@@ -304,11 +304,12 @@ src="https://www.facebook.com/tr?id=851416281111227&ev=PageView&noscript=1"
         {!! $header_content !!}
     @endif
 
-    <!-- Critical CSS - Load immediately -->
-    <link rel="preload" href="{{ asset('front') }}/css/bootstrap.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="{{ asset('front') }}/css/bootstrap.css"></noscript>
-    <link rel="preload" href="{{ asset('front') }}/css/styles.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="{{ asset('front') }}/css/styles.css"></noscript>
+    <!-- Critical CSS - Load synchronously to prevent FOUC -->
+    <link rel="stylesheet" href="{{ asset('front') }}/css/bootstrap.css">
+    <link rel="stylesheet" href="{{ asset('front') }}/css/styles.css">
+    <link rel="stylesheet" href="{{ asset('front') }}/font/fonts.css">
+    <link rel="stylesheet" href="{{ asset('front') }}/icons/icomoon/style.css">
+    <link rel="stylesheet" href="{{ asset('front') }}/icons/fontawesome/css/all.min.css">
     
     <!-- Non-critical CSS - Load asynchronously -->
     <link rel="preload" href="{{ asset('front') }}/css/swiper-bundle.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
@@ -323,18 +324,6 @@ src="https://www.facebook.com/tr?id=851416281111227&ev=PageView&noscript=1"
     <noscript><link rel="stylesheet" href="{{ asset('front') }}/css/animate2.min.css"></noscript>
     <link rel="preload" href="{{ asset('front') }}/css/textanimation.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="{{ asset('front') }}/css/textanimation.css"></noscript>
-    <!-- Font - Preload critical fonts -->
-    <link rel="preload" href="{{ asset('front') }}/font/Farmhouse.otf" as="font" type="font/otf" crossorigin>
-    <link rel="preload" href="{{ asset('front') }}/font/Glittery-Snowfall.ttf" as="font" type="font/ttf" crossorigin>
-    <link rel="preload" href="{{ asset('front') }}/icons/fontawesome/webfonts/fa-solid-900.ttf" as="font" type="font/ttf" crossorigin>
-    <link rel="preload" href="{{ asset('front') }}/icons/fontawesome/webfonts/fa-brands-400.ttf" as="font" type="font/ttf" crossorigin>
-    <link rel="preload" href="{{ asset('front') }}/font/fonts.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="{{ asset('front') }}/font/fonts.css"></noscript>
-    <!-- Icon -->
-    <link rel="preload" href="{{ asset('front') }}/icons/icomoon/style.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="{{ asset('front') }}/icons/icomoon/style.css"></noscript>
-    <link rel="preload" href="{{ asset('front') }}/icons/fontawesome/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="{{ asset('front') }}/icons/fontawesome/css/all.min.css"></noscript>
     <!--[if lt IE 9]>
         <script src="{{ asset('front') }}/javascript/html5shiv.js"></script>
         <script src="{{ asset('front') }}/javascript/respond.min.js"></script>
@@ -978,19 +967,40 @@ src="https://www.facebook.com/tr?id=851416281111227&ev=PageView&noscript=1"
     <!-- Non-critical JavaScript - Load asynchronously after page load -->
     <script>
         // Load scripts after DOM is ready to improve LCP
+        // Load magnific-popup before main.js since main.js depends on it
         window.addEventListener('DOMContentLoaded', function() {
-            var scripts = [
+            // First load dependencies
+            var dependencyScripts = [
                 '{{ asset("front") }}/js/bootstrap.min.js',
-                '{{ asset("front") }}/js/lazysize.min.js',
-                '{{ asset("front") }}/js/swiper-bundle.min.js',
-                '{{ asset("front") }}/js/main.js'
+                '{{ asset("front") }}/js/magnific-popup.min.js'
             ];
             
-            scripts.forEach(function(src) {
+            // Load dependencies sequentially
+            function loadScript(src, callback) {
                 var script = document.createElement('script');
                 script.src = src;
-                script.async = true;
+                script.async = false; // Load sequentially
+                script.onload = callback;
                 document.body.appendChild(script);
+            }
+            
+            // Load dependencies first
+            loadScript(dependencyScripts[0], function() {
+                loadScript(dependencyScripts[1], function() {
+                    // Now load scripts that depend on magnific-popup
+                    var scripts = [
+                        '{{ asset("front") }}/js/lazysize.min.js',
+                        '{{ asset("front") }}/js/swiper-bundle.min.js',
+                        '{{ asset("front") }}/js/main.js'
+                    ];
+                    
+                    scripts.forEach(function(src) {
+                        var script = document.createElement('script');
+                        script.src = src;
+                        script.async = true;
+                        document.body.appendChild(script);
+                    });
+                });
             });
         });
         
@@ -998,7 +1008,6 @@ src="https://www.facebook.com/tr?id=851416281111227&ev=PageView&noscript=1"
         window.addEventListener('load', function() {
             var deferredScripts = [
                 '{{ asset("front") }}/js/wow.min.js',
-                '{{ asset("front") }}/js/magnific-popup.min.js',
                 '{{ asset("front") }}/js/swiper.js',
                 '{{ asset("front") }}/js/odometer.min.js',
                 '{{ asset("front") }}/js/counter.js',
