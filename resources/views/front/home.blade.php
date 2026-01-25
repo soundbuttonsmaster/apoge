@@ -237,8 +237,8 @@
                                     Laser Transmitter,
                                     Laser Receiver, Laser Control Box, and Bucket/Scrapper.
                                 </p>
-                                <a href="{{ route('home.about_us') }}" class="tf-btn btn-read-more gap-34" aria-label="Read more about Apogee Group and our agricultural equipment"> <span
-                                        class="text-style">Read more about Apogee Group</span>
+                                <a href="{{ route('home.about_us') }}" class="tf-btn btn-read-more gap-34" aria-label="Read more about Apogee Group and our agricultural equipment" style="color: #ffffff !important; background-color: #1a5f2e !important;"> <span
+                                        class="text-style" style="color: #ffffff !important;">Read more about Apogee Group</span>
                                     <div class="icon"> <i class="icon-arrow_right"></i> </div>
                                 </a>
                                 <div class="image hover-item"> <img src="{{ asset('front') }}/images/s-about.jpg"
@@ -340,7 +340,7 @@
                                                     {{ Str::limit($item->product_name, 18) }}
                                                 </div>
                                                 <p class="text"> {{ Str::limit($item->short_description, 53) }}</p>
-                                                <span class="tf-btn-read" aria-label="Read more about {{ $item->product_name }}"> Read More </span>
+                                                <span class="tf-btn-read" aria-label="Read more about {{ $item->product_name }}" style="color: #1a5f2e !important; font-weight: 600;"> Read More </span>
                                             </a> </div>
                                     </div>
                                 </div>
@@ -391,7 +391,7 @@
                                     with approved subsidies. Our primary focus is on manufacturing cutting-edge and
                                     highlysophisticated
                                     levelling equipment to automate the farming process. </p>
-                                <a href="{{ route('home.about_us') }}" class="tf-btn btn-read-more scale-40" aria-label="Read more about what Apogee Agrotech does"> <span class="text-style">Read more about Apogee Agrotech</span>
+                                <a href="{{ route('home.about_us') }}" class="tf-btn btn-read-more scale-40" aria-label="Read more about what Apogee Agrotech does" style="color: #ffffff !important; background-color: #1a5f2e !important;"> <span class="text-style" style="color: #ffffff !important;">Read more about Apogee Agrotech</span>
                                     <div class="icon"> <i class="icon-arrow_right"></i> </div>
                                 </a>
                             </div>
@@ -414,7 +414,7 @@
                                 <p class="sub"> We, here, ensure the best service across PAN India and internationally.
                                     Click here to
                                     explore our </p>
-                                <a href="{{ asset('front/brochure/Company-Profile-Apogee-Agrotech.pdf') }}" target="_blank" class="download btn-read-more scale-40"> Download Brochure </a>
+                                <a href="{{ asset('front/brochure/Company-Profile-Apogee-Agrotech.pdf') }}" target="_blank" class="download btn-read-more scale-40" style="color: #ffffff !important; background-color: #1a5f2e !important;"> Download Brochure </a>
                             </li>
                             <li> <img src="{{ asset('front') }}/images/make-in-india.png" alt="Make in India logo - Apogee Agrotech supports Indian manufacturing"> </li>
                         </ul>
@@ -433,8 +433,8 @@
                     <div class="row">
                         <div class="col-lg-12">
                             <div class="heading-section style-3 has-text text-center">
-                                <p class="sub-title">Apogeeagrotech</p>
-                                <p class="title tf-animate-3"> Experience Our Journey </p>
+                                <p class="sub-title" style="color: #333333 !important; font-weight: 600;">Apogeeagrotech</p>
+                                <p class="title tf-animate-3" style="color: #1a5f2e !important;"> Experience Our Journey </p>
                                 <div class="img-item"> <img class="tf-animate-1"
                                         src="{{ asset('front') }}/images/item/rice-plant-2.png" alt="Rice icon representing paddy crop section on Apogee Agrotech website" /> </div>
                             </div>

@@ -356,24 +356,24 @@ src="https://www.facebook.com/tr?id=851416281111227&ev=PageView&noscript=1"
                                     class="">India's Agriculture Sector</span> </div>
                             <div class="topbar-right">
                                 <ul class="contact-list">
-                                    <li class="item"> <a href="#" class="icon"> <i
+                                    <li class="item"> <a href="tel:+91 7624002265" class="icon" aria-label="Call us"> <i
                                                 class="fa-solid fa-phone-volume"></i> </a> <a
                                             href="tel:+91 7624002265">+91 7624002265</a> </li>
-                                    <li class="item"> <a href="#" class="icon"> <i
+                                    <li class="item"> <a href="mailto:sales@apogeeagrotech.com" class="icon" aria-label="Email us"> <i
                                                 class="far fa-envelope"></i> </a> <a
                                             href="mailto:sales@apogeeagrotech.com">sales@apogeeagrotech.com</a> </li>
-                                    <li class="item"> <a href="#" class="icon"> <i
+                                    <li class="item"> <a href="#" class="icon" aria-label="Our location"> <i
                                                 class="fa-solid fa-location-dot"></i> </a> <a href="#">Garh Road,
                                             Hapur, UP, 245101</a> </li>
                                 </ul>
                                 <ul class="social-list">
-                                    <li class="item"> <a href="https://www.youtube.com/@apogee_agro" target="_blank">
+                                    <li class="item"> <a href="https://www.youtube.com/@apogee_agro" target="_blank" aria-label="Follow us on YouTube">
                                             <i class="fa-brands fa-youtube"></i> </a> </li>
                                     <li class="item"> <a href="https://www.facebook.com/apogeeagrotech/"
-                                            target="_blank"> <i class="fa-brands fa-facebook-f"></i> </a> </li>
+                                            target="_blank" aria-label="Follow us on Facebook"> <i class="fa-brands fa-facebook-f"></i> </a> </li>
                                     <li class="item"> <a href="https://www.instagram.com/apogee_agro/"
-                                            target="_blank"> <i class="fa-brands fa-instagram"></i> </a> </li>
-                                    <li class="item"> <a href="https://www.linkedin.com/company/apogee-agrotech-pvt-ltd" target="_blank"> <i
+                                            target="_blank" aria-label="Follow us on Instagram"> <i class="fa-brands fa-instagram"></i> </a> </li>
+                                    <li class="item"> <a href="https://www.linkedin.com/company/apogee-agrotech-pvt-ltd" target="_blank" aria-label="Follow us on LinkedIn"> <i
                                                 class="fa-brands fa-linkedin-in"></i> </a> </li>
 
                                 </ul>
@@ -500,8 +500,8 @@ src="https://www.facebook.com/tr?id=851416281111227&ev=PageView&noscript=1"
                                     </ul>
                                 </div>
                             </div>
-                            <div class="header-right"> <a href="{{ asset('front/brochure/Company-Profile-Apogee-Agrotech.pdf') }}" target="_blank" class="tf-btn gap-30"> <span
-                                        class="text-style"> Download Brochure </span>
+                            <div class="header-right"> <a href="{{ asset('front/brochure/Company-Profile-Apogee-Agrotech.pdf') }}" target="_blank" class="tf-btn gap-30" style="color: #ffffff !important; background-color: #1a5f2e !important;"> <span
+                                        class="text-style" style="color: #ffffff !important;"> Download Brochure </span>
                                     <div class="icon"> <i class="icon-arrow_down"></i> </div>
                                 </a>
                                 <div class="icon-wrap">
@@ -824,8 +824,8 @@ src="https://www.facebook.com/tr?id=851416281111227&ev=PageView&noscript=1"
                     <div class="row">
                         <div class="col-lg-3 col-md-6 ">
                             <div class="footer-inner-wrap footer-col-block">
-                                <h4 class="footer-title footer-title-desktop mb-23"> Contact Info </h4>
-                                <h4 class="footer-title footer-title-mobile mb-23"> Contact Us! </h4>
+                                <h2 class="footer-title footer-title-desktop mb-23"> Contact Info </h2>
+                                <h2 class="footer-title footer-title-mobile mb-23"> Contact Us! </h2>
                                 <ul class="contact-list tf-collapse-content">
                                     <li> <i class="fa-solid fa-location-dot fs-17"></i>
                                         <p class="address"> Plot No. 540,541, Near Reliance Petrol Pump, Garh Road,
@@ -845,8 +845,8 @@ src="https://www.facebook.com/tr?id=851416281111227&ev=PageView&noscript=1"
                         </div>
                         <div class="col-lg-3 col-md-6 ">
                             <div class="footer-inner-wrap footer-col-block">
-                                <h4 class="footer-title footer-title-desktop mb-28"> Quick Links </h4>
-                                <h4 class="footer-title footer-title-mobile mb-28"> Quick Links </h4>
+                                <h2 class="footer-title footer-title-desktop mb-28"> Quick Links </h2>
+                                <h2 class="footer-title footer-title-mobile mb-28"> Quick Links </h2>
                                 <ul class="link-list tf-collapse-content">
                                     <li class="item"> <a href="{{ route('home') }}"> Home </a> </li>
                                     <li class="item"><a href="{{ route('home.about_us') }}">About Us</a></li>
@@ -859,8 +859,8 @@ src="https://www.facebook.com/tr?id=851416281111227&ev=PageView&noscript=1"
                         </div>
                         <div class="col-lg-3 col-md-6 ">
                             <div class="footer-inner-wrap footer-col-block">
-                                <h4 class="footer-title footer-title-desktop mb-28"> Products </h4>
-                                <h4 class="footer-title footer-title-mobile mb-28"> Products </h4>
+                                <h2 class="footer-title footer-title-desktop mb-28"> Products </h2>
+                                <h2 class="footer-title footer-title-mobile mb-28"> Products </h2>
                                 <ul class="link-list tf-collapse-content">
                                      @php
                                         $category = \App\Models\Category::where('status', 1)->latest()->get();
@@ -877,7 +877,7 @@ src="https://www.facebook.com/tr?id=851416281111227&ev=PageView&noscript=1"
                         </div>
                         <div class="col-lg-3 col-md-6">
                             <div class="footer-inner-wrap">
-                                <h4 class="footer-title fs-20"> Newsletter </h4>
+                                <h2 class="footer-title fs-20"> Newsletter </h2>
                                 <form id="subscribe" method="post" class="form-email style-2" data-parsley-validate>
                                     @csrf
 
