@@ -40,17 +40,19 @@ class HomeController extends Controller
 
     public function AboutUs()
     {
-        $meta_title = "About Us - Apogee Agrotech";
-        $meta_keywords =  "About Us - Apogee Agrotech";
-        $meta_description =  "About Us - Apogee Agrotech, Provides agri equipment at best prices.";
-        return view('front.company.about-us', compact('meta_title', 'meta_keywords', 'meta_description'));
+        $meta_title = "About Us - Laser Land Leveller Manufacturer India | Apogee Agrotech";
+        $meta_keywords = "about apogee agrotech, laser land leveller manufacturer, laser land leveler company india, agricultural equipment manufacturer, precision farming equipment, GNSS land leveller manufacturer, laser guided equipment, apogee agrotech history, laser land leveller company";
+        $meta_description = "Learn about Apogee Agrotech - India's leading manufacturer of Laser Land Leveller and Laser Land Leveler equipment. Discover our journey in precision agriculture and commitment to quality. Call +91 7624002265";
+        $schema_type = 'AboutPage';
+        return view('front.company.about-us', compact('meta_title', 'meta_keywords', 'meta_description', 'schema_type'));
     }
      public function TimeLine()
     {
-        $meta_title = "Timeline - Apogee Agrotech";
-        $meta_keywords =  "Timeline - Apogee Agrotech";
-        $meta_description =  "Timeline - Apogee Agrotech, Provides agri equipment at best prices.";
-        return view('front.company.time-line', compact('meta_title', 'meta_keywords', 'meta_description'));
+        $meta_title = "Company Timeline - Laser Land Leveller Manufacturer History | Apogee Agrotech";
+        $meta_keywords = "apogee agrotech timeline, laser land leveller company history, agricultural equipment manufacturer history, precision farming evolution, laser land leveller development, company milestones, apogee agrotech journey";
+        $meta_description = "Explore the timeline of Apogee Agrotech - India's premier Laser Land Leveller manufacturer. Discover our milestones, innovations, and growth in precision agriculture equipment manufacturing.";
+        $schema_type = 'AboutPage';
+        return view('front.company.time-line', compact('meta_title', 'meta_keywords', 'meta_description', 'schema_type'));
     }
 
     public function ProductListing($category_slug, $subcategory_slug)
@@ -87,11 +89,14 @@ class HomeController extends Controller
         $AllCategory = Category::where('status', 1)->latest()->get();
 
 
-        $meta_title = @$subcategory->meta_title;
-        $meta_keywords =  @$subcategory->meta_keywords;
-        $meta_description =  @$subcategory->meta_description;
+        $meta_title = !empty($subcategory->meta_title) ? $subcategory->meta_title : $subcategory_name . ' - ' . $category_name . ' | Laser Land Leveller | Apogee Agrotech';
+        $meta_keywords = !empty($subcategory->meta_keywords) ? $subcategory->meta_keywords : strtolower($subcategory_name) . ', ' . strtolower($category_name) . ', laser land leveller, laser land leveler, precision agriculture equipment, apogee agrotech';
+        $meta_description = !empty($subcategory->meta_description) ? $subcategory->meta_description : 'Browse ' . $subcategory_name . ' products from ' . $category_name . ' category. Best quality Laser Land Leveller equipment by Apogee Agrotech. Get best prices in India.';
         $header_content = @$subcategory->head_content;
-        return view('front.product-listing', compact('productlisting', 'category_name', 'subcategory_name', 'AllCategory', 'meta_title', 'meta_keywords', 'meta_description', 'header_content'));
+        $schema_type = 'CollectionPage';
+        $category = $category;
+        $subcategory = $subcategory;
+        return view('front.product-listing', compact('productlisting', 'category_name', 'subcategory_name', 'AllCategory', 'meta_title', 'meta_keywords', 'meta_description', 'header_content', 'schema_type', 'category', 'subcategory'));
     }
 
     public function ProductListingCategory($category_slug)
@@ -117,11 +122,12 @@ class HomeController extends Controller
         $AllCategory = Category::where('status', 1)->latest()->get();
         $headerContent = HeaderContent::where('page_name', 'product_list')->where('status', 1)->first();
         
-         $meta_title = @$category->meta_title;
-        $meta_keywords =  @$category->meta_keywords;
-        $meta_description =  @$category->meta_description;
+         $meta_title = !empty($category->meta_title) ? $category->meta_title : $category_name . ' - Laser Land Leveller Products | Apogee Agrotech';
+        $meta_keywords = !empty($category->meta_keywords) ? $category->meta_keywords : strtolower($category_name) . ', laser land leveller, laser land leveler, precision agriculture equipment, agricultural machinery, apogee agrotech products';
+        $meta_description = !empty($category->meta_description) ? $category->meta_description : 'Explore ' . $category_name . ' products by Apogee Agrotech. Best quality Laser Land Leveller equipment for precision agriculture. Get best prices in India. Call +91 7624002265';
         $header_content = @$category->head_content;
-        return view('front.product-listing', compact('productlisting', 'category_name', 'AllCategory', 'headerContent', 'meta_title', 'meta_keywords', 'meta_description', 'header_content'));
+        $schema_type = 'CollectionPage';
+        return view('front.product-listing', compact('productlisting', 'category_name', 'AllCategory', 'headerContent', 'meta_title', 'meta_keywords', 'meta_description', 'header_content', 'schema_type', 'category'));
     }
 
      public function productDatels($product_slug)
@@ -134,11 +140,12 @@ class HomeController extends Controller
         $RelatedProducts = Product::where('category_id', $product->category_id)->where('subcategory_id', $product->subcategory_id)->where('status', 1)->latest()->get();
 
 
-        $meta_title = @$product->meta_title;
-        $meta_keywords =  @$product->meta_keywords;
-        $meta_description =  @$product->meta_description;
+        $meta_title = !empty($product->meta_title) ? $product->meta_title : $product->product_name . ' - Laser Land Leveller | Apogee Agrotech';
+        $meta_keywords = !empty($product->meta_keywords) ? $product->meta_keywords : strtolower($product->product_name) . ', laser land leveller, laser land leveler, precision agriculture, agricultural equipment, apogee agrotech, ' . strtolower($product->product_name) . ' price';
+        $meta_description = !empty($product->meta_description) ? $product->meta_description : $product->product_name . ' by Apogee Agrotech. ' . (!empty($product->short_description) ? strip_tags($product->short_description) : 'Best quality Laser Land Leveller equipment for precision agriculture.') . ' Get best price in India.';
         $header_content = @$product->head_content;
-        return view('front.product-datels', compact('product', 'RelatedProducts', 'meta_title', 'meta_keywords', 'meta_description', 'header_content'));
+        $schema_type = 'Product';
+        return view('front.product-datels', compact('product', 'RelatedProducts', 'meta_title', 'meta_keywords', 'meta_description', 'header_content', 'schema_type'));
     }
 
 
@@ -149,24 +156,30 @@ class HomeController extends Controller
         $headerContent = HeaderContent::where('page_name', 'photo_gallery')->where('status', 1)->first();
 
         
-        $meta_title = @$headerContent->meta_title;
-        $meta_keywords =  @$headerContent->meta_keywords;
-        $meta_description =  @$headerContent->meta_description;
-        return view('front.media.image-gallery', compact('session', 'meta_title', 'meta_keywords', 'meta_description'));
+        $meta_title = !empty($headerContent->meta_title) ? $headerContent->meta_title : 'Image Gallery - Laser Land Leveller Photos & Images | Apogee Agrotech';
+        $meta_keywords = !empty($headerContent->meta_keywords) ? $headerContent->meta_keywords : 'laser land leveller images, laser land leveller photos, apogee agrotech gallery, agricultural equipment images, precision farming photos, laser land leveller pictures, GNSS land leveller images';
+        $meta_description = !empty($headerContent->meta_description) ? $headerContent->meta_description : 'Browse our image gallery showcasing Laser Land Leveller equipment, precision agriculture solutions, and customer success stories. High-quality photos of Apogee Agrotech products.';
+        $schema_type = 'ImageGallery';
+        return view('front.media.image-gallery', compact('session', 'meta_title', 'meta_keywords', 'meta_description', 'schema_type', 'headerContent'));
     }
 
    public function VideoGallery(){
         $videoGallery = VideoGallery::where('status', 1)->latest()->get();
         $headerContent = HeaderContent::where('page_name', 'video_gallery')->where('status', 1)->first();
 
-        $meta_title = @$headerContent->meta_title;
-        $meta_keywords =  @$headerContent->meta_keywords;
-        $meta_description =  @$headerContent->meta_description;
-        return view('front.media.video-gallery', compact('videoGallery', 'meta_title', 'meta_keywords', 'meta_description'));
+        $meta_title = !empty($headerContent->meta_title) ? $headerContent->meta_title : 'Video Gallery - Laser Land Leveller Videos & Demonstrations | Apogee Agrotech';
+        $meta_keywords = !empty($headerContent->meta_keywords) ? $headerContent->meta_keywords : 'laser land leveller videos, laser land leveller demonstrations, apogee agrotech videos, agricultural equipment videos, precision farming videos, laser land leveller tutorials, GNSS land leveller videos';
+        $meta_description = !empty($headerContent->meta_description) ? $headerContent->meta_description : 'Watch videos of Laser Land Leveller equipment in action. Product demonstrations, customer testimonials, and tutorials from Apogee Agrotech - India\'s leading manufacturer.';
+        $schema_type = 'VideoGallery';
+        return view('front.media.video-gallery', compact('videoGallery', 'meta_title', 'meta_keywords', 'meta_description', 'schema_type', 'headerContent'));
     }
     public function Blog(){
         $blog = Blog::where('status', 1)->latest()->get();
-        return view('front.media.blog', compact('blog'));
+        $meta_title = 'Blog - Laser Land Leveller Articles, News & Tips | Apogee Agrotech';
+        $meta_keywords = 'laser land leveller blog, precision agriculture articles, farming tips, agricultural equipment news, laser land leveller guides, farming technology blog, apogee agrotech blog';
+        $meta_description = 'Read latest articles, news, and tips about Laser Land Leveller equipment, precision agriculture, and farming technology. Expert insights from Apogee Agrotech.';
+        $schema_type = 'Blog';
+        return view('front.media.blog', compact('blog', 'meta_title', 'meta_keywords', 'meta_description', 'schema_type'));
     }
    public function BlogDatels($slug){
         // dd($slug);
@@ -177,20 +190,22 @@ class HomeController extends Controller
 
         $blogs = Blog::where('status', 1)->latest()->take(5)->get();
 
-        $meta_title = @$blogdatels->meta_title;
-        $meta_keywords =  @$blogdatels->meta_keywords;
-        $meta_description =  @$blogdatels->meta_description;
+        $meta_title = !empty($blogdatels->meta_title) ? $blogdatels->meta_title : $blogdatels->title . ' - Laser Land Leveller Blog | Apogee Agrotech';
+        $meta_keywords = !empty($blogdatels->meta_keywords) ? $blogdatels->meta_keywords : strtolower($blogdatels->title) . ', laser land leveller, precision agriculture, farming tips, agricultural equipment, apogee agrotech blog';
+        $meta_description = !empty($blogdatels->meta_description) ? $blogdatels->meta_description : (!empty($blogdatels->short_description) ? strip_tags($blogdatels->short_description) : $blogdatels->title . ' - Read latest insights about Laser Land Leveller and precision agriculture from Apogee Agrotech.');
         $header_content = @$blogdatels->head_content;
-        return view('front.media.blog-datels', compact('blogdatels', 'blogs', 'meta_title', 'meta_keywords', 'meta_description', 'header_content'));
+        $schema_type = 'BlogPosting';
+        return view('front.media.blog-datels', compact('blogdatels', 'blogs', 'meta_title', 'meta_keywords', 'meta_description', 'header_content', 'schema_type'));
 
     }
  
     // Network
     public function BecomeADealer(){
-        $meta_title = "Become a Dealer - Apogee Agrotech";
-        $meta_keywords =  "Become a Dealer - Apogee Agrotech";
-        $meta_description =  "Become a Dealer - Apogee Agrotech, Provides agri equipment at best prices.";
-        return view('admin.network.become-a-dealer', compact('meta_title', 'meta_keywords', 'meta_description'));
+        $meta_title = "Become a Dealer - Laser Land Leveller Dealer Program | Apogee Agrotech";
+        $meta_keywords = "become laser land leveller dealer, apogee agrotech dealer program, agricultural equipment dealership, laser land leveller distributor, dealer opportunity, agricultural machinery dealer, precision farming equipment dealer";
+        $meta_description = "Join Apogee Agrotech as a dealer and sell Laser Land Leveller equipment. Exclusive dealer program with best margins, marketing support, and training. Apply now to become our authorized dealer.";
+        $schema_type = 'ContactPage';
+        return view('admin.network.become-a-dealer', compact('meta_title', 'meta_keywords', 'meta_description', 'schema_type'));
     }
     public function SaveBecomeForm(Request $request){
         // dd($request->all());
@@ -217,10 +232,11 @@ class HomeController extends Controller
     }
 
     public function FindADealer(){
-        $meta_title = "Find a Dealer - Apogee Agrotech";
-        $meta_keywords =  "Find a Dealer - Apogee Agrotech";
-        $meta_description =  "Find a Dealer - Apogee Agrotech, Provides agri equipment at best prices.";
-        return view('admin.network.find-a-dealer', compact('meta_title', 'meta_keywords', 'meta_description'));
+        $meta_title = "Find a Dealer - Laser Land Leveller Dealers Near You | Apogee Agrotech";
+        $meta_keywords = "find laser land leveller dealer, apogee agrotech dealers, laser land leveller dealer near me, agricultural equipment dealer, precision farming equipment dealer, laser land leveller distributor";
+        $meta_description = "Find authorized Apogee Agrotech dealers near you. Buy genuine Laser Land Leveller equipment from our network of trusted dealers across India. Search by location now.";
+        $schema_type = 'WebPage';
+        return view('admin.network.find-a-dealer', compact('meta_title', 'meta_keywords', 'meta_description', 'schema_type'));
     }
 
  public function SaveFindDealerForm(Request $request)
@@ -278,19 +294,21 @@ class HomeController extends Controller
     public function testimonials(){
         $testimonials = Testimonial::where('status', 1)->latest()->get();
         
-        $meta_title = "Testimonials - Apogee Agrotech";
-        $meta_keywords =  "Testimonials - Apogee Agrotech";
-        $meta_description =  "Testimonials - Apogee Agrotech, Provides agri equipment at best prices.";
-        return view('front.testimonials', compact('testimonials', 'meta_title', 'meta_keywords', 'meta_description'));
+        $meta_title = "Customer Testimonials - Laser Land Leveller Reviews | Apogee Agrotech";
+        $meta_keywords = "laser land leveller reviews, apogee agrotech testimonials, customer reviews, laser land leveller feedback, precision agriculture testimonials, agricultural equipment reviews, laser land leveller customer stories";
+        $meta_description = "Read customer testimonials and reviews about Apogee Agrotech Laser Land Leveller equipment. Real experiences from farmers and agricultural professionals across India.";
+        $schema_type = 'WebPage';
+        return view('front.testimonials', compact('testimonials', 'meta_title', 'meta_keywords', 'meta_description', 'schema_type'));
     }
 
 
     public function Contactus()
     {
-        $meta_title = "Contact Us - Apogee Agrotech";
-        $meta_keywords =  "Contact Us - Apogee Agrotech";
-        $meta_description =  "Contact Us - Apogee Agrotech, Provides agri equipment at best prices.";
-        return view('front.contact-us', compact('meta_title', 'meta_keywords', 'meta_description'));
+        $meta_title = "Contact Us - Laser Land Leveller Manufacturer | Apogee Agrotech";
+        $meta_keywords = "contact apogee agrotech, laser land leveller contact, laser land leveller manufacturer contact, agricultural equipment inquiry, precision farming contact, laser land leveller support, apogee agrotech phone number";
+        $meta_description = "Contact Apogee Agrotech for Laser Land Leveller inquiries, product information, dealer opportunities, and support. Call +91 7624002265 or email sales@apogeeagrotech.com. Located in Hapur, UP, India.";
+        $schema_type = 'ContactPage';
+        return view('front.contact-us', compact('meta_title', 'meta_keywords', 'meta_description', 'schema_type'));
     }
 
     public function saveContactForm(Request $request){
@@ -333,10 +351,12 @@ class HomeController extends Controller
         $state = DB::table('geo_locations')->where('location_type', 'STATE')->get();
 
 
-        $meta_title = "Farmer Registration - Apogee Agrotech";
-        $meta_keywords =  "Farmer Registration - Apogee Agrotech";
-        $meta_description =  "Farmer Registration - Apogee Agrotech, Provides agri equipment at best prices.";
-        return view('front.farmer-registration', compact('state', 'meta_title', 'meta_keywords', 'meta_description'));
+        $meta_title = "Farmer Registration - Laser Land Leveller Owner Registration | Apogee Agrotech";
+        $meta_keywords = "farmer registration, laser land leveller owner registration, agricultural equipment registration, farmer card registration, laser land leveller warranty registration";
+        $meta_description = "Register your Laser Land Leveller equipment with Apogee Agrotech. Get farmer card, warranty benefits, and exclusive offers. Quick and easy registration process.";
+        $schema_type = 'WebPage';
+        return view('front.farmer-registration', compact('state', 'meta_title', 'meta_keywords', 'meta_description', 'schema_type'));
+    }
     }
 
 
@@ -465,7 +485,11 @@ class HomeController extends Controller
     
       public function FindAfarmerCard()
     {
-        return view('front.find-a-farmer-card');
+        $meta_title = "Find Farmer Card - Laser Land Leveller Owner Card Lookup | Apogee Agrotech";
+        $meta_keywords = "find farmer card, laser land leveller owner card, farmer card lookup, agricultural equipment card, apogee agrotech farmer card";
+        $meta_description = "Find your Laser Land Leveller farmer card by entering your details. Access warranty information, service history, and exclusive benefits from Apogee Agrotech.";
+        $schema_type = 'WebPage';
+        return view('front.find-a-farmer-card', compact('meta_title', 'meta_keywords', 'meta_description', 'schema_type'));
     }
 
 

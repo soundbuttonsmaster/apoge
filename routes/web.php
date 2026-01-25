@@ -27,6 +27,7 @@ use App\Http\Controllers\front\HomePageController;
 
 // home page
 use App\Http\Controllers\front\HomeController;
+use App\Http\Controllers\SitemapController;
 
 
 
@@ -271,3 +272,6 @@ Route::get('privacy-policy', function(){
 Route::get('delete-account', function(){
     return view('front.delete-account');
 });
+
+// Sitemap
+Route::get('sitemap.xml', [SitemapController::class, 'index'])->name('sitemap');

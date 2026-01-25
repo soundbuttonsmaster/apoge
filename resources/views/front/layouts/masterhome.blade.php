@@ -251,6 +251,9 @@
         }]
     }
     </script>
+    @else
+        {{-- Include dynamic schema for other pages --}}
+        @include('front.layouts.partials.schema')
     @endif
 
 <!-- Google tag (gtag.js) --> <script async src="https://www.googletagmanager.com/gtag/js?id=G-139HDX1VWS"></script> <script>   window.dataLayer = window.dataLayer || [];   function gtag(){dataLayer.push(arguments);}   gtag('js', new Date());   gtag('config', 'G-139HDX1VWS'); </script>

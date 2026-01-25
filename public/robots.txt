@@ -1,2 +1,16 @@
 User-agent: *
 Allow: /
+
+# Block admin area
+Disallow: /admin/
+Disallow: /admin-login
+
+# Block private areas
+Disallow: /view-clear
+Disallow: /api/
+
+# Sitemap
+Sitemap: https://www.apogeeagrotech.com/sitemap.xml
+
+# Crawl delay (optional - adjust as needed)
+Crawl-delay: 1
