@@ -10,8 +10,8 @@
                     <div class="slide-home-1">
                         <div class="image overflow-hidden">
                             <img src="{{ asset('front') }}/images/page-title/slider-1.jpg"
-                                data-src="{{ asset('front') }}/images/page-title/slider-1.jpg" alt="Apogee Bahubali Laser Land Leveller Bucket"
-                                class="lazyload tf-animate-zoom-in-out" />
+                                alt="Apogee Bahubali Laser Land Leveller Bucket"
+                                class="tf-animate-zoom-in-out" fetchpriority="high" width="1920" height="1080" />
                         </div>
                         <div class="content-wrap">
                             <div class="tf-container w-1780">
@@ -53,8 +53,8 @@
                 <div class="swiper-slide">
                     <div class="slide-home-1">
                         <div class="image overflow-hidden"> <img src="{{ asset('front') }}/images/page-title/slider-2.jpg"
-                                data-src="{{ asset('front') }}/images/page-title/slider-2.jpg" alt="Farmer using GNSS land leveller by Apogee Agrotech for accurate and efficient land preparation in agriculture"
-                                class="lazyload tf-animate-zoom-in-out" /> </div>
+                                alt="Farmer using GNSS land leveller by Apogee Agrotech for accurate and efficient land preparation in agriculture"
+                                class="tf-animate-zoom-in-out" width="1920" height="1080" /> </div>
                         <div class="content-wrap">
                             <div class="tf-container w-1780">
                                 <div class="row">
@@ -86,8 +86,8 @@
                 <div class="swiper-slide">
                     <div class="slide-home-1">
                         <div class="image overflow-hidden"> <img src="{{ asset('front') }}/images/page-title/slider-3.jpg"
-                                data-src="{{ asset('front') }}/images/page-title/slider-3.jpg" alt="Apogee Auto Steering Set"
-                                class="lazyload tf-animate-zoom-in-out" /> </div>
+                                alt="Apogee Auto Steering Set"
+                                class="tf-animate-zoom-in-out" width="1920" height="1080" /> </div>
                         <div class="content-wrap">
                             <div class="tf-container w-1780">
                                 <div class="row">

@@ -108,6 +108,23 @@
     <!-- Google Site Verification -->
     <meta name="google-site-verification" content="7QDVioBve69fT7GcAvNox_CxgnOc1wEtwqEB8zWTe24" />
     
+    <!-- Preconnect to critical origins for faster loading -->
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://connect.facebook.net" crossorigin>
+    <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+    <link rel="dns-prefetch" href="https://connect.facebook.net">
+    <link rel="dns-prefetch" href="https://www.facebook.com">
+    <link rel="dns-prefetch" href="https://parsleyjs.org">
+    
+    @if($isHomePage)
+    <!-- Preload critical LCP image -->
+    <link rel="preload" as="image" href="{{ asset('front') }}/images/page-title/slider-1.jpg" fetchpriority="high">
+    @endif
+    
     <!-- Schema.org Structured Data -->
     @if($isHomePage)
     <script type="application/ld+json">
@@ -294,7 +311,11 @@ src="https://www.facebook.com/tr?id=851416281111227&ev=PageView&noscript=1"
     <link rel="stylesheet" type="text/css" href="{{ asset('front') }}/css/animate.min.css" />
     <link rel="stylesheet" type="text/css" href="{{ asset('front') }}/css/animate2.min.css" />
     <link rel="stylesheet" type="text/css" href="{{ asset('front') }}/css/textanimation.css" />
-    <!-- Font -->
+    <!-- Font - Preload critical fonts -->
+    <link rel="preload" href="{{ asset('front') }}/font/Farmhouse.otf" as="font" type="font/otf" crossorigin>
+    <link rel="preload" href="{{ asset('front') }}/font/Glittery-Snowfall.ttf" as="font" type="font/ttf" crossorigin>
+    <link rel="preload" href="{{ asset('front') }}/icons/fontawesome/webfonts/fa-solid-900.ttf" as="font" type="font/ttf" crossorigin>
+    <link rel="preload" href="{{ asset('front') }}/icons/fontawesome/webfonts/fa-brands-400.ttf" as="font" type="font/ttf" crossorigin>
     <link rel="stylesheet" href="{{ asset('front') }}/font/fonts.css" />
     <!-- Icon -->
     <link rel="stylesheet" type="text/css" href="{{ asset('front') }}/icons/icomoon/style.css" />
@@ -305,9 +326,13 @@ src="https://www.facebook.com/tr?id=851416281111227&ev=PageView&noscript=1"
     <![endif]-->
     @yield('css')
 
-    <!-- css for toaster -->
-    <link rel="stylesheet" type="text/css"
-        href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+    <!-- css for toaster - loaded asynchronously to prevent render blocking -->
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css"></noscript>
+    <script>
+        // LoadCSS polyfill for async CSS loading
+        !function(e){"use strict";var t=function(t,n,r){var o,i=e.document,a=i.createElement("link");if(n)o=n;else{var l=(i.body||i.getElementsByTagName("head")[0]).childNodes;o=l[l.length-1]}var d=i.styleSheets;a.rel="stylesheet",a.href=t,a.media="only x",function e(t){if(i.body)return t();setTimeout(function(){e(t)})}(function(){o.parentNode.insertBefore(a,n?o:o.nextSibling)});var f=function(e){for(var t=a.href,n=d.length;n--;)if(d[n].href===t)return e();setTimeout(function(){f(e)})};return a.addEventListener&&a.addEventListener("load",function(){this.media=r||"all"}),a.onloadcssdefined=f,f(function(){a.media!==r&&(a.media=r||"all")}),a};"undefined"!=typeof exports?exports.loadCSS=t:e.loadCSS=t}("undefined"!=typeof global?global:this);
+    </script>
     <!-- end css for toaster -->
     
     
@@ -932,26 +957,28 @@ src="https://www.facebook.com/tr?id=851416281111227&ev=PageView&noscript=1"
         </svg> </div>
     <!-- /.Prograss -->
 
-    <!-- Javascript -->
-    <script type="text/javascript" src="{{ asset('front') }}/js/bootstrap.min.js"></script>
+    <!-- Javascript - Critical scripts loaded first -->
     <script type="text/javascript" src="{{ asset('front') }}/js/jquery.min.js"></script>
-    <script type="text/javascript" src="{{ asset('front') }}/js/lazysize.min.js"></script>
-    <script type="text/javascript" src="{{ asset('front') }}/js/wow.min.js"></script>
-    <script type="text/javascript" src="{{ asset('front') }}/js/magnific-popup.min.js"></script>
-    <script type="text/javascript" src="{{ asset('front') }}/js/swiper-bundle.min.js"></script>
-    <script type="text/javascript" src="{{ asset('front') }}/js/swiper.js"></script>
-    <script type="text/javascript" src="{{ asset('front') }}/js/odometer.min.js"></script>
-    <script type="text/javascript" src="{{ asset('front') }}/js/counter.js"></script>
-    <script type="text/javascript" src="{{ asset('front') }}/js/count-down.js"></script>
-    <script type="text/javascript" src="{{ asset('front') }}/js/jquery-validate.js"></script>
-    <script type="text/javascript" src="{{ asset('front') }}/js/gsap-animation.js"></script>
-    <script type="text/javascript" src="{{ asset('front') }}/js/gsap.min.js"></script>
-    <script type="text/javascript" src="{{ asset('front') }}/js/ScrollTrigger.min.js"></script>
-    <script type="text/javascript" src="{{ asset('front') }}/js/Splitetext.js"></script>
-    <script type="text/javascript" src="{{ asset('front') }}/js/main.js"></script>
+    <script type="text/javascript" src="{{ asset('front') }}/js/bootstrap.min.js"></script>
+    
+    <!-- Non-critical scripts loaded with defer -->
+    <script type="text/javascript" src="{{ asset('front') }}/js/lazysize.min.js" defer></script>
+    <script type="text/javascript" src="{{ asset('front') }}/js/wow.min.js" defer></script>
+    <script type="text/javascript" src="{{ asset('front') }}/js/magnific-popup.min.js" defer></script>
+    <script type="text/javascript" src="{{ asset('front') }}/js/swiper-bundle.min.js" defer></script>
+    <script type="text/javascript" src="{{ asset('front') }}/js/swiper.js" defer></script>
+    <script type="text/javascript" src="{{ asset('front') }}/js/odometer.min.js" defer></script>
+    <script type="text/javascript" src="{{ asset('front') }}/js/counter.js" defer></script>
+    <script type="text/javascript" src="{{ asset('front') }}/js/count-down.js" defer></script>
+    <script type="text/javascript" src="{{ asset('front') }}/js/jquery-validate.js" defer></script>
+    <script type="text/javascript" src="{{ asset('front') }}/js/gsap-animation.js" defer></script>
+    <script type="text/javascript" src="{{ asset('front') }}/js/gsap.min.js" defer></script>
+    <script type="text/javascript" src="{{ asset('front') }}/js/ScrollTrigger.min.js" defer></script>
+    <script type="text/javascript" src="{{ asset('front') }}/js/Splitetext.js" defer></script>
+    <script type="text/javascript" src="{{ asset('front') }}/js/main.js" defer></script>
+    <script src="{{ asset('front') }}/js/timeline.js" defer></script>
+    <script src="{{ asset('front') }}/js/jquery.fancybox.min.js" defer></script>
     <!-- /Javascript -->
-    <script src="{{ asset('front') }}/js/timeline.js"></script>
-    <script src="{{ asset('front') }}/js/jquery.fancybox.min.js"></script>
 
     <!-- /Javascript -->
     <script>
@@ -972,10 +999,10 @@ src="https://www.facebook.com/tr?id=851416281111227&ev=PageView&noscript=1"
     </script>
 
 
-    <script type="text/javascript" src="https://parsleyjs.org/dist/parsley.js"></script>
+    <script type="text/javascript" src="https://parsleyjs.org/dist/parsley.js" defer></script>
 
     <!---------------- Toaster ------------------->
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js" defer></script>
     <script>
         @if (Session::has('message'))
             var type = "{{ Session::get('alert-type', 'info') }}"
