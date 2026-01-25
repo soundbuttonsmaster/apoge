@@ -11,7 +11,7 @@
                         <div class="image overflow-hidden">
                             <img src="{{ asset('front') }}/images/page-title/slider-1.jpg"
                                 alt="Apogee Bahubali Laser Land Leveller Bucket"
-                                class="tf-animate-zoom-in-out" fetchpriority="high" width="1920" height="1080" />
+                                class="tf-animate-zoom-in-out" fetchpriority="high" width="1920" height="1080" loading="eager" decoding="async" />
                         </div>
                         <div class="content-wrap">
                             <div class="tf-container w-1780">

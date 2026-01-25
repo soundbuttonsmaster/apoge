@@ -121,8 +121,12 @@
     <link rel="dns-prefetch" href="https://parsleyjs.org">
     
     @if($isHomePage)
-    <!-- Preload critical LCP image -->
+    <!-- Preload critical LCP image and resources -->
     <link rel="preload" as="image" href="{{ asset('front') }}/images/page-title/slider-1.jpg" fetchpriority="high">
+    <link rel="preload" as="image" href="{{ asset('front') }}/images/logo.jpg" fetchpriority="high">
+    <link rel="preload" href="{{ asset('front') }}/css/bootstrap.css" as="style">
+    <link rel="preload" href="{{ asset('front') }}/css/styles.css" as="style">
+    <link rel="preload" href="{{ asset('front') }}/js/jquery.min.js" as="script">
     @endif
     
     <!-- Schema.org Structured Data -->
@@ -300,26 +304,37 @@ src="https://www.facebook.com/tr?id=851416281111227&ev=PageView&noscript=1"
         {!! $header_content !!}
     @endif
 
-    <!-- Bootstrap  -->
-    <link rel="stylesheet" type="text/css" href="{{ asset('front') }}/css/bootstrap.css" />
-    <!-- Theme Style -->
-    <link rel="stylesheet" type="text/css" href="{{ asset('front') }}/css/magnific-popup.min.css" />
-    <link rel="stylesheet" type="text/css" href="{{ asset('front') }}/css/odometer.min.css" />
-    <link rel="stylesheet" type="text/css" href="{{ asset('front') }}/css/swiper-bundle.min.css" />
-    <link rel="stylesheet" type="text/css" href="{{ asset('front') }}/css/styles.css" />
-    <!-- Animation Style -->
-    <link rel="stylesheet" type="text/css" href="{{ asset('front') }}/css/animate.min.css" />
-    <link rel="stylesheet" type="text/css" href="{{ asset('front') }}/css/animate2.min.css" />
-    <link rel="stylesheet" type="text/css" href="{{ asset('front') }}/css/textanimation.css" />
+    <!-- Critical CSS - Load immediately -->
+    <link rel="preload" href="{{ asset('front') }}/css/bootstrap.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="{{ asset('front') }}/css/bootstrap.css"></noscript>
+    <link rel="preload" href="{{ asset('front') }}/css/styles.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="{{ asset('front') }}/css/styles.css"></noscript>
+    
+    <!-- Non-critical CSS - Load asynchronously -->
+    <link rel="preload" href="{{ asset('front') }}/css/swiper-bundle.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="{{ asset('front') }}/css/swiper-bundle.min.css"></noscript>
+    <link rel="preload" href="{{ asset('front') }}/css/magnific-popup.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="{{ asset('front') }}/css/magnific-popup.min.css"></noscript>
+    <link rel="preload" href="{{ asset('front') }}/css/odometer.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="{{ asset('front') }}/css/odometer.min.css"></noscript>
+    <link rel="preload" href="{{ asset('front') }}/css/animate.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="{{ asset('front') }}/css/animate.min.css"></noscript>
+    <link rel="preload" href="{{ asset('front') }}/css/animate2.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="{{ asset('front') }}/css/animate2.min.css"></noscript>
+    <link rel="preload" href="{{ asset('front') }}/css/textanimation.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="{{ asset('front') }}/css/textanimation.css"></noscript>
     <!-- Font - Preload critical fonts -->
     <link rel="preload" href="{{ asset('front') }}/font/Farmhouse.otf" as="font" type="font/otf" crossorigin>
     <link rel="preload" href="{{ asset('front') }}/font/Glittery-Snowfall.ttf" as="font" type="font/ttf" crossorigin>
     <link rel="preload" href="{{ asset('front') }}/icons/fontawesome/webfonts/fa-solid-900.ttf" as="font" type="font/ttf" crossorigin>
     <link rel="preload" href="{{ asset('front') }}/icons/fontawesome/webfonts/fa-brands-400.ttf" as="font" type="font/ttf" crossorigin>
-    <link rel="stylesheet" href="{{ asset('front') }}/font/fonts.css" />
+    <link rel="preload" href="{{ asset('front') }}/font/fonts.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="{{ asset('front') }}/font/fonts.css"></noscript>
     <!-- Icon -->
-    <link rel="stylesheet" type="text/css" href="{{ asset('front') }}/icons/icomoon/style.css" />
-    <link rel="stylesheet" type="text/css" href="{{ asset('front') }}/icons/fontawesome/css/all.min.css" />
+    <link rel="preload" href="{{ asset('front') }}/icons/icomoon/style.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="{{ asset('front') }}/icons/icomoon/style.css"></noscript>
+    <link rel="preload" href="{{ asset('front') }}/icons/fontawesome/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="{{ asset('front') }}/icons/fontawesome/css/all.min.css"></noscript>
     <!--[if lt IE 9]>
         <script src="{{ asset('front') }}/javascript/html5shiv.js"></script>
         <script src="{{ asset('front') }}/javascript/respond.min.js"></script>
@@ -392,7 +407,7 @@ src="https://www.facebook.com/tr?id=851416281111227&ev=PageView&noscript=1"
                         <div class="header-inner">
                             <div class="header-left">
                                 <div class="logo-site"> <a href="{{ route('home') }}"> <img
-                                            src="{{ asset('front') }}/images/logo.jpg" alt="Apogee Agrotech Logo" /> </a> </div>
+                                            src="{{ asset('front') }}/images/logo.jpg" alt="Apogee Agrotech Logo" width="200" height="60" loading="eager" decoding="async" /> </a> </div>
                             </div>
                             <div>
                                 <div class="main-nav">
@@ -523,7 +538,7 @@ src="https://www.facebook.com/tr?id=851416281111227&ev=PageView&noscript=1"
                                 <div class="top">
                                     <div class="logo"> <a href="{{ route('home') }}" rel="home"
                                             class="main-logo"> <img id="mobile-logo_header" alt="Apogee Agrotech Mobile Logo"
-                                                src="{{ asset('front') }}/images/logo.jpg" /> </a>
+                                                src="{{ asset('front') }}/images/logo.jpg" width="200" height="60" loading="eager" decoding="async" /> </a>
                                         <div class="mobile-nav-close"> <i class="icon-close"></i> </div>
                                     </div>
                                     <nav id="mobile-main-nav" class="mobile-main-nav">
@@ -657,7 +672,7 @@ src="https://www.facebook.com/tr?id=851416281111227&ev=PageView&noscript=1"
                             <div class="header-inner ">
                                 <div class="header-left">
                                     <div class="logo-site"> <a href="{{ route('home') }}"> <img
-                                                src="{{ asset('front') }}/images/logo.jpg" alt="Apogee Agrotech logo – Manufacturer of laser land levellers and advanced agricultural equipment in India" /> </a>
+                                                src="{{ asset('front') }}/images/logo.jpg" alt="Apogee Agrotech logo – Manufacturer of laser land levellers and advanced agricultural equipment in India" width="200" height="60" loading="eager" decoding="async" /> </a>
                                     </div>
                                 </div>
                                 <div>
@@ -957,27 +972,54 @@ src="https://www.facebook.com/tr?id=851416281111227&ev=PageView&noscript=1"
         </svg> </div>
     <!-- /.Prograss -->
 
-    <!-- Javascript - Critical scripts loaded first -->
+    <!-- Critical JavaScript - Load synchronously only if needed for initial render -->
     <script type="text/javascript" src="{{ asset('front') }}/js/jquery.min.js"></script>
-    <script type="text/javascript" src="{{ asset('front') }}/js/bootstrap.min.js"></script>
     
-    <!-- Non-critical scripts loaded with defer -->
-    <script type="text/javascript" src="{{ asset('front') }}/js/lazysize.min.js" defer></script>
-    <script type="text/javascript" src="{{ asset('front') }}/js/wow.min.js" defer></script>
-    <script type="text/javascript" src="{{ asset('front') }}/js/magnific-popup.min.js" defer></script>
-    <script type="text/javascript" src="{{ asset('front') }}/js/swiper-bundle.min.js" defer></script>
-    <script type="text/javascript" src="{{ asset('front') }}/js/swiper.js" defer></script>
-    <script type="text/javascript" src="{{ asset('front') }}/js/odometer.min.js" defer></script>
-    <script type="text/javascript" src="{{ asset('front') }}/js/counter.js" defer></script>
-    <script type="text/javascript" src="{{ asset('front') }}/js/count-down.js" defer></script>
-    <script type="text/javascript" src="{{ asset('front') }}/js/jquery-validate.js" defer></script>
-    <script type="text/javascript" src="{{ asset('front') }}/js/gsap-animation.js" defer></script>
-    <script type="text/javascript" src="{{ asset('front') }}/js/gsap.min.js" defer></script>
-    <script type="text/javascript" src="{{ asset('front') }}/js/ScrollTrigger.min.js" defer></script>
-    <script type="text/javascript" src="{{ asset('front') }}/js/Splitetext.js" defer></script>
-    <script type="text/javascript" src="{{ asset('front') }}/js/main.js" defer></script>
-    <script src="{{ asset('front') }}/js/timeline.js" defer></script>
-    <script src="{{ asset('front') }}/js/jquery.fancybox.min.js" defer></script>
+    <!-- Non-critical JavaScript - Load asynchronously after page load -->
+    <script>
+        // Load scripts after DOM is ready to improve LCP
+        window.addEventListener('DOMContentLoaded', function() {
+            var scripts = [
+                '{{ asset("front") }}/js/bootstrap.min.js',
+                '{{ asset("front") }}/js/lazysize.min.js',
+                '{{ asset("front") }}/js/swiper-bundle.min.js',
+                '{{ asset("front") }}/js/main.js'
+            ];
+            
+            scripts.forEach(function(src) {
+                var script = document.createElement('script');
+                script.src = src;
+                script.async = true;
+                document.body.appendChild(script);
+            });
+        });
+        
+        // Load remaining scripts after page is fully loaded
+        window.addEventListener('load', function() {
+            var deferredScripts = [
+                '{{ asset("front") }}/js/wow.min.js',
+                '{{ asset("front") }}/js/magnific-popup.min.js',
+                '{{ asset("front") }}/js/swiper.js',
+                '{{ asset("front") }}/js/odometer.min.js',
+                '{{ asset("front") }}/js/counter.js',
+                '{{ asset("front") }}/js/count-down.js',
+                '{{ asset("front") }}/js/jquery-validate.js',
+                '{{ asset("front") }}/js/gsap.min.js',
+                '{{ asset("front") }}/js/gsap-animation.js',
+                '{{ asset("front") }}/js/ScrollTrigger.min.js',
+                '{{ asset("front") }}/js/Splitetext.js',
+                '{{ asset("front") }}/js/timeline.js',
+                '{{ asset("front") }}/js/jquery.fancybox.min.js'
+            ];
+            
+            deferredScripts.forEach(function(src) {
+                var script = document.createElement('script');
+                script.src = src;
+                script.async = true;
+                document.body.appendChild(script);
+            });
+        });
+    </script>
     <!-- /Javascript -->
 
     <!-- /Javascript -->
@@ -1004,58 +1046,74 @@ src="https://www.facebook.com/tr?id=851416281111227&ev=PageView&noscript=1"
     <!---------------- Toaster ------------------->
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js" defer></script>
     <script>
-        @if (Session::has('message'))
-            var type = "{{ Session::get('alert-type', 'info') }}"
-            switch (type) {
-                case 'info':
-                    toastr.info("{{ Session::get('message') }}");
-                    break;
-                case 'success':
-                    toastr.success("{{ Session::get('message') }}");
-                    break;
-                case 'warning':
-                    toastr.warning("{{ Session::get('message') }}");
-                    break;
-                case 'error':
-                    toastr.error("{{ Session::get('message') }}");
-                    break;
+        // Wait for toastr to load before showing messages
+        (function() {
+            function showToastrMessage() {
+                if (typeof toastr !== 'undefined') {
+                    @if (Session::has('message'))
+                        var type = "{{ Session::get('alert-type', 'info') }}"
+                        switch (type) {
+                            case 'info':
+                                toastr.info("{{ Session::get('message') }}");
+                                break;
+                            case 'success':
+                                toastr.success("{{ Session::get('message') }}");
+                                break;
+                            case 'warning':
+                                toastr.warning("{{ Session::get('message') }}");
+                                break;
+                            case 'error':
+                                toastr.error("{{ Session::get('message') }}");
+                                break;
+                        }
+                    @endif
+                } else {
+                    setTimeout(showToastrMessage, 100);
+                }
             }
-        @endif
+            showToastrMessage();
+        })();
     </script>
 
 
     <script>
-        function SubscribeNow() {
-            $('.text-danger').text('');
-            var isValid = $('#subscribe').parsley().validate();
-            // If form validation fails, return
-            if (!isValid) {
-                return;
-            }
-            // var action = 
-            var formData = new FormData($('#subscribe')[0]);
-            $.ajax({
-                type: "post",
-                url: '/subscribe',
-                data: formData,
-                processData: false,
-                contentType: false,
-                success: function(data) { // If the request is successful
-                    console.log(data); // Log the response data to console
-
-                    toastr.success(data.message);
-                    // $(formData).reset();
-                    $('#subscribe')[0].reset();
-                    $('#subscribe').parsley().reset();
-                },
-                error: function(error) { // If there is an error with the request
-                    console.log(error); // Log the error to console
-                    // Handle error response here
-                    // alert(error.message);
-                    toastr.error('The email has already been taken.');
+        // Wait for jQuery and Parsley to load before defining SubscribeNow
+        (function() {
+            function initSubscribe() {
+                if (typeof jQuery !== 'undefined' && typeof jQuery.fn.parsley !== 'undefined') {
+                    window.SubscribeNow = function() {
+                        jQuery('.text-danger').text('');
+                        var isValid = jQuery('#subscribe').parsley().validate();
+                        if (!isValid) {
+                            return;
+                        }
+                        var formData = new FormData(jQuery('#subscribe')[0]);
+                        jQuery.ajax({
+                            type: "post",
+                            url: '/subscribe',
+                            data: formData,
+                            processData: false,
+                            contentType: false,
+                            success: function(data) {
+                                if (typeof toastr !== 'undefined') {
+                                    toastr.success(data.message);
+                                }
+                                jQuery('#subscribe')[0].reset();
+                                jQuery('#subscribe').parsley().reset();
+                            },
+                            error: function(error) {
+                                if (typeof toastr !== 'undefined') {
+                                    toastr.error('The email has already been taken.');
+                                }
+                            }
+                        });
+                    };
+                } else {
+                    setTimeout(initSubscribe, 100);
                 }
-            });
-        }
+            }
+            initSubscribe();
+        })();
     </script>
 
     <!-- PWA Service Worker Registration -->
