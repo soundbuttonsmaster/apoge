@@ -357,10 +357,8 @@ class HomeController extends Controller
         $schema_type = 'WebPage';
         return view('front.farmer-registration', compact('state', 'meta_title', 'meta_keywords', 'meta_description', 'schema_type'));
     }
-    }
 
-
-  public function loaddistrict(Request $req)
+    public function loaddistrict(Request $req)
     {
         // dd($req->all());
         $sel = '';
