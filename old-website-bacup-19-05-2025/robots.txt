@@ -1,0 +1,71 @@
+# Allow all for Googlebot
+User-agent: Googlebot
+Allow: /
+
+# Allow css and js for Googlebot
+User-Agent: Googlebot
+Allow: .js
+Allow: .css
+
+# Allow all for Googlebot News
+User-agent: Googlebot News
+Allow: /
+
+
+# Allow all for Googlebot Images
+User-agent: Googlebot Images
+Allow: /
+
+# Allow all for Googlebot Video
+User-agent: Googlebot Video
+Allow: /
+
+# Allow all for Google Mobile
+User-agent: Google Mobile
+Allow: /
+
+# Allow all for Google Smartphone
+User-agent: Google Smartphone
+Allow: /
+
+# Allow all for Google Mobile Adsense
+User-agent: Google Mobile Adsense
+Disallow:
+
+# Allow all for Google Adsense
+User-agent: Google Adsense
+Disallow: 
+
+# Allow all for Google AdsBot
+User-agent: Google AdsBot
+Allow: /
+
+# Allow all for Google app crawler
+User-agent: Google app crawler
+Allow: /
+
+User-agent: bingbot
+Allow: /
+
+User-agent: Slurp
+Disallow: 
+
+User-agent: baiduspider
+Disallow: 
+
+User-agent: yahoo-mmcrawler
+Disallow: 
+
+User-agent: yahoo-blogs/v3.9
+Disallow: 
+
+User-agent: *
+Disallow: 
+
+User-agent: *
+Disallow: /maintainance.php
+
+
+
+Sitemap: https://www.apogeeagrotech.com/sitemap.xml
+

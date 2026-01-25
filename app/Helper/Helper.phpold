@@ -1,0 +1,265 @@
+<?php
+
+use Illuminate\Support\Facades\DB;
+use App\Models\ShippingAddress;
+use App\Models\Order;
+use App\Models\OrderDetails;
+use Intervention\Image\ImageManagerStatic as Image;
+const statesArr = ['Name', 'email'];
+
+    if (!function_exists('saveImage')) {
+        function saveImage($image, $destPath, $maxWidth, $maxHeight)
+        {
+            $ext = $image->getClientOriginalExtension();
+            $imgName = rand(11111,99999).time() . '.' . $ext;
+            $destinationPath = public_path('uploads/' . $destPath);
+            // Ensure the destination directory exists
+            if (!file_exists($destinationPath)) {
+                mkdir($destinationPath, 0777, true);
+            }
+            $imgFile = Image::make($image->getRealPath());
+            // Check if the image width is greater than the maximum width
+            if ($imgFile->width() > $maxWidth) {
+                // Resize only if the image width exceeds the maximum width
+                $imgFile->resize($maxWidth, $maxHeight, function ($constraint) {
+                    $constraint->aspectRatio();
+                });
+            }
+            // Save the image to the destination path
+            $imgFile->save($destinationPath . '/' . $imgName);
+
+            return $imgName;
+        }
+
+    }
+
+    if(!function_exists('saveFile')) {
+        function saveFile($file){
+            if ($req->hasFile('payment_plan_pdf')) {
+                $paymentPlanPdf = time() . '.' . $req->payment_plan_pdf->getClientOriginalExtension();
+                $req->payment_plan_pdf->move(public_path('/uploads/payment_plan_pdf/'), $paymentPlanPdf);
+            }
+        }
+    }
+
+    if(!function_exists('getYoutubeVideoId')){
+        function getYoutubeVideoId($url) {
+            // Define a regular expression pattern to match the video ID
+            $pattern = '/(?<=v=|\/videos\/|embed\/|youtu.be\/|\/v\/|\/e\/|watch\?v=|\/embed\/)[^#\&\?]*/';
+            // Use preg_match to find the video ID in the URL
+            preg_match($pattern, $url, $matches);
+            // Check if a match was found
+            if (isset($matches[0])) {
+                return $matches[0];
+            } else {
+                // If no match was found, return null or an error message
+                return null;
+            }
+        }
+    }
+
+
+
+    // home page
+
+    if(!function_exists('category')){
+        function category(){
+            $category = DB::table('categories')->where('status', 1)->get();
+            return $category;
+        }
+    }
+    
+    if(!function_exists('subcategory')){
+        function subcategory(){
+            $subcategory = DB::table('subcategories')->where('status', 1)->get();
+            return $subcategory;
+        }
+    }
+    
+    
+
+function shipmentLogin()
+{
+
+    $curl = curl_init();
+
+    curl_setopt_array($curl, array(
+        CURLOPT_URL => 'https://cargowale.com/api/login',
+        CURLOPT_RETURNTRANSFER => true,
+        CURLOPT_ENCODING => '',
+        CURLOPT_MAXREDIRS => 10,
+        CURLOPT_TIMEOUT => 0,
+        CURLOPT_FOLLOWLOCATION => true,
+        CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+        CURLOPT_CUSTOMREQUEST => 'POST',
+        CURLOPT_POSTFIELDS => '{
+            "email": "arshdeep@simistove.com",
+            "password": "Admin@123#"
+        }
+        ',
+        CURLOPT_HTTPHEADER => array(
+            'Accept: application/json',
+            'Content-Type: application/json'
+        ),
+    ));
+
+    $response = curl_exec($curl);
+
+    curl_close($curl);
+    return $response;
+}
+
+
+
+
+function callShipmentApi($orderObj)
+{
+    $orderAddress = ShippingAddress::where('order_id', $orderObj->id)->first();
+    // dd($orderAddress);
+    // shipmentLogin function call in helper
+    $login_data = shipmentLogin();
+
+    $curl = curl_init();
+
+    // Set the endpoint URL
+    $endpoint = 'https://cargowale.com/api/shipments';
+
+    // Initialize items array to store all items in the order
+    $items = [];
+    // Iterate over order details and add items to the items array
+    foreach ($orderObj->orderDetails as $orderDetail) {
+        $items[] = [
+            'qty' => $orderDetail->quantity,
+            'dimensions' => [
+                'length' => '61.5', // Example length, you should use actual dimensions
+                'height' => '61',   // Example height, you should use actual dimensions
+                'width' => '45'     // Example width, you should use actual dimensions
+            ]
+        ];
+    }
+    $addressType = $orderObj->payment_type == "Online"?"Prepaid":"Prepaid";
+    $cod = $orderObj->payment_type == 'COD'? $orderObj->grand_total: null;
+
+    $payload = [
+        'shippingSearches' => [
+            'origin_pincode' => '201009',
+            'destination_pincode' => '201009',
+            'address_type' => $addressType,
+            'weight' => '30',
+            'cod' =>"",
+            'invoice_value' => $orderObj->grand_total,
+            'insurance' =>'Yes',
+            'items' => $items,
+        ],
+        'shippinginfo' => [
+            'wharehouse' => '2370',
+            'description' => 'Testing Desh',
+            'orderid' => $orderObj->order_id,
+            'invoiceno' => $orderObj->order_id, // Assuming you have a fixed invoice number
+            'invoice_value' => $orderObj->grand_total,
+            'waybill' => '',
+            'company' => $orderAddress->company_name,
+            'personname' => $orderAddress->first_name . ' ' . $orderAddress->last_name,
+            'phone' =>  $orderAddress->phone,
+            'pincode' => $orderAddress->zipcode,
+            'city' => $orderAddress->city,
+            'state' => $orderAddress->state,
+            'address' => $orderAddress->address . ',' . $orderAddress->city . ',' . $orderAddress->state . ',' . $orderAddress->zipcode,
+            'shipper_gstin' => 'xxxxxxxx',
+            'consignee_gstin' => 'xxxxxxxx'
+        ]
+    ];
+    // dd($payload);
+    curl_setopt_array($curl, [
+        CURLOPT_URL => $endpoint,
+        CURLOPT_RETURNTRANSFER => true,
+        CURLOPT_ENCODING => '',
+        CURLOPT_MAXREDIRS => 10,
+        CURLOPT_TIMEOUT => 0,
+        CURLOPT_FOLLOWLOCATION => true,
+        CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+        CURLOPT_CUSTOMREQUEST => 'POST',
+        CURLOPT_POSTFIELDS => json_encode($payload),
+        CURLOPT_HTTPHEADER => [
+            'Accept: application/json',
+            'Authorization: Bearer ' . json_decode($login_data)->token,
+            'Content-Type: application/json',
+            'supplierId: cargowale0611'
+        ],
+    ]);
+
+    // Execute curl request
+    $response = curl_exec($curl);
+    $statusCode = curl_getinfo($curl, CURLINFO_HTTP_CODE);
+
+
+    // Close curl session
+    curl_close($curl);
+    // Process the response and return appropriate data
+    if ($statusCode == 200) {
+        // Successful response
+        return ['success' => true, 'message' => 'Shipment request successful', 'data' => json_decode($response, true)];
+    } else {
+        // Error response
+        return ['success' => false, 'message' => 'Shipment request failed', 'error' => $response];
+    }
+}
+
+
+
+function getShippint($shipping_id){
+
+        $login_data = shipmentLogin();
+        $curl = curl_init();
+
+        curl_setopt_array($curl, array(
+        CURLOPT_URL => 'https://cargowale.com/api/shipment/'.$shipping_id,
+        CURLOPT_RETURNTRANSFER => true,
+        CURLOPT_ENCODING => '',
+        CURLOPT_MAXREDIRS => 10,
+        CURLOPT_TIMEOUT => 0,
+        CURLOPT_FOLLOWLOCATION => true,
+        CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+        CURLOPT_CUSTOMREQUEST => 'GET',
+        CURLOPT_HTTPHEADER => [
+            'Accept: application/json',
+            'Authorization: Bearer ' . json_decode($login_data)->token,
+            'Content-Type: application/json',
+            'supplierId: cargowale0611'
+        ],
+        ));
+        $response = curl_exec($curl);
+        return $response;
+}
+
+
+
+function getShippintStatus($lr_number){
+
+    $login_data = shipmentLogin();
+    $curl = curl_init();
+
+    curl_setopt_array($curl, array(
+    CURLOPT_URL => 'https://cargowale.com/api/shipment-status/'.$lr_number,
+    CURLOPT_RETURNTRANSFER => true,
+    CURLOPT_ENCODING => '',
+    CURLOPT_MAXREDIRS => 10,
+    CURLOPT_TIMEOUT => 0,
+    CURLOPT_FOLLOWLOCATION => true,
+    CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+    CURLOPT_CUSTOMREQUEST => 'GET',
+    CURLOPT_HTTPHEADER => [
+        'Accept: application/json',
+        'Authorization: Bearer ' . json_decode($login_data)->token,
+        'Content-Type: application/json',
+        'supplierId: cargowale0611'
+    ],
+    ));
+    $response = curl_exec($curl);
+    return $response;
+}
+
+    
+    
+    
+?>
