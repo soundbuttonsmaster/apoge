@@ -238,7 +238,7 @@
                                     Laser Receiver, Laser Control Box, and Bucket/Scrapper.
                                 </p>
                                 <a href="{{ route('home.about_us') }}" class="tf-btn btn-read-more gap-34" aria-label="Read more about Apogee Group and our agricultural equipment"> <span
-                                        class="text-style">Read more </span>
+                                        class="text-style">Read more about Apogee Group</span>
                                     <div class="icon"> <i class="icon-arrow_right"></i> </div>
                                 </a>
                                 <div class="image hover-item"> <img src="{{ asset('front') }}/images/s-about.jpg"
@@ -391,8 +391,7 @@
                                     with approved subsidies. Our primary focus is on manufacturing cutting-edge and
                                     highlysophisticated
                                     levelling equipment to automate the farming process. </p>
-                                <a href="{{ route('home.about_us') }}" class="tf-btn btn-read-more scale-40" aria-label="Read more about what Apogee Agrotech does"> <span class="text-style"> read
-                                        more </span>
+                                <a href="{{ route('home.about_us') }}" class="tf-btn btn-read-more scale-40" aria-label="Read more about what Apogee Agrotech does"> <span class="text-style">Read more about Apogee Agrotech</span>
                                     <div class="icon"> <i class="icon-arrow_right"></i> </div>
                                 </a>
                             </div>
@@ -669,9 +668,9 @@
         <!-- Section break page -->
         <section class="s-break-page style-2">
             <div class="content">
-                <h1 class="font-farmhouse text-center text-anime-style-1"> Take a look at our indigenous <br>
+                <h2 class="font-farmhouse text-center text-anime-style-1"> Take a look at our indigenous <br>
                     agriculture equipment to <br>
-                    overcome the farming challenges </h1>
+                    overcome the farming challenges </h2>
             </div>
         </section>
         <!-- /.Section break page -->

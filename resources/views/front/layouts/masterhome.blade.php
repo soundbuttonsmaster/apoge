@@ -488,7 +488,7 @@ src="https://www.facebook.com/tr?id=851416281111227&ev=PageView&noscript=1"
                                     </a> -->
                                 </div>
                                 <div class="wg-welcome"><a href="https://api.whatsapp.com/send?phone=917624002265"
-                                        target="_blank"> <i class="fab fa-whatsapp"></i></a> </div>
+                                        target="_blank" aria-label="Contact us on WhatsApp"> <i class="fab fa-whatsapp"></i></a> </div>
                                 <div class="mobile-button"> <span></span> </div>
                             </div>
                         </div>
@@ -743,7 +743,7 @@ src="https://www.facebook.com/tr?id=851416281111227&ev=PageView&noscript=1"
                                         </a>
                                     </div> -->
                                     <div class="wg-welcome"> <a
-                                            href="https://api.whatsapp.com/send?phone=917624002265" target="_blank">
+                                            href="https://api.whatsapp.com/send?phone=917624002265" target="_blank" aria-label="Contact us on WhatsApp">
                                             <i class="fab fa-whatsapp"></i></a></div>
                                     <div class="mobile-button"> <span></span> </div>
                                 </div>
@@ -758,7 +758,9 @@ src="https://www.facebook.com/tr?id=851416281111227&ev=PageView&noscript=1"
             </div>
         </header>
         <!-- /.Header -->
-        @yield('section')
+        <main id="main-content">
+            @yield('section')
+        </main>
 
         <!-- Footer -->
         <footer class="footer" id="footer-main">
@@ -778,12 +780,12 @@ src="https://www.facebook.com/tr?id=851416281111227&ev=PageView&noscript=1"
                                     <ul class="list">
                                         <!-- <li class="item"> <a href="#"> <i class="fa-brands fa-x-twitter"></i> </a> </li> -->
                                         <li class="item"> <a href="https://www.youtube.com/@apogee_agro"
-                                                target="_blank"> <i class="fa-brands fa-youtube"></i> </a> </li>
+                                                target="_blank" aria-label="Visit Apogee Agrotech YouTube channel"> <i class="fa-brands fa-youtube"></i> </a> </li>
                                         <li class="item"> <a href="https://www.facebook.com/apogeeagrotech/"
-                                                target="_blank"> <i class="fa-brands fa-facebook-f"></i> </a> </li>
+                                                target="_blank" aria-label="Visit Apogee Agrotech Facebook page"> <i class="fa-brands fa-facebook-f"></i> </a> </li>
                                         <li class="item"> <a href="https://www.instagram.com/apogee_agro/"
-                                                target="_blank"> <i class="fa-brands fa-instagram"></i> </a> </li>
-                                        <li class="item"> <a href="https://www.linkedin.com/company/apogee-agrotech-pvt-ltd" target="_blank">
+                                                target="_blank" aria-label="Visit Apogee Agrotech Instagram profile"> <i class="fa-brands fa-instagram"></i> </a> </li>
+                                        <li class="item"> <a href="https://www.linkedin.com/company/apogee-agrotech-pvt-ltd" target="_blank" aria-label="Visit Apogee Agrotech LinkedIn company page">
                                                 <i class="fa-brands fa-linkedin-in"></i> </a> </li>
                                     </ul>
                                 </div>
@@ -856,7 +858,7 @@ src="https://www.facebook.com/tr?id=851416281111227&ev=PageView&noscript=1"
 
                                     <div id="subscribe-content" class="w-100">
                                         <input id="subscribe-email" type="email" name="email"
-                                            class="email style-2" placeholder="Email address:" aria-required=" true"
+                                            class="email style-2" placeholder="Email address:" aria-required="true"
                                             required>
                                         <button type="button" onclick="SubscribeNow()" class="tf-btn full scale-40">
                                             <span class="text-style cl-primary"> Subscribe Now! </span> <span
@@ -911,7 +913,7 @@ src="https://www.facebook.com/tr?id=851416281111227&ev=PageView&noscript=1"
                                     name="text" tabindex="2" value="" aria-required="true" required />
                             </fieldset>
                             <div class="button-submit">
-                                <button class="" type="submit"> <i class="icon-magnifying-glass"></i>
+                                <button class="" type="submit" aria-label="Search"> <i class="icon-magnifying-glass"></i>
                                 </button>
                             </div>
                         </form>
