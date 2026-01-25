@@ -30,9 +30,10 @@ class HomeController extends Controller
         $products = Product::where('show_in_home', 1)->where('status', 1)->latest()->get();
         $testimonials = Testimonial::where('status', 1)->latest()->get();
 
-        $meta_title = @$headerContent->meta_title;
-        $meta_keywords =  @$headerContent->meta_keywords;
-        $meta_description =  @$headerContent->meta_description;
+        // Optimized SEO meta tags for Laser Land Leveller keywords
+        $meta_title = !empty($headerContent->meta_title) ? $headerContent->meta_title : 'Laser Land Leveller India | Best Laser Land Leveler Manufacturer | Apogee Agrotech';
+        $meta_keywords = !empty($headerContent->meta_keywords) ? $headerContent->meta_keywords : 'laser land leveller, laser land leveler, laser land leveller india, laser land leveler manufacturer india, best laser land leveller, laser guided land leveller, GNSS land leveller, laser land leveller price, laser land leveller machine, laser land leveller for agriculture, laser land leveller bucket, laser land leveller system, precision land levelling, agricultural land leveller, laser leveller equipment, laser land leveller dealer, laser land leveller supplier, laser land leveller UP, laser land leveller Hapur, apogee laser land leveller, bahubali laser land leveller, laser land leveller cost, laser land leveller benefits, laser land leveller technology, laser land leveller manufacturers, laser land leveller exporters, laser land leveller price in india, laser land leveller online, buy laser land leveller';
+        $meta_description = !empty($headerContent->meta_description) ? $headerContent->meta_description : 'Apogee Agrotech - India\'s Leading Manufacturer of Laser Land Leveller & Laser Land Leveler Equipment. Best Quality GNSS & Laser Guided Land Levelling Systems for Precision Agriculture. Get Best Price on Laser Land Levellers in India. Call +91 7624002265';
         $header_content = @$headerContent->head_content;
         return view('front.home', compact('headerContent', 'products', 'meta_title', 'meta_keywords', 'meta_description', 'header_content', 'testimonials'));
     }

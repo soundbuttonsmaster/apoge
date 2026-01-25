@@ -1,18 +1,257 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-IN" lang="en-IN">
 
 <head>
     <meta charset="utf-8" />
-    <title>{{ !empty($meta_title) ? $meta_title : 'Apogee Agrotech Indigeneous Land Levelling Implements' }}</title>
-    <meta name = "Keywords"
-        content = "{{ !empty($meta_keywords) ? $meta_keywords : 'land levelling equipment, laser land levelling, apogee agrotech laser land leveller, GNSS land leveller, GNSS land levelling system, laser gnss land leveller for agriculture, best land leveller, laser guided land leveller, land levelling machine, leveler in agriculture, rotavator, autosteering, laser leveller price' }}" />
-    <meta name = "Description"
-        content = "{{ !empty($meta_description) ? $meta_description : 'Explore the impact of apogees advanced indigeneous land levelling implements on agricultural precision. Elevate your farming efficiency for maximum yield' }}" />
+    
+    @php
+        // Determine if this is the home page
+        $isHomePage = Route::is('home');
+        
+        // Set default optimized meta tags for home page
+        if ($isHomePage) {
+            $defaultTitle = 'Laser Land Leveller India | Best Laser Land Leveler Manufacturer | Apogee Agrotech';
+            $defaultKeywords = 'laser land leveller, laser land leveler, laser land leveller india, laser land leveler manufacturer india, best laser land leveller, laser guided land leveller, GNSS land leveller, laser land leveller price, laser land leveller machine, laser land leveller for agriculture, laser land leveller bucket, laser land leveller system, precision land levelling, agricultural land leveller, laser leveller equipment, laser land leveller dealer, laser land leveller supplier, laser land leveller UP, laser land leveller Hapur, apogee laser land leveller, bahubali laser land leveller, laser land leveller cost, laser land leveller benefits, laser land leveller technology';
+            $defaultDescription = 'Apogee Agrotech - India\'s Leading Manufacturer of Laser Land Leveller & Laser Land Leveler Equipment. Best Quality GNSS & Laser Guided Land Levelling Systems for Precision Agriculture. Get Best Price on Laser Land Levellers in India. Call +91 7624002265';
+            $ogImage = asset('front') . '/images/logo.jpg';
+            $canonicalUrl = url('/');
+        } else {
+            $defaultTitle = !empty($meta_title) ? $meta_title : 'Apogee Agrotech - Laser Land Levelling Equipment';
+            $defaultKeywords = !empty($meta_keywords) ? $meta_keywords : 'laser land leveller, laser land leveler, GNSS land leveller, agricultural equipment';
+            $defaultDescription = !empty($meta_description) ? $meta_description : 'Apogee Agrotech - Leading Manufacturer of Laser Land Leveller Equipment in India';
+            $ogImage = asset('front') . '/images/logo.jpg';
+            $canonicalUrl = url()->current();
+        }
+        
+        $pageTitle = !empty($meta_title) ? $meta_title : $defaultTitle;
+        $pageKeywords = !empty($meta_keywords) ? $meta_keywords : $defaultKeywords;
+        $pageDescription = !empty($meta_description) ? $meta_description : $defaultDescription;
+    @endphp
+    
+    <!-- Primary Meta Tags -->
+    <title>{{ $pageTitle }}</title>
+    <meta name="title" content="{{ $pageTitle }}" />
+    <meta name="description" content="{{ $pageDescription }}" />
+    <meta name="keywords" content="{{ $pageKeywords }}" />
+    <meta name="author" content="Apogee Agrotech Pvt. Ltd." />
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+    <meta name="language" content="English" />
+    <meta name="geo.region" content="IN-UP" />
+    <meta name="geo.placename" content="Hapur, Uttar Pradesh, India" />
+    <meta name="geo.position" content="28.7306;77.7806" />
+    <meta name="ICBM" content="28.7306, 77.7806" />
+    <meta name="revisit-after" content="7 days" />
+    <meta name="distribution" content="global" />
+    <meta name="rating" content="general" />
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="{{ $canonicalUrl }}" />
+    
     <!--[if IE]><meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'><![endif]-->
     <!-- Mobile Specific Metas -->
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
+    <meta name="theme-color" content="#1a5f2e" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
     
-<meta name="google-site-verification" content="7QDVioBve69fT7GcAvNox_CxgnOc1wEtwqEB8zWTe24" />
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="{{ $isHomePage ? 'website' : 'article' }}" />
+    <meta property="og:url" content="{{ $canonicalUrl }}" />
+    <meta property="og:title" content="{{ $pageTitle }}" />
+    <meta property="og:description" content="{{ $pageDescription }}" />
+    <meta property="og:image" content="{{ $ogImage }}" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Apogee Agrotech - Laser Land Leveller Manufacturer India" />
+    <meta property="og:site_name" content="Apogee Agrotech" />
+    <meta property="og:locale" content="en_IN" />
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content="{{ $canonicalUrl }}" />
+    <meta name="twitter:title" content="{{ $pageTitle }}" />
+    <meta name="twitter:description" content="{{ $pageDescription }}" />
+    <meta name="twitter:image" content="{{ $ogImage }}" />
+    <meta name="twitter:image:alt" content="Apogee Agrotech - Laser Land Leveller Manufacturer India" />
+    <meta name="twitter:site" content="@apogeeagrotech" />
+    <meta name="twitter:creator" content="@apogeeagrotech" />
+    
+    <!-- Additional SEO Meta Tags -->
+    <meta name="application-name" content="Apogee Agrotech" />
+    <meta name="msapplication-TileColor" content="#1a5f2e" />
+    <meta name="msapplication-config" content="{{ asset('front') }}/browserconfig.xml" />
+    
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="{{ asset('manifest.json') }}" />
+    
+    <!-- Favicon and App Icons -->
+    <link rel="icon" type="image/png" href="{{ asset('uploads/logo/favicon.png') }}" />
+    <link rel="shortcut icon" type="image/png" href="{{ asset('uploads/logo/favicon.png') }}" />
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('uploads/logo/favicon.png') }}" />
+    <link rel="apple-touch-icon" sizes="152x152" href="{{ asset('uploads/logo/favicon.png') }}" />
+    <link rel="apple-touch-icon" sizes="144x144" href="{{ asset('uploads/logo/favicon.png') }}" />
+    <link rel="apple-touch-icon" sizes="120x120" href="{{ asset('uploads/logo/favicon.png') }}" />
+    <link rel="apple-touch-icon" sizes="114x114" href="{{ asset('uploads/logo/favicon.png') }}" />
+    <link rel="apple-touch-icon" sizes="76x76" href="{{ asset('uploads/logo/favicon.png') }}" />
+    <link rel="apple-touch-icon" sizes="72x72" href="{{ asset('uploads/logo/favicon.png') }}" />
+    <link rel="apple-touch-icon" sizes="60x60" href="{{ asset('uploads/logo/favicon.png') }}" />
+    <link rel="apple-touch-icon" sizes="57x57" href="{{ asset('uploads/logo/favicon.png') }}" />
+    <link rel="icon" type="image/png" sizes="192x192" href="{{ asset('uploads/logo/favicon.png') }}" />
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('uploads/logo/favicon.png') }}" />
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('uploads/logo/favicon.png') }}" />
+    
+    <!-- PWA Meta Tags -->
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-title" content="Apogee Agrotech" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    
+    <!-- Google Site Verification -->
+    <meta name="google-site-verification" content="7QDVioBve69fT7GcAvNox_CxgnOc1wEtwqEB8zWTe24" />
+    
+    <!-- Schema.org Structured Data -->
+    @if($isHomePage)
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Apogee Agrotech Pvt. Ltd.",
+        "alternateName": "Apogee Agrotech",
+        "url": "{{ url('/') }}",
+        "logo": "{{ asset('front') }}/images/logo.jpg",
+        "description": "India's Leading Manufacturer of Laser Land Leveller and Laser Land Leveler Equipment for Precision Agriculture",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Plot No. 540,541, Near Reliance Petrol Pump, Garh Road",
+            "addressLocality": "Hapur",
+            "addressRegion": "Uttar Pradesh",
+            "postalCode": "245101",
+            "addressCountry": "IN"
+        },
+        "contactPoint": {
+            "@type": "ContactPoint",
+            "telephone": "+91-7624002265",
+            "contactType": "Sales",
+            "email": "sales@apogeeagrotech.com",
+            "areaServed": "IN",
+            "availableLanguage": ["en", "hi"]
+        },
+        "sameAs": [
+            "https://www.youtube.com/@apogee_agro",
+            "https://www.facebook.com/apogeeagrotech/",
+            "https://www.instagram.com/apogee_agro/",
+            "https://www.linkedin.com/company/apogee-agrotech-pvt-ltd"
+        ],
+        "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.8",
+            "reviewCount": "150"
+        }
+    }
+    </script>
+    
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "Apogee Agrotech Pvt. Ltd.",
+        "image": "{{ asset('front') }}/images/logo.jpg",
+        "@id": "{{ url('/') }}",
+        "url": "{{ url('/') }}",
+        "telephone": "+91-7624002265",
+        "priceRange": "$$",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Plot No. 540,541, Near Reliance Petrol Pump, Garh Road",
+            "addressLocality": "Hapur",
+            "addressRegion": "Uttar Pradesh",
+            "postalCode": "245101",
+            "addressCountry": "IN"
+        },
+        "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": 28.7306,
+            "longitude": 77.7806
+        },
+        "openingHoursSpecification": {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": [
+                "Monday",
+                "Tuesday",
+                "Wednesday",
+                "Thursday",
+                "Friday",
+                "Saturday"
+            ],
+            "opens": "09:00",
+            "closes": "18:30"
+        },
+        "areaServed": {
+            "@type": "Country",
+            "name": "India"
+        }
+    }
+    </script>
+    
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "Apogee Agrotech",
+        "url": "{{ url('/') }}",
+        "potentialAction": {
+            "@type": "SearchAction",
+            "target": {
+                "@type": "EntryPoint",
+                "urlTemplate": "{{ url('/') }}?s={search_term_string}"
+            },
+            "query-input": "required name=search_term_string"
+        }
+    }
+    </script>
+    
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Product",
+        "name": "Laser Land Leveller",
+        "image": "{{ asset('front') }}/images/page-title/slider-1.jpg",
+        "description": "Professional Laser Land Leveller and Laser Land Leveler Equipment for Precision Agriculture. Best Quality GNSS and Laser Guided Land Levelling Systems manufactured in India.",
+        "brand": {
+            "@type": "Brand",
+            "name": "Apogee Agrotech"
+        },
+        "manufacturer": {
+            "@type": "Organization",
+            "name": "Apogee Agrotech Pvt. Ltd."
+        },
+        "offers": {
+            "@type": "Offer",
+            "url": "{{ url('/') }}",
+            "priceCurrency": "INR",
+            "availability": "https://schema.org/InStock",
+            "itemCondition": "https://schema.org/NewCondition"
+        },
+        "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.8",
+            "reviewCount": "150"
+        }
+    }
+    </script>
+    
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [{
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "{{ url('/') }}"
+        }]
+    }
+    </script>
+    @endif
 
 <!-- Google tag (gtag.js) --> <script async src="https://www.googletagmanager.com/gtag/js?id=G-139HDX1VWS"></script> <script>   window.dataLayer = window.dataLayer || [];   function gtag(){dataLayer.push(arguments);}   gtag('js', new Date());   gtag('config', 'G-139HDX1VWS'); </script>
  
@@ -57,8 +296,6 @@ src="https://www.facebook.com/tr?id=851416281111227&ev=PageView&noscript=1"
     <!-- Icon -->
     <link rel="stylesheet" type="text/css" href="{{ asset('front') }}/icons/icomoon/style.css" />
     <link rel="stylesheet" type="text/css" href="{{ asset('front') }}/icons/fontawesome/css/all.min.css" />
-    <!-- Favicon and Touch Icons  -->
-    <link rel="shortcut icon" href="{{ asset('front') }}/favicon.ico" type="image/x-icon">
     <!--[if lt IE 9]>
         <script src="{{ asset('front') }}/javascript/html5shiv.js"></script>
         <script src="{{ asset('front') }}/javascript/respond.min.js"></script>
@@ -784,6 +1021,43 @@ src="https://www.facebook.com/tr?id=851416281111227&ev=PageView&noscript=1"
                     // alert(error.message);
                     toastr.error('The email has already been taken.');
                 }
+            });
+        }
+    </script>
+
+    <!-- PWA Service Worker Registration -->
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', function() {
+                navigator.serviceWorker.register('/service-worker.js')
+                    .then(function(registration) {
+                        console.log('ServiceWorker registration successful with scope: ', registration.scope);
+                        
+                        // Check for updates every hour
+                        setInterval(function() {
+                            registration.update();
+                        }, 3600000);
+                    })
+                    .catch(function(err) {
+                        console.log('ServiceWorker registration failed: ', err);
+                    });
+            });
+
+            // Handle install prompt
+            let deferredPrompt;
+            window.addEventListener('beforeinstallprompt', (e) => {
+                // Prevent Chrome 67 and earlier from automatically showing the prompt
+                e.preventDefault();
+                // Stash the event so it can be triggered later
+                deferredPrompt = e;
+                // Show custom install button or notification
+                console.log('PWA install prompt available');
+            });
+
+            // Listen for app installed event
+            window.addEventListener('appinstalled', (evt) => {
+                console.log('PWA was installed');
+                deferredPrompt = null;
             });
         }
     </script>
