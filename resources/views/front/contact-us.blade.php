@@ -15,7 +15,7 @@
                             Contact Us
                         </h1>
                         <div class="icon-img">
-                            <img src="{{ asset('front') }}/images/item/line-throw-title.png" alt="Contact us Apogee Agrotech Pvt.Ltd">
+                            <img src="{{ asset('front') }}/images/item/line-throw-title.png" alt="Contact us Apogee Agrotech Pvt.Ltd" style="width: auto; height: auto; max-width: 100%; object-fit: contain;">
                         </div>
                         <div class="breadcrumb">
                             <a href="{{ route('home') }}">Home</a>

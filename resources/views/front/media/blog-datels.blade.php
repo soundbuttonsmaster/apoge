@@ -15,7 +15,7 @@
                                 Blog
                             </h1>
                             <div class="icon-img">
-                                <img src="{{ asset('front') }}/images/item/line-throw-title.png" alt="">
+                                <img src="{{ asset('front') }}/images/item/line-throw-title.png" alt="Blog post decorative separator" style="width: auto; height: auto; max-width: 100%; object-fit: contain;">
                             </div>
                             <div class="breadcrumb">
                                 <a href="{{ route('home') }}">Home</a>

@@ -12,7 +12,7 @@
                         <div class="content">
                             <h1 class="title">Video Gallery</h1>
                             <div class="icon-img"> <img src="{{ asset('front') }}/images/item/line-throw-title.png"
-                                    alt="Apogee Youtube Video Gallery"> </div>
+                                    alt="Apogee Youtube Video Gallery" style="width: auto; height: auto; max-width: 100%; object-fit: contain;"> </div>
                             <div class="breadcrumb"> <a href="{{ route('home') }}">Home</a>
                                 <div class="icon"> <i class="icon-arrow-right1"></i> </div>
                                 <a href="javascript:void(0)">Media</a>

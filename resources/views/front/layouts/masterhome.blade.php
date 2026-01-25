@@ -376,7 +376,7 @@ src="https://www.facebook.com/tr?id=851416281111227&ev=PageView&noscript=1"
                                                 href="{{ route('home') }}">Home</a></li>
                                         <li
                                             class="item has-child {{ Route::is('home.about_us') || Route::is('home.time_line') ? 'current-menu' : '' }}">
-                                            <a href="javascript:void(0)">Company</a>
+                                            <a href="{{ route('home.about_us') }}" aria-label="Company - About Us and Timeline">Company</a>
                                             <ul class="sub-nav">
                                                 <li><a href="{{ route('home.about_us') }}"><span>About us</span></a>
                                                 </li>
@@ -385,7 +385,7 @@ src="https://www.facebook.com/tr?id=851416281111227&ev=PageView&noscript=1"
                                             </ul>
                                         </li>
                                         <li class="item has-child {{ Request::is('p*') ? 'current-menu' : '' }}"> <a
-                                                href="javascript:void(0)">Products</a>
+                                                href="{{ route('home.product_listing_category', \App\Models\Category::where('status', 1)->first()->slug ?? '#') }}" aria-label="Products - Laser Land Leveller Equipment">Products</a>
                                             <ul class="sub-nav">
                                                 @php
                                                     $category = \App\Models\Category::where('status', 1)
@@ -423,7 +423,7 @@ src="https://www.facebook.com/tr?id=851416281111227&ev=PageView&noscript=1"
                                         <!-- <li class="item has-child"><a href="#">Testimonial</span></a></li>  -->
                                         <li
                                             class="item has-child {{ Route::is('home.image_gallery') || Route::is('home.video_gallery') || Route::is('home.blog') ? 'current-menu' : '' }}">
-                                            <a href="javascript:void(0)">Media</span></a>
+                                            <a href="{{ route('home.image_gallery') }}" aria-label="Media - Image Gallery, Video Gallery and Blog">Media</a>
                                             <ul class="sub-nav">
                                                 <li><a href="{{ route('home.image_gallery') }}"><span>Image
                                                             Gallery</span></a></li>
@@ -434,7 +434,7 @@ src="https://www.facebook.com/tr?id=851416281111227&ev=PageView&noscript=1"
                                         </li>
                                         <li
                                             class="item has-child {{ Route::is('home.become_a_dealer') || Route::is('home.find_a_dealer') ? 'current-menu' : '' }}">
-                                            <a href="javascript:void(0)">Network</span></a>
+                                            <a href="{{ route('home.become_a_dealer') }}" aria-label="Network - Become a Dealer and Find a Dealer">Network</a>
                                             <ul class="sub-nav">
                                                 <li><a href="{{ route('home.become_a_dealer') }}"><span>Become
                                                             Dealer</span></a></li>
@@ -508,7 +508,7 @@ src="https://www.facebook.com/tr?id=851416281111227&ev=PageView&noscript=1"
                                                     <!-- <i class="icon-arrow_down"></i> -->
                                                 </a> </li>
                                             <li class="menu-item menu-item-has-children-mobile"> <a
-                                                    href="javascript:void(0)" class="item-menu-mobile">Company <i
+                                                    href="{{ route('home.about_us') }}" class="item-menu-mobile" aria-label="Company - About Us and Timeline">Company <i
                                                         class="icon-arrow_down"></i></a>
                                                 <ul class="sub-menu-mobile">
                                                     <li class="menu-item"><a
@@ -518,7 +518,7 @@ src="https://www.facebook.com/tr?id=851416281111227&ev=PageView&noscript=1"
                                                 </ul>
                                             </li>
                                             <li class="menu-item menu-item-has-children-mobile"> <a
-                                                    href="javascript:void(0)" class="item-menu-mobile">Products <i
+                                                    href="{{ route('home.product_listing_category', \App\Models\Category::where('status', 1)->first()->slug ?? '#') }}" class="item-menu-mobile" aria-label="Products - Laser Land Leveller Equipment">Products <i
                                                         class="icon-arrow_down"></i></a>
                                                 <ul class="sub-menu-mobile">
                                                     @php
@@ -555,7 +555,7 @@ src="https://www.facebook.com/tr?id=851416281111227&ev=PageView&noscript=1"
                                                 </ul>
                                             </li>
                                             <li class="menu-item menu-item-has-children-mobile"> <a
-                                                    href="javascript:void(0)" class="item-menu-mobile">Media <i
+                                                    href="{{ route('home.image_gallery') }}" class="item-menu-mobile" aria-label="Media - Image Gallery, Video Gallery and Blog">Media <i
                                                         class="icon-arrow_down"></i></a>
                                                 <ul class="sub-menu-mobile">
                                                     <li class="menu-item"><a
@@ -569,7 +569,7 @@ src="https://www.facebook.com/tr?id=851416281111227&ev=PageView&noscript=1"
                                                 </ul>
                                             </li>
                                             <li class="menu-item menu-item-has-children-mobile"> <a
-                                                    href="javascript:void(0)" class="item-menu-mobile">Network <i
+                                                    href="{{ route('home.become_a_dealer') }}" class="item-menu-mobile" aria-label="Network - Become a Dealer and Find a Dealer">Network <i
                                                         class="icon-arrow_down"></i></a>
                                                 <ul class="sub-menu-mobile">
                                                     <li class="menu-item"><a
@@ -641,7 +641,7 @@ src="https://www.facebook.com/tr?id=851416281111227&ev=PageView&noscript=1"
                                             <li class="item has-child current-menu"> <a
                                                     href="{{ route('home') }}">Home</a>
                                             </li>
-                                            <li class="item has-child"> <a href="javascript:void(0)">Company</a>
+                                            <li class="item has-child"> <a href="{{ route('home.about_us') }}" aria-label="Company - About Us and Timeline">Company</a>
                                                 <ul class="sub-nav">
                                                     <li><a href="{{ route('home.about_us') }}"><span> About Us
                                                             </span></a></li>
@@ -649,8 +649,9 @@ src="https://www.facebook.com/tr?id=851416281111227&ev=PageView&noscript=1"
                                                             </span></a></li>
                                                 </ul>
                                             </li>
-                                            <li class="item has-child"> <a href="javascript:void(0)">Products</a>
+                                            <li class="item has-child"> <a href="{{ route('home.product_listing_category', \App\Models\Category::where('status', 1)->first()->slug ?? '#') }}" aria-label="Products - Laser Land Leveller Equipment">Products</a>
                                                 <ul class="sub-nav">
+                                                    @php
                                                     $category = \App\Models\Category::where('status', 1)
                                                     ->latest()
                                                     ->get();
@@ -681,7 +682,7 @@ src="https://www.facebook.com/tr?id=851416281111227&ev=PageView&noscript=1"
                                                     @endif
                                                 </ul>
                                             </li>
-                                            <li class="item has-child"><a href="javascript:void(0)">Media</a>
+                                            <li class="item has-child"><a href="{{ route('home.image_gallery') }}" aria-label="Media - Image Gallery, Video Gallery and Blog">Media</a>
                                                 <ul class="sub-nav">
                                                     <li><a href="{{ route('home.image_gallery') }}"><span>Image
                                                                 Gallery</span></a>
@@ -692,7 +693,7 @@ src="https://www.facebook.com/tr?id=851416281111227&ev=PageView&noscript=1"
                                                     <li><a href="{{ route('home.blog') }}"><span>Blog</span></a></li>
                                                 </ul>
                                             </li>
-                                            <li class="item has-child"><a href="javascript:void(0)">Network</a>
+                                            <li class="item has-child"><a href="{{ route('home.become_a_dealer') }}" aria-label="Network - Become a Dealer and Find a Dealer">Network</a>
                                                 <ul class="sub-nav">
                                                     <li><a href="{{ route('home.become_a_dealer') }}"><span>Become
                                                                 Dealer</span></a>
@@ -751,9 +752,9 @@ src="https://www.facebook.com/tr?id=851416281111227&ev=PageView&noscript=1"
                     </div>
                 </div>
                 <div class="header-item children"> <img src="{{ asset('front') }}/images/item/page-title-top.png"
-                        alt="Top laser land leveller models by Apogee used in Indian agriculture"> </div>
+                        alt="Top laser land leveller models by Apogee used in Indian agriculture" width="1920" height="60" style="width: 100%; height: auto; object-fit: contain;"> </div>
             </div>
-            <div class="header-item"> <img src="{{ asset('front') }}/images/item/page-title-top.png" alt="Apogee Group’s top GNSS and laser-based land levelling equipment lineup">
+            <div class="header-item"> <img src="{{ asset('front') }}/images/item/page-title-top.png" alt="Apogee Group's top GNSS and laser-based land levelling equipment lineup" width="1920" height="60" style="width: 100%; height: auto; object-fit: contain;">
             </div>
         </header>
         <!-- /.Header -->

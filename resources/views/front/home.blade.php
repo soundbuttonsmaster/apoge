@@ -25,7 +25,7 @@
                                                 agriculture</h1>
                                             <div class="img-item "> <img
                                                     src="{{ asset('front') }}/images/item/line-throw-title.png"
-                                                    class="tf-trainsition-draw-left access-trainsition" alt="Horizontal line divider graphic used to separate sections on the Apogee Agrotech website" />
+                                                    class="tf-trainsition-draw-left access-trainsition" alt="Horizontal line divider graphic used to separate sections on the Apogee Agrotech website" style="width: auto; height: auto; max-width: 100%; object-fit: contain;" />
                                             </div>
                                             <p class="text font-nunito tf-fade-left fade-item-4">Simplify the land levelling
                                                 process with our
@@ -67,7 +67,7 @@
                                             </h1>
                                             <div class="img-item "> <img class="tf-trainsition-draw-left access-trainsition"
                                                     src="{{ asset('front') }}/images/item/line-throw-title.png"
-                                                    alt="Line of Apogee Agrotech land levellers arranged for display, showing product range and uniform build quality" /> </div>
+                                                    alt="Line of Apogee Agrotech land levellers arranged for display, showing product range and uniform build quality" style="width: auto; height: auto; max-width: 100%; object-fit: contain;" /> </div>
                                             <p class="text font-nunito tf-fade-left fade-item-4"> Transform land levelling
                                                 to offer precise data
                                                 by minimizing challenges posed by operations & weather conditions.</p>
@@ -100,7 +100,7 @@
                                                 Agriculture </h1>
                                             <div class="img-item"> <img class="tf-trainsition-draw-left access-trainsition"
                                                     src="{{ asset('front') }}/images/item/line-throw-title.png"
-                                                    alt="Decorative horizontal line used as a visual separator in Apogee Agrotech's website layout or section design" /> </div>
+                                                    alt="Decorative horizontal line used as a visual separator in Apogee Agrotech's website layout or section design" style="width: auto; height: auto; max-width: 100%; object-fit: contain;" /> </div>
                                             <p class="text font-nunito tf-fade-left fade-item-4"> Automate the steering of
                                                 tractors and farming
                                                 machinery to make precision farming easy. </p>
@@ -156,28 +156,28 @@
                     <div class="col-lg-4">
                         <div class="box-portfolio style-4 tf-img-hover mb-s-991">
                             <div class="image hover01"> <img src="{{ asset('front') }}/images/we-use-new-technology.jpg"
-                                    class="lazyload" /> </div>
+                                    alt="Advanced technology in agriculture - GPS-guided equipment and smart farming solutions by Apogee Agrotech" class="lazyload" /> </div>
                             <div class="content">
-                                <div class="icon hover02"> <img src="{{ asset('front') }}/images/logo.jpg" /> </div>
-                                <a href="#" class="title hover-text-4"> We use new technology</a>
+                                <div class="icon hover02"> <img src="{{ asset('front') }}/images/logo.jpg" alt="Apogee Agrotech Logo" /> </div>
+                                <a href="{{ route('home.about_us') }}" class="title hover-text-4"> We use new technology</a>
                                 <p class="text font-nunito"> We use advanced technology in agriculture to improve
                                     productivity, precision,
                                     and sustainability. From GPS-guided equipment to smart farming solutions, we bring
                                     innovation to the
                                     field. </p>
                                 <div class="bot"> <a href="{{ route('home.about_us') }}"
-                                        class="btn-read font-worksans fw-5"> Read More </a> </div>
+                                        class="btn-read font-worksans fw-5" aria-label="Read more about how we use new technology in agriculture"> Read More </a> </div>
                             </div>
                         </div>
                     </div>
                     <div class="col-lg-4 col-md-6">
                         <div class="box-portfolio style-4 tf-img-hover mb-s-991">
                             <div class="image hover01"> <img
-                                    src="{{ asset('front') }}/images/quality-value-and-services.jpg" class="lazyload" />
+                                    src="{{ asset('front') }}/images/quality-value-and-services.jpg" alt="Quality value and services - Apogee Agrotech commitment to excellence in agricultural equipment" class="lazyload" />
                             </div>
                             <div class="content">
-                                <div class="icon"> <img src="{{ asset('front') }}/images/logo.jpg" /> </div>
-                                <a href="#" class="title hover-text-4">
+                                <div class="icon"> <img src="{{ asset('front') }}/images/logo.jpg" alt="Apogee Agrotech Logo" /> </div>
+                                <a href="{{ route('home.about_us') }}" class="title hover-text-4">
                                     <!-- We are committed to delivering top- -->
                                     Quality Value and Services</a>
                                 <p class="text font-nunito"> We are committed to delivering the highest quality,
@@ -188,24 +188,24 @@
                                     <!-- Click here to explore our company catalogue, offering a comprehensive understanding of our solutions. -->
                                 </p>
                                 <div class="bot"> <a href="{{ route('home.about_us') }}"
-                                        class="btn-read font-worksans fw-5"> Read More </a> </div>
+                                        class="btn-read font-worksans fw-5" aria-label="Read more about quality value and services"> Read More </a> </div>
                             </div>
                         </div>
                     </div>
                     <div class="col-lg-4 col-md-6">
                         <div class="box-portfolio style-4 tf-img-hover">
                             <div class="image hover01"> <img src="{{ asset('front') }}/images/our-mission.jpg"
-                                    alt="Apogee Agrotech’s mission to empower farmers with innovative, reliable, and efficient agricultural machinery solutions" class="lazyload" /> </div>
+                                    alt="Apogee Agrotech's mission to empower farmers with innovative, reliable, and efficient agricultural machinery solutions" class="lazyload" /> </div>
                             <div class="content">
-                                <div class="icon"> <img src="{{ asset('front') }}/images/logo.jpg" /> </div>
-                                <a href="#" class="title hover-text-4"> Our Mission </a>
+                                <div class="icon"> <img src="{{ asset('front') }}/images/logo.jpg" alt="Apogee Agrotech Logo" /> </div>
+                                <a href="{{ route('home.about_us') }}" class="title hover-text-4"> Our Mission </a>
                                 <p class="text font-nunito"> Our mission is to empower farmers with innovative, efficient,
                                     and sustainable
                                     agricultural solutions. We strive to enhance productivity and improve
                                     livelihoods through technology and service excellence.
                                 </p>
                                 <div class="bot"> <a href="{{ route('home.about_us') }}"
-                                        class="btn-read font-worksans fw-5"> Read More </a> </div>
+                                        class="btn-read font-worksans fw-5" aria-label="Read more about our mission"> Read More </a> </div>
                             </div>
                         </div>
                     </div>
@@ -237,7 +237,7 @@
                                     Laser Transmitter,
                                     Laser Receiver, Laser Control Box, and Bucket/Scrapper.
                                 </p>
-                                <a href="{{ route('home.about_us') }}" class="tf-btn btn-read-more gap-34"> <span
+                                <a href="{{ route('home.about_us') }}" class="tf-btn btn-read-more gap-34" aria-label="Read more about Apogee Group and our agricultural equipment"> <span
                                         class="text-style">Read more </span>
                                     <div class="icon"> <i class="icon-arrow_right"></i> </div>
                                 </a>
@@ -279,7 +279,7 @@
                                             <li>
                                                 <div class="box-icon  style-3 ic-hover wow fadeInUp" data-wow-delay="0s">
                                                     <div class="icon style-circle hover-icon"> <i><img
-                                                                src="{{ asset('front') }}/images/highly-efficient-and-precised-equipment.png"></i>
+                                                                src="{{ asset('front') }}/images/highly-efficient-and-precised-equipment.png" alt="Highly efficient and precise agricultural equipment icon"></i>
                                                     </div>
                                                     <a href="{{ route('home.about_us') }}"
                                                         class="caption fw-6 font-worksans text-upper hover-text-secondary">
@@ -289,7 +289,7 @@
                                             <li>
                                                 <div class="box-icon style-3 ic-hover wow fadeInUp" data-wow-delay="0s">
                                                     <div class="icon style-circle hover-icon"> <i><img
-                                                                src="{{ asset('front') }}/images/save-water-labour-and-increase-yields.png"></i>
+                                                                src="{{ asset('front') }}/images/save-water-labour-and-increase-yields.png" alt="Save water, labour and increase yields icon"></i>
                                                     </div>
                                                     <a href="{{ route('home.about_us') }}"
                                                         class="caption fw-6 font-worksans text-upper hover-text-secondary">
@@ -332,7 +332,7 @@
                                                 <div class="image">
                                                     @if (!empty($item->product_image) && isset(json_decode($item->product_image)[0]))
                                                         <img src="{{ asset('uploads/products/list/' . json_decode($item->product_image)[0]) }}"
-                                                            class="lazyload">
+                                                            alt="{{ $item->product_name }} - Laser Land Leveller by Apogee Agrotech" class="lazyload">
                                                     @endif
 
                                                 </div>
@@ -340,7 +340,7 @@
                                                     {{ Str::limit($item->product_name, 18) }}
                                                 </div>
                                                 <p class="text"> {{ Str::limit($item->short_description, 53) }}</p>
-                                                <span class="tf-btn-read"> Read More </span>
+                                                <span class="tf-btn-read" aria-label="Read more about {{ $item->product_name }}"> Read More </span>
                                             </a> </div>
                                     </div>
                                 </div>
@@ -391,7 +391,7 @@
                                     with approved subsidies. Our primary focus is on manufacturing cutting-edge and
                                     highlysophisticated
                                     levelling equipment to automate the farming process. </p>
-                                <a href="#" class="tf-btn btn-read-more scale-40"> <span class="text-style"> read
+                                <a href="{{ route('home.about_us') }}" class="tf-btn btn-read-more scale-40" aria-label="Read more about what Apogee Agrotech does"> <span class="text-style"> read
                                         more </span>
                                     <div class="icon"> <i class="icon-arrow_right"></i> </div>
                                 </a>
@@ -417,7 +417,7 @@
                                     explore our </p>
                                 <a href="{{ asset('front/brochure/Company-Profile-Apogee-Agrotech.pdf') }}" target="_blank" class="download btn-read-more scale-40"> Download Brochure </a>
                             </li>
-                            <li> <img src="{{ asset('front') }}/images/make-in-india.png"> </li>
+                            <li> <img src="{{ asset('front') }}/images/make-in-india.png" alt="Make in India logo - Apogee Agrotech supports Indian manufacturing"> </li>
                         </ul>
                     </div>
                 </div>
@@ -443,10 +443,10 @@
                     </div>
                 </div>
                 <div class="s-img-item item-1"> <img src="{{ asset('front') }}/images/item/page-title-top.png"
-                        alt="Page title icon used to highlight section headers on the Apogee Agrotech website" /> </div>
+                        alt="Page title icon used to highlight section headers on the Apogee Agrotech website" width="1920" height="60" style="width: 100%; height: auto; object-fit: contain;" /> </div>
                 <div class="s-img-item item-2 wow zoomIn"> <img src="{{ asset('front') }}/images/item/windmill.png"
                         alt="Windmill icon used as page title symbol representing sustainability and innovation on Apogee Agrotech website" /> </div>
-                <div class="s-img-item item-3"> <img src="{{ asset('front') }}/images/item/green.png" alt="img" />
+                <div class="s-img-item item-3"> <img src="{{ asset('front') }}/images/item/green.png" alt="Decorative green line separator" width="1920" height="89" style="width: 100%; height: auto; object-fit: contain;" />
                 </div>
             </div>
             <div class="slider-side">
@@ -511,7 +511,7 @@
                 </div>
             </div>
             <div class="s-img-item item-4"> <img src="{{ asset('front') }}/images/item/page-title-top.png"
-                    alt="img" /> </div>
+                    alt="Decorative page title separator" width="1920" height="60" style="width: 100%; height: auto; object-fit: contain;" /> </div>
         </section>
         <!-- /.Section project -->
 
@@ -655,14 +655,14 @@
                     </div>
                 </div>
             </div>
-            <div class="s-img-item item-1"> <img src="{{ asset('front') }}/images/item/brown-top.png" alt="Brown Top img" />
+            <div class="s-img-item item-1"> <img src="{{ asset('front') }}/images/item/brown-top.png" alt="Brown Top decorative separator" width="1920" height="72" style="width: 100%; height: auto; object-fit: contain;" />
             </div>
             <div class="s-img-item item-2 zoomIn wow">
                 <div class="scroll-element-4"> <img src="{{ asset('front') }}/images/item/tructor.png" alt="img" />
                 </div>
             </div>
             <div class="s-img-item item-bottom"> <img src="{{ asset('front') }}/images/item/brown-bottom.png"
-                    alt="Brown Botton img" /> </div>
+                    alt="Brown Bottom decorative separator" width="1920" height="72" style="width: 100%; height: auto; object-fit: contain;" /> </div>
         </section>
         <!-- /.Section counter -->
 
@@ -764,7 +764,7 @@
                 </div>
             </div>
             <div class="s-img-item item-1 t--40 z-3"> <img src="{{ asset('front') }}/images/item/page-title-top.png"
-                    alt="img" /> </div>
+                    alt="Decorative page title separator" width="1920" height="60" style="width: 100%; height: auto; object-fit: contain;" /> </div>
         </section>
         <!-- /.Section faq -->
 

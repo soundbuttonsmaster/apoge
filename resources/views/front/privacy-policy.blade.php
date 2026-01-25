@@ -17,7 +17,7 @@
                                     Privacy Policy
                                 </h1>
                                 <div class="icon-img">
-                                    <img src="{{ asset('front') }}/images/item/line-throw-title.png" alt="Apogee Agrotech Privacy Policy">
+                                    <img src="{{ asset('front') }}/images/item/line-throw-title.png" alt="Apogee Agrotech Privacy Policy" style="width: auto; height: auto; max-width: 100%; object-fit: contain;">
                                 </div>
                                 <div class="breadcrumb">
                                     <a href="{{ route('home') }}">Home</a>

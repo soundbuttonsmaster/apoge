@@ -17,7 +17,7 @@
                                     About Us
                                 </h1>
                                 <div class="icon-img">
-                                    <img src="{{ asset('front') }}/images/item/line-throw-title.png" alt="Apogee Agrotech Pvt.Ltd About Us">
+                                    <img src="{{ asset('front') }}/images/item/line-throw-title.png" alt="Apogee Agrotech Pvt.Ltd About Us" style="width: auto; height: auto; max-width: 100%; object-fit: contain;">
                                 </div>
                                 <div class="breadcrumb">
                                     <a href="{{ route('home') }}">Home</a>

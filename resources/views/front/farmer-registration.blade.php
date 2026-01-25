@@ -16,7 +16,7 @@
                                     Registration
                                 </h1>
                                 <div class="icon-img">
-                                    <img src="{{ asset('front') }}/images/item/line-throw-title.png" alt="Online registration form to enquire about Apogee Agrotech agricultural equipment ">
+                                    <img src="{{ asset('front') }}/images/item/line-throw-title.png" alt="Online registration form to enquire about Apogee Agrotech agricultural equipment" style="width: auto; height: auto; max-width: 100%; object-fit: contain;">
                                 </div>
                                 <div class="breadcrumb">
                                     <a href="{{ route('home') }}">Home</a>

@@ -12,7 +12,7 @@
                         <div class="content">
                             <h1 class="title"> Image Gallery </h1>
                             <div class="icon-img"> <img src="{{ asset('front') }}/images/item/line-throw-title.png"
-                                    alt="">
+                                    alt="Image gallery decorative separator" style="width: auto; height: auto; max-width: 100%; object-fit: contain;">
                             </div>
                             <div class="breadcrumb"> <a href="index.html">Home</a>
                                 <div class="icon"> <i class="icon-arrow-right1"></i> </div>
