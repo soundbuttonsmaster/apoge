@@ -339,6 +339,48 @@ src="https://www.facebook.com/tr?id=851416281111227&ev=PageView&noscript=1"
     </script>
     <!-- end css for toaster -->
     
+    <!-- Accessibility: Fix contrast ratios for odometer/counter elements -->
+    <style>
+        /* Fix contrast for odometer.style-2 on light gray background (#e9e9e9) */
+        .wg-counter.style-2 .odometer,
+        .wg-counter.style-2 .odometer span,
+        .wg-counter.style-2 .odometer.style-2,
+        .wg-counter.style-2 .odometer.style-2 span,
+        .wg-counter.style-2 .odometer .odometer-digit,
+        .wg-counter.style-2 .odometer .odometer-digit-inner,
+        .wg-counter.style-2 .counter-item .sub-odo {
+            color: #1a1a1a !important; /* Dark color for better contrast on light gray */
+        }
+        
+        /* Fix contrast for odometer elements in s-counter section (beige background #e1ba85) */
+        .s-counter .odometer,
+        .s-counter .odometer span,
+        .s-counter .odometer.fs-65,
+        .s-counter .odometer.fs-65 span,
+        .s-counter .odometer.style-1,
+        .s-counter .odometer.style-1 span,
+        .s-counter .odometer.style-1-1,
+        .s-counter .odometer.style-1-1 span,
+        .s-counter .odometer.style-1-2,
+        .s-counter .odometer.style-1-2 span,
+        .s-counter .odometer.style-1-3,
+        .s-counter .odometer.style-1-3 span,
+        .s-counter .odometer.style-1-4,
+        .s-counter .odometer.style-1-4 span,
+        .s-counter .odometer .odometer-digit,
+        .s-counter .odometer .odometer-digit-inner,
+        .s-counter .wg-counter .odometer,
+        .s-counter .wg-counter .odometer span,
+        .s-counter .wg-counter .odometer.fs-65,
+        .s-counter .wg-counter .odometer.fs-65 span,
+        .s-counter .wg-counter .odometer .odometer-digit,
+        .s-counter .wg-counter .odometer .odometer-digit-inner,
+        .s-counter .counter-item .sub-odo,
+        .s-counter .sub-odo {
+            color: #1a1a1a !important; /* Dark color for better contrast on beige background */
+        }
+    </style>
+    
     
        
 
@@ -966,39 +1008,47 @@ src="https://www.facebook.com/tr?id=851416281111227&ev=PageView&noscript=1"
     
     <!-- Non-critical JavaScript - Load asynchronously after page load -->
     <script>
-        // Load scripts after DOM is ready to improve LCP
-        // Load magnific-popup before main.js since main.js depends on it
-        window.addEventListener('DOMContentLoaded', function() {
-            // First load dependencies
-            var dependencyScripts = [
-                '{{ asset("front") }}/js/bootstrap.min.js',
-                '{{ asset("front") }}/js/magnific-popup.min.js'
-            ];
-            
-            // Load dependencies sequentially
-            function loadScript(src, callback) {
-                var script = document.createElement('script');
-                script.src = src;
-                script.async = false; // Load sequentially
+        // Helper function to load scripts sequentially
+        function loadScript(src, callback) {
+            var script = document.createElement('script');
+            script.src = src;
+            script.async = false; // Load sequentially
+            if (callback) {
                 script.onload = callback;
-                document.body.appendChild(script);
             }
-            
-            // Load dependencies first
-            loadScript(dependencyScripts[0], function() {
-                loadScript(dependencyScripts[1], function() {
-                    // Now load scripts that depend on magnific-popup
-                    var scripts = [
-                        '{{ asset("front") }}/js/lazysize.min.js',
-                        '{{ asset("front") }}/js/swiper-bundle.min.js',
-                        '{{ asset("front") }}/js/main.js'
-                    ];
-                    
-                    scripts.forEach(function(src) {
-                        var script = document.createElement('script');
-                        script.src = src;
-                        script.async = true;
-                        document.body.appendChild(script);
+            document.body.appendChild(script);
+        }
+        
+        // Load scripts after DOM is ready to improve LCP
+        window.addEventListener('DOMContentLoaded', function() {
+            // Load bootstrap first
+            loadScript('{{ asset("front") }}/js/bootstrap.min.js', function() {
+                // Load magnific-popup
+                loadScript('{{ asset("front") }}/js/magnific-popup.min.js', function() {
+                    // Load GSAP dependencies before SplitText and main.js
+                    loadScript('{{ asset("front") }}/js/gsap.min.js', function() {
+                        loadScript('{{ asset("front") }}/js/ScrollTrigger.min.js', function() {
+                            // Load SplitText before main.js (main.js depends on SplitText)
+                            loadScript('{{ asset("front") }}/js/Splitetext.js', function() {
+                                // Load fancybox before inline script uses it
+                                loadScript('{{ asset("front") }}/js/jquery.fancybox.min.js', function() {
+                                    // Now load scripts that depend on the above libraries
+                                    var scripts = [
+                                        '{{ asset("front") }}/js/lazysize.min.js',
+                                        '{{ asset("front") }}/js/swiper-bundle.min.js',
+                                        '{{ asset("front") }}/js/gsap-animation.js',
+                                        '{{ asset("front") }}/js/main.js'
+                                    ];
+                                    
+                                    scripts.forEach(function(src) {
+                                        var script = document.createElement('script');
+                                        script.src = src;
+                                        script.async = true;
+                                        document.body.appendChild(script);
+                                    });
+                                });
+                            });
+                        });
                     });
                 });
             });
@@ -1013,12 +1063,7 @@ src="https://www.facebook.com/tr?id=851416281111227&ev=PageView&noscript=1"
                 '{{ asset("front") }}/js/counter.js',
                 '{{ asset("front") }}/js/count-down.js',
                 '{{ asset("front") }}/js/jquery-validate.js',
-                '{{ asset("front") }}/js/gsap.min.js',
-                '{{ asset("front") }}/js/gsap-animation.js',
-                '{{ asset("front") }}/js/ScrollTrigger.min.js',
-                '{{ asset("front") }}/js/Splitetext.js',
-                '{{ asset("front") }}/js/timeline.js',
-                '{{ asset("front") }}/js/jquery.fancybox.min.js'
+                '{{ asset("front") }}/js/timeline.js'
             ];
             
             deferredScripts.forEach(function(src) {
@@ -1033,20 +1078,28 @@ src="https://www.facebook.com/tr?id=851416281111227&ev=PageView&noscript=1"
 
     <!-- /Javascript -->
     <script>
-        $(document).ready(function() {
-            $(".fancybox").fancybox({
-                openEffect: "none",
-                closeEffect: "none"
-            });
+        // Wait for jQuery and fancybox to load before initializing
+        (function() {
+            function initFancybox() {
+                if (typeof jQuery !== 'undefined' && typeof jQuery.fn.fancybox !== 'undefined') {
+                    jQuery(document).ready(function() {
+                        jQuery(".fancybox").fancybox({
+                            openEffect: "none",
+                            closeEffect: "none"
+                        });
 
-            $(".zoom").hover(function() {
-
-                $(this).addClass('transition');
-            }, function() {
-
-                $(this).removeClass('transition');
-            });
-        });
+                        jQuery(".zoom").hover(function() {
+                            jQuery(this).addClass('transition');
+                        }, function() {
+                            jQuery(this).removeClass('transition');
+                        });
+                    });
+                } else {
+                    setTimeout(initFancybox, 100);
+                }
+            }
+            initFancybox();
+        })();
     </script>
 
 
