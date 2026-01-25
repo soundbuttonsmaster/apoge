@@ -213,47 +213,64 @@
 @endif
 
 {{-- Breadcrumb Schema for all pages --}}
+@php
+    $breadcrumbItems = [
+        [
+            "@type" => "ListItem",
+            "position" => 1,
+            "name" => "Home",
+            "item" => $baseUrl
+        ]
+    ];
+    
+    $position = 2;
+    
+    if (isset($category_name)) {
+        $breadcrumbItems[] = [
+            "@type" => "ListItem",
+            "position" => $position++,
+            "name" => $category_name,
+            "item" => $baseUrl . '/p/' . (isset($category) ? $category->slug : '')
+        ];
+    }
+    
+    if (isset($subcategory_name)) {
+        $breadcrumbItems[] = [
+            "@type" => "ListItem",
+            "position" => $position++,
+            "name" => $subcategory_name,
+            "item" => $currentUrl
+        ];
+    }
+    
+    if (isset($product)) {
+        $breadcrumbItems[] = [
+            "@type" => "ListItem",
+            "position" => $position++,
+            "name" => $product->product_name,
+            "item" => $currentUrl
+        ];
+    }
+    
+    if (isset($blogdatels)) {
+        $breadcrumbItems[] = [
+            "@type" => "ListItem",
+            "position" => $position++,
+            "name" => "Blog",
+            "item" => $baseUrl . '/media/blog'
+        ];
+        $breadcrumbItems[] = [
+            "@type" => "ListItem",
+            "position" => $position++,
+            "name" => $blogdatels->title,
+            "item" => $currentUrl
+        ];
+    }
+@endphp
 <script type="application/ld+json">
 {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
-    "itemListElement": [
-        {
-            "@type": "ListItem",
-            "position": 1,
-            "name": "Home",
-            "item": "{{ $baseUrl }}"
-        }@if(isset($category_name)),
-        {
-            "@type": "ListItem",
-            "position": 2,
-            "name": "{{ $category_name }}",
-            "item": "{{ $baseUrl }}/p/{{ isset($category) ? $category->slug : '' }}"
-        }@endif@if(isset($subcategory_name)),
-        {
-            "@type": "ListItem",
-            "position": 3,
-            "name": "{{ $subcategory_name }}",
-            "item": "{{ $currentUrl }}"
-        }@endif@if(isset($product)),
-        {
-            "@type": "ListItem",
-            "position": {{ isset($category_name) ? (isset($subcategory_name) ? 4 : 3) : 2 }},
-            "name": "{{ $product->product_name }}",
-            "item": "{{ $currentUrl }}"
-        }@endif@if(isset($blogdatels)),
-        {
-            "@type": "ListItem",
-            "position": 2,
-            "name": "Blog",
-            "item": "{{ $baseUrl }}/media/blog"
-        },
-        {
-            "@type": "ListItem",
-            "position": 3,
-            "name": "{{ $blogdatels->title }}",
-            "item": "{{ $currentUrl }}"
-        }@endif
-    ]
+    "itemListElement": @json($breadcrumbItems)
 }
 </script>
