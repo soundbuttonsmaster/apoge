@@ -19,12 +19,13 @@ use App\Models\VideoGallery;
 use App\Models\Subscribe;
 use App\Models\Dealer;
 use App\Models\FarmerRegistration;
+use App\Models\Area;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\DB;
 
 class HomeController extends Controller
 {
-   public function home()
+    public function home()
     {
         $headerContent = HeaderContent::where('page_name', 'home')->where('status', 1)->first();
         $products = Product::where('show_in_home', 1)->where('status', 1)->latest()->get();
@@ -46,7 +47,7 @@ class HomeController extends Controller
         $schema_type = 'AboutPage';
         return view('front.company.about-us', compact('meta_title', 'meta_keywords', 'meta_description', 'schema_type'));
     }
-     public function TimeLine()
+    public function TimeLine()
     {
         $meta_title = "Company Timeline - Laser Land Leveller Manufacturer History | Apogee Agrotech";
         $meta_keywords = "apogee agrotech timeline, laser land leveller company history, agricultural equipment manufacturer history, precision farming evolution, laser land leveller development, company milestones, apogee agrotech journey";
@@ -121,8 +122,8 @@ class HomeController extends Controller
 
         $AllCategory = Category::where('status', 1)->latest()->get();
         $headerContent = HeaderContent::where('page_name', 'product_list')->where('status', 1)->first();
-        
-         $meta_title = !empty($category->meta_title) ? $category->meta_title : $category_name . ' - Laser Land Leveller Products | Apogee Agrotech';
+
+        $meta_title = !empty($category->meta_title) ? $category->meta_title : $category_name . ' - Laser Land Leveller Products | Apogee Agrotech';
         $meta_keywords = !empty($category->meta_keywords) ? $category->meta_keywords : strtolower($category_name) . ', laser land leveller, laser land leveler, precision agriculture equipment, agricultural machinery, apogee agrotech products';
         $meta_description = !empty($category->meta_description) ? $category->meta_description : 'Explore ' . $category_name . ' products by Apogee Agrotech. Best quality Laser Land Leveller equipment for precision agriculture. Get best prices in India. Call +91 7624002265';
         $header_content = @$category->head_content;
@@ -130,7 +131,7 @@ class HomeController extends Controller
         return view('front.product-listing', compact('productlisting', 'category_name', 'AllCategory', 'headerContent', 'meta_title', 'meta_keywords', 'meta_description', 'header_content', 'schema_type', 'category'));
     }
 
-     public function productDatels($product_slug)
+    public function productDatels($product_slug)
     {
         $product = Product::where('slug', $product_slug)->where('status', 1)->first();
         if (!$product) {
@@ -150,12 +151,12 @@ class HomeController extends Controller
 
 
     // Media
-     public function ImageGallery()
+    public function ImageGallery()
     {
         $session = Session::where('status', 1)->get();
         $headerContent = HeaderContent::where('page_name', 'photo_gallery')->where('status', 1)->first();
 
-        
+
         $meta_title = !empty($headerContent->meta_title) ? $headerContent->meta_title : 'Image Gallery - Laser Land Leveller Photos & Images | Apogee Agrotech';
         $meta_keywords = !empty($headerContent->meta_keywords) ? $headerContent->meta_keywords : 'laser land leveller images, laser land leveller photos, apogee agrotech gallery, agricultural equipment images, precision farming photos, laser land leveller pictures, GNSS land leveller images';
         $meta_description = !empty($headerContent->meta_description) ? $headerContent->meta_description : 'Browse our image gallery showcasing Laser Land Leveller equipment, precision agriculture solutions, and customer success stories. High-quality photos of Apogee Agrotech products.';
@@ -163,7 +164,8 @@ class HomeController extends Controller
         return view('front.media.image-gallery', compact('session', 'meta_title', 'meta_keywords', 'meta_description', 'schema_type', 'headerContent'));
     }
 
-   public function VideoGallery(){
+    public function VideoGallery()
+    {
         $videoGallery = VideoGallery::where('status', 1)->latest()->get();
         $headerContent = HeaderContent::where('page_name', 'video_gallery')->where('status', 1)->first();
 
@@ -173,7 +175,8 @@ class HomeController extends Controller
         $schema_type = 'VideoGallery';
         return view('front.media.video-gallery', compact('videoGallery', 'meta_title', 'meta_keywords', 'meta_description', 'schema_type', 'headerContent'));
     }
-    public function Blog(){
+    public function Blog()
+    {
         $blog = Blog::where('status', 1)->latest()->get();
         $meta_title = 'Blog - Laser Land Leveller Articles, News & Tips | Apogee Agrotech';
         $meta_keywords = 'laser land leveller blog, precision agriculture articles, farming tips, agricultural equipment news, laser land leveller guides, farming technology blog, apogee agrotech blog';
@@ -181,7 +184,8 @@ class HomeController extends Controller
         $schema_type = 'Blog';
         return view('front.media.blog', compact('blog', 'meta_title', 'meta_keywords', 'meta_description', 'schema_type'));
     }
-   public function BlogDatels($slug){
+    public function BlogDatels($slug)
+    {
         // dd($slug);
         $blogdatels = Blog::where('slug', $slug)->where('status', 1)->first();
         if (!$blogdatels) {
@@ -198,16 +202,18 @@ class HomeController extends Controller
         return view('front.media.blog-datels', compact('blogdatels', 'blogs', 'meta_title', 'meta_keywords', 'meta_description', 'header_content', 'schema_type'));
 
     }
- 
+
     // Network
-    public function BecomeADealer(){
+    public function BecomeADealer()
+    {
         $meta_title = "Become a Dealer - Laser Land Leveller Dealer Program | Apogee Agrotech";
         $meta_keywords = "become laser land leveller dealer, apogee agrotech dealer program, agricultural equipment dealership, laser land leveller distributor, dealer opportunity, agricultural machinery dealer, precision farming equipment dealer";
         $meta_description = "Join Apogee Agrotech as a dealer and sell Laser Land Leveller equipment. Exclusive dealer program with best margins, marketing support, and training. Apply now to become our authorized dealer.";
         $schema_type = 'ContactPage';
         return view('admin.network.become-a-dealer', compact('meta_title', 'meta_keywords', 'meta_description', 'schema_type'));
     }
-    public function SaveBecomeForm(Request $request){
+    public function SaveBecomeForm(Request $request)
+    {
         // dd($request->all());
         $request->validate([
             'name' => 'required',
@@ -231,7 +237,8 @@ class HomeController extends Controller
         return response()->json(['status' => 'true', 'message' => 'Form Submited successfully !']);
     }
 
-    public function FindADealer(){
+    public function FindADealer()
+    {
         $meta_title = "Find a Dealer - Laser Land Leveller Dealers Near You | Apogee Agrotech";
         $meta_keywords = "find laser land leveller dealer, apogee agrotech dealers, laser land leveller dealer near me, agricultural equipment dealer, precision farming equipment dealer, laser land leveller distributor";
         $meta_description = "Find authorized Apogee Agrotech dealers near you. Buy genuine Laser Land Leveller equipment from our network of trusted dealers across India. Search by location now.";
@@ -239,7 +246,7 @@ class HomeController extends Controller
         return view('admin.network.find-a-dealer', compact('meta_title', 'meta_keywords', 'meta_description', 'schema_type'));
     }
 
- public function SaveFindDealerForm(Request $request)
+    public function SaveFindDealerForm(Request $request)
     {
         // dd($request->all());
         $request->validate([
@@ -273,11 +280,11 @@ class HomeController extends Controller
         // }
         if ($request->state) {
             // $query->where('state', $request->state);
-             $query->where('state', 'LIKE', '%' . $request->state . '%');
+            $query->where('state', 'LIKE', '%' . $request->state . '%');
         }
         if ($request->district) {
             // $query->where('district', $request->district);
-             $query->where('district', 'LIKE', '%' . $request->district . '%');
+            $query->where('district', 'LIKE', '%' . $request->district . '%');
         }
 
         // Fetch matched dealers
@@ -291,9 +298,10 @@ class HomeController extends Controller
     }
 
 
-    public function testimonials(){
+    public function testimonials()
+    {
         $testimonials = Testimonial::where('status', 1)->latest()->get();
-        
+
         $meta_title = "Customer Testimonials - Laser Land Leveller Reviews | Apogee Agrotech";
         $meta_keywords = "laser land leveller reviews, apogee agrotech testimonials, customer reviews, laser land leveller feedback, precision agriculture testimonials, agricultural equipment reviews, laser land leveller customer stories";
         $meta_description = "Read customer testimonials and reviews about Apogee Agrotech Laser Land Leveller equipment. Real experiences from farmers and agricultural professionals across India.";
@@ -311,7 +319,8 @@ class HomeController extends Controller
         return view('front.contact-us', compact('meta_title', 'meta_keywords', 'meta_description', 'schema_type'));
     }
 
-    public function saveContactForm(Request $request){
+    public function saveContactForm(Request $request)
+    {
         // dd($request->all());
         $request->validate([
             'name' => 'required',
@@ -330,9 +339,9 @@ class HomeController extends Controller
         $enquiryObj->save();
         return response()->json(['status' => 'true', 'message' => 'Enquiry Submited successfully !']);
     }
-    
-    
-    
+
+
+
     public function subscribe(Request $request)
     {
         // dd($request->all());
@@ -344,9 +353,9 @@ class HomeController extends Controller
         $subscribe->save();
         return response()->json(['message' => 'Subscription successful'], 200);
     }
-    
-    
-     public function FarmerRegistration()
+
+
+    public function FarmerRegistration()
     {
         $state = DB::table('geo_locations')->where('location_type', 'STATE')->get();
 
@@ -363,24 +372,26 @@ class HomeController extends Controller
         // dd($req->all());
         $sel = '';
         $StateId = $req->state_id;
-        $districtDropdown  = '';
+        $districtDropdown = '';
         $Distictlist = DB::table('geo_locations')->where('parent_id', $StateId)->where('location_type', 'DISTRICT')->get();
 
         // dd($Distictlist);
         if (count($Distictlist) > 0) {
-            $districtDropdown  .= '<select class="form-control" name="district" onchange="setCity(this)" required>';
-            $districtDropdown  .= '<option value="">जिला</option>';
+            $districtDropdown .= '<select class="form-control" name="district" onchange="setCity(this)" required>';
+            $districtDropdown .= '<option value="">जिला</option>';
             for ($i = 0; $i < count($Distictlist); $i++) {
-                if (isset($sel) && $sel == $Distictlist[$i]->id) $selected = 'selected="selected"';
-                else $selected = "";
-                $districtDropdown  .= '<option data-id="' . $Distictlist[$i]->id . '" value="' . $Distictlist[$i]->name . '" ' . $selected . '>' . $Distictlist[$i]->name . '</option>';
+                if (isset($sel) && $sel == $Distictlist[$i]->id)
+                    $selected = 'selected="selected"';
+                else
+                    $selected = "";
+                $districtDropdown .= '<option data-id="' . $Distictlist[$i]->id . '" value="' . $Distictlist[$i]->name . '" ' . $selected . '>' . $Distictlist[$i]->name . '</option>';
             }
             // data-id="{{ $ste->id }}"
-            $districtDropdown  .= '</select>';
+            $districtDropdown .= '</select>';
         } else {
-            $districtDropdown  .= '<select class="form-control" name="district" required>';
-            $districtDropdown  .= '<option value="">No Record Found</option>';
-            $districtDropdown  .= '</select>';
+            $districtDropdown .= '<select class="form-control" name="district" required>';
+            $districtDropdown .= '<option value="">No Record Found</option>';
+            $districtDropdown .= '</select>';
         }
 
 
@@ -395,24 +406,26 @@ class HomeController extends Controller
         // dd($req->all());
         $sel = '';
         $cityId = $req->city_id;
-        $cityDropdown  = '';
+        $cityDropdown = '';
         $citylist = DB::table('geo_locations')->where('parent_id', $cityId)->where('location_type', 'SUBDISTRICT')->get();
 
         // dd($citylist);
         if (count($citylist) > 0) {
-            $cityDropdown  .= '<select class="form-control" name="city" required>';
-            $cityDropdown  .= '<option value="">शहर</option>';
+            $cityDropdown .= '<select class="form-control" name="city" required>';
+            $cityDropdown .= '<option value="">शहर</option>';
             for ($i = 0; $i < count($citylist); $i++) {
-                if (isset($sel) && $sel == $citylist[$i]->id) $selected = 'selected="selected"';
-                else $selected = "";
-                $cityDropdown  .= '<option value="' . $citylist[$i]->name . '" ' . $selected . '>' . $citylist[$i]->name . '</option>';
+                if (isset($sel) && $sel == $citylist[$i]->id)
+                    $selected = 'selected="selected"';
+                else
+                    $selected = "";
+                $cityDropdown .= '<option value="' . $citylist[$i]->name . '" ' . $selected . '>' . $citylist[$i]->name . '</option>';
             }
             // data-id="{{ $ste->id }}"
-            $cityDropdown  .= '</select>';
+            $cityDropdown .= '</select>';
         } else {
-            $cityDropdown  .= '<select class="form-control" name="city" required>';
-            $cityDropdown  .= '<option value="">No Record Found</option>';
-            $cityDropdown  .= '</select>';
+            $cityDropdown .= '<select class="form-control" name="city" required>';
+            $cityDropdown .= '<option value="">No Record Found</option>';
+            $cityDropdown .= '</select>';
         }
 
 
@@ -421,9 +434,9 @@ class HomeController extends Controller
             'cityDropdown' => $cityDropdown,
         ]);
     }
-    
-    
-      public function SaveFarmerRegistraion(Request $req)
+
+
+    public function SaveFarmerRegistraion(Request $req)
     {
         // dd($req->all());
         $req->validate([
@@ -438,12 +451,12 @@ class HomeController extends Controller
             'leveller_model_no' => 'required',
             'leveller_purchase_date' => 'required',
         ]);
-          // Generate unique customer ID
+        // Generate unique customer ID
         do {
             $customer_id = 'CUST' . mt_rand(100000, 999999); // e.g. CUST456789
         } while (FarmerRegistration::where('customer_id', $customer_id)->exists());
 
-         // 16 digit ka unique card number generate karo
+        // 16 digit ka unique card number generate karo
         do {
             $cardNumber = '';
             for ($i = 0; $i < 16; $i++) {
@@ -452,7 +465,7 @@ class HomeController extends Controller
         } while (FarmerRegistration::where('card_number', $cardNumber)->exists());
 
         // Expiry date calculate karo (current month + 3 months)
-        $expiryDate = Carbon::now()->addMonths(3)->endOfMonth(); 
+        $expiryDate = Carbon::now()->addMonths(3)->endOfMonth();
 
 
         $farmerRegistration = new FarmerRegistration();
@@ -467,21 +480,21 @@ class HomeController extends Controller
         $farmerRegistration->leveller_manufacturer = $req->leveller_manufacturer;
         $farmerRegistration->leveller_model_no = $req->leveller_model_no;
         $farmerRegistration->leveller_purchase_date = $req->leveller_purchase_date;
-         $farmerRegistration->card_number = $cardNumber;
+        $farmerRegistration->card_number = $cardNumber;
         $farmerRegistration->expiry_date = $expiryDate;
         $farmerRegistration->card_ganrate_status = 1;
         $farmerRegistration->save();
         $farmerCard = $farmerRegistration;
         // return response()->json(['status' => 'true', 'message' => 'Form Submited successfully !']);
-        
-         $html = view('front.layouts.include-find-afarmer-card', compact('farmerCard'))->render();
+
+        $html = view('front.layouts.include-find-afarmer-card', compact('farmerCard'))->render();
         return response()->json([
             'status' => true,
             'html' => $html
         ]);
     }
-    
-      public function FindAfarmerCard()
+
+    public function FindAfarmerCard()
     {
         $meta_title = "Find Farmer Card - Laser Land Leveller Owner Card Lookup | Apogee Agrotech";
         $meta_keywords = "find farmer card, laser land leveller owner card, farmer card lookup, agricultural equipment card, apogee agrotech farmer card";
@@ -524,4 +537,18 @@ class HomeController extends Controller
             ]);
         }
     }
+    public function AreasWeCover()
+    {
+        $areas = Area::where('status', 1)->latest()->get();
+
+        // Meta tags
+        $headerContent = HeaderContent::where('page_name', 'areas_we_cover')->where('status', 1)->first();
+        $meta_title = !empty($headerContent->meta_title) ? $headerContent->meta_title : 'Areas We Cover | Apogee Agrotech';
+        $meta_keywords = !empty($headerContent->meta_keywords) ? $headerContent->meta_keywords : '';
+        $meta_description = !empty($headerContent->meta_description) ? $headerContent->meta_description : '';
+
+
+        return view('front.areas-we-cover', compact('areas', 'meta_title', 'meta_keywords', 'meta_description'));
+    }
+
 }

@@ -453,6 +453,8 @@ src="https://www.facebook.com/tr?id=851416281111227&ev=PageView&noscript=1"
                                                 </li>
                                                 <li><a href="{{ route('home.time_line') }}"><span>Time line</span></a>
                                                 </li>
+                                                <li><a href="{{ route('home.areas_we_cover') }}"><span>Areas We Cover</span></a>
+                                                </li>
                                             </ul>
                                         </li>
                                         <li class="item has-child {{ Request::is('p*') ? 'current-menu' : '' }}"> <a
@@ -586,6 +588,8 @@ src="https://www.facebook.com/tr?id=851416281111227&ev=PageView&noscript=1"
                                                             href="{{ route('home.about_us') }}">About Us</a></li>
                                                     <li class="menu-item"><a
                                                             href="{{ route('home.time_line') }}">Time line</a></li>
+                                                    <li class="menu-item"><a
+                                                            href="{{ route('home.areas_we_cover') }}">Areas We Cover</a></li>
                                                 </ul>
                                             </li>
                                             <li class="menu-item menu-item-has-children-mobile"> <a
@@ -717,6 +721,8 @@ src="https://www.facebook.com/tr?id=851416281111227&ev=PageView&noscript=1"
                                                     <li><a href="{{ route('home.about_us') }}"><span> About Us
                                                             </span></a></li>
                                                     <li><a href="{{ route('home.time_line') }}"><span> Time line
+                                                            </span></a></li>
+                                                    <li><a href="{{ route('home.areas_we_cover') }}"><span> Areas We Cover
                                                             </span></a></li>
                                                 </ul>
                                             </li>

@@ -12,10 +12,12 @@
     <link href="{{ asset('admin') }}/css/all.min.css" rel="stylesheet" />
     <link href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css" rel="stylesheet"
         crossorigin="anonymous" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js" crossorigin="anonymous"></script>
-    
-    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js"
+        crossorigin="anonymous"></script>
+
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+
     <link rel="stylesheet" href="{{ asset('admin/css/additional-fonts.css') }}">
 
     <link rel="stylesheet" type="text/css"
@@ -44,8 +46,8 @@
         </form>
         <!-- Navbar-->
         <ul class="navbar-nav ml-auto ml-md-0">
-            <li class="nav-item dropdown"> <a class="nav-link dropdown-toggle" id="userDropdown" href="#"
-                    role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i
+            <li class="nav-item dropdown"> <a class="nav-link dropdown-toggle" id="userDropdown" href="#" role="button"
+                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i
                         class="fas fa-user fa-fw"></i></a>
                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
                     <h6 class="pl-3">Welcome Admin!</h6>
@@ -109,8 +111,7 @@
                             Products
                             <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                         </a>
-                        <div class="collapse" id="product" aria-labelledby="headingTwo"
-                            data-parent="#sidenavAccordion">
+                        <div class="collapse" id="product" aria-labelledby="headingTwo" data-parent="#sidenavAccordion">
                             <nav class="sb-sidenav-menu-nested nav accordion" id="sidenavAccordionPages"> <a
                                     class="nav-link" href="{{ route('admin.product.create') }}">Add Product</a> <a
                                     class="nav-link" href="{{ route('admin.product.list') }}">View Product</a> </nav>
@@ -122,8 +123,7 @@
                             Media
                             <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                         </a>
-                        <div class="collapse" id="media" aria-labelledby="headingTwo"
-                            data-parent="#sidenavAccordion">
+                        <div class="collapse" id="media" aria-labelledby="headingTwo" data-parent="#sidenavAccordion">
                             <nav class="sb-sidenav-menu-nested nav accordion" id="sidenavAccordionPages">
 
                                 <a class="nav-link" href="{{ route('admin.session.create') }}">Add Session</a>
@@ -151,34 +151,40 @@
                             Become a Dealer view
                         </a>
                         <a class="nav-link {{ Route::is('admin.find_a_dealer') ? 'active' : '' }}""
-                            href="{{ route('admin.find_a_dealer') }}">
+                            href=" {{ route('admin.find_a_dealer') }}">
                             <div class="sb-nav-link-icon"><i class="fa fa-user"></i></div>
                             Find a Dealer view
                         </a>
                         <a class="nav-link {{ Route::is('admin.dealer.create') ? 'active' : '' }}""
-                            href="{{ route('admin.dealer.create') }}">
+                            href=" {{ route('admin.dealer.create') }}">
                             <div class="sb-nav-link-icon"><i class="fa fa-user"></i></div>
                             Add Dealer
                         </a>
 
 
                         <a class="nav-link {{ Route::is('admin.enquriy_list') ? 'active' : '' }}""
-                            href="{{ route('admin.enquriy_list') }}">
+                            href=" {{ route('admin.enquriy_list') }}">
                             <div class="sb-nav-link-icon"><i class="far fa-window-restore"></i></div>
                             Enquiry View
                         </a>
-                        
-                          <a class="nav-link {{ Route::is('admin.farmer_registration_list') ? 'active' : '' }}""
-                        href="{{ route('admin.farmer_registration_list') }}">
-                        <div class="sb-nav-link-icon"><i class="far fa-window-restore"></i></div>
-                        Farmer Registration
-                    </a>
-                        
+
+                        <a class="nav-link {{ Route::is('admin.farmer_registration_list') ? 'active' : '' }}""
+                        href=" {{ route('admin.farmer_registration_list') }}">
+                            <div class="sb-nav-link-icon"><i class="far fa-window-restore"></i></div>
+                            Farmer Registration
+                        </a>
+
                         <a class="nav-link {{ Route::is('admin.subscribe.subscribe') ? 'active' : '' }}""
-                        href="{{ route('admin.subscribe.subscribe') }}">
-                        <div class="sb-nav-link-icon"><i class="far fa-window-restore"></i></div>
-                        Subscribe
-                    </a>
+                        href=" {{ route('admin.subscribe.subscribe') }}">
+                            <div class="sb-nav-link-icon"><i class="far fa-window-restore"></i></div>
+                            Subscribe
+                        </a>
+
+                        <a class="nav-link {{ Route::is('admin.area.index') ? 'active' : '' }}"
+                            href="{{ route('admin.area.index') }}">
+                            <div class="sb-nav-link-icon"><i class="fas fa-map-marker-alt"></i></div>
+                            Areas We Cover
+                        </a>
 
 
                     </div>
@@ -221,22 +227,22 @@
     <!---------------- Toaster ------------------->
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
     <script>
-        @if (Session::has('message'))
-            var type = "{{ Session::get('alert-type', 'info') }}"
-            switch (type) {
-                case 'info':
-                    toastr.info("{{ Session::get('message') }}");
-                    break;
-                case 'success':
-                    toastr.success("{{ Session::get('message') }}");
-                    break;
-                case 'warning':
-                    toastr.warning("{{ Session::get('message') }}");
-                    break;
-                case 'error':
-                    toastr.error("{{ Session::get('message') }}");
-                    break;
-            }
+        @if (Session:: has('message'))
+        var type = "{{ Session::get('alert-type', 'info') }}"
+        switch (type) {
+            case 'info':
+                toastr.info("{{ Session::get('message') }}");
+                break;
+            case 'success':
+                toastr.success("{{ Session::get('message') }}");
+                break;
+            case 'warning':
+                toastr.warning("{{ Session::get('message') }}");
+                break;
+            case 'error':
+                toastr.error("{{ Session::get('message') }}");
+                break;
+        }
         @endif
     </script>
 </body>

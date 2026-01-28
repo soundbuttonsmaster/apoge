@@ -19,6 +19,7 @@ use App\Http\Controllers\admin\AdminTestimoialController;
 use App\Http\Controllers\admin\AdminVideogalleryController;
 use App\Http\Controllers\admin\AdminSubscribeContoller;
 use App\Http\Controllers\admin\AdminFarmerCardController;
+use App\Http\Controllers\admin\AdminAreaController;
 
 // for reports
 
@@ -179,8 +180,17 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'middleware' => 'AdminAuth'
         Route::post('/update/{id}', [AdminHeaderContentController::class, 'update'])->name('update');
         Route::get('/delete/{id}', [AdminHeaderContentController::class, 'delete'])->name('delete');
     });
-    
-       Route::group(['prefix' => 'subscribe', 'as' => 'subscribe.'], function () {
+
+    Route::group(['prefix' => 'area', 'as' => 'area.'], function () {
+        Route::get('/index', [AdminAreaController::class, 'index'])->name('index');
+        Route::get('/create', [AdminAreaController::class, 'create'])->name('create');
+        Route::post('/store', [AdminAreaController::class, 'store'])->name('store');
+        Route::get('/edit/{id}', [AdminAreaController::class, 'edit'])->name('edit');
+        Route::post('/update/{id}', [AdminAreaController::class, 'update'])->name('update');
+        Route::get('/delete/{id}', [AdminAreaController::class, 'delete'])->name('delete');
+    });
+
+    Route::group(['prefix' => 'subscribe', 'as' => 'subscribe.'], function () {
         Route::get('/subscribe', [AdminSubscribeContoller::class, 'index'])->name('subscribe');
         Route::get('delete-subscribe/{id}', [AdminSubscribeContoller::class, 'deleteSubscribe'])->name('delete_subscribe');
     });
@@ -188,22 +198,22 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'middleware' => 'AdminAuth'
 
 
     Route::get('enquiry', [AdminDashboardController::class, 'EnquryList'])->name('enquriy_list');
-      Route::get('enquiry-export', [AdminDashboardController::class, 'EnquiryDataexport'])->name('enquiry_export');
+    Route::get('enquiry-export', [AdminDashboardController::class, 'EnquiryDataexport'])->name('enquiry_export');
     Route::get('delete-enquiry/{id}', [AdminDashboardController::class, 'DeleteEnquiry'])->name('delete_enquiry');
 
     // become-a-dealer.
     Route::get('become-a-dealer', [AdminBecomeADealerController::class, 'index'])->name('become_a_dealer');
-        Route::get('become-a-dealer-export', [AdminBecomeADealerController::class, 'BecomeDealerDataexport'])->name('become_a_dealer_export');
+    Route::get('become-a-dealer-export', [AdminBecomeADealerController::class, 'BecomeDealerDataexport'])->name('become_a_dealer_export');
     Route::get('delete-become-a-dealeer/{id}', [AdminBecomeADealerController::class, 'DeleteBecomeDealer'])->name('delete_become_dealer');
 
 
     // find-a-dealer
     Route::get('find-a-dealer', [AdminFindADealerController::class, 'index'])->name('find_a_dealer');
-        Route::get('find-a-dealer-export', [AdminFindADealerController::class, 'FindDealerDataexport'])->name('find_a_dealer_export');
+    Route::get('find-a-dealer-export', [AdminFindADealerController::class, 'FindDealerDataexport'])->name('find_a_dealer_export');
     Route::get('delete-find-a-dealer/{id}', [AdminFindADealerController::class, 'DeleteFindADealer'])->name('delete_find_a_dealer');
-    
-    
-      Route::get('farmer-registration', [AdminFarmerCardController::class, 'FarmerRegistrationList'])->name('farmer_registration_list');
+
+
+    Route::get('farmer-registration', [AdminFarmerCardController::class, 'FarmerRegistrationList'])->name('farmer_registration_list');
     Route::get('ganrate-farmer-card/{id}', [AdminFarmerCardController::class, 'ganrateFarmerCard'])->name('ganrate_farmer_card');
     Route::get('view-farmer-card/{id}', [AdminFarmerCardController::class, 'ViewFarmerCard'])->name('view_farmer_card');
     // Route::get('delete-enquiry/{id}', [AdminDashboardController::class, 'DeleteEnquiry'])->name('delete_enquiry');
@@ -263,15 +273,17 @@ Route::post('/loaddistrict', [HomeController::class, 'loaddistrict'])->name('hom
 Route::post('/loadcity', [HomeController::class, 'loadcity'])->name('home.loadcity');
 
 
-Route::get('privacy-policy', function(){
+Route::get('privacy-policy', function () {
     return view('front.privacy-policy');
 });
 
 
 
-Route::get('delete-account', function(){
+Route::get('delete-account', function () {
     return view('front.delete-account');
 });
 
 // Sitemap
 Route::get('sitemap.xml', [SitemapController::class, 'index'])->name('sitemap');
+
+Route::get('areas-we-cover', [HomeController::class, 'AreasWeCover'])->name('home.areas_we_cover');
