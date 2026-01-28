@@ -33,6 +33,26 @@
             font-size: 16px;
             line-height: 1.8;
             color: #555;
+            text-align: justify;
+        }
+
+        .content-area p {
+            margin-bottom: 20px;
+        }
+
+        .tf-btn.btn-fill {
+            background-color: #333;
+            color: #fff;
+            padding: 12px 30px;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .tf-btn.btn-fill:hover {
+            background-color: #db5518;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(219, 85, 24, 0.3);
         }
     </style>
 @endsection

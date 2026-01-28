@@ -289,13 +289,3 @@ Route::get('sitemap.xml', [SitemapController::class, 'index'])->name('sitemap');
 Route::get('areas-we-cover', [HomeController::class, 'AreasWeCover'])->name('home.areas_we_cover');
 Route::get('areas-we-cover/{slug}', [HomeController::class, 'AreaDetail'])->name('home.area_detail');
 
-Route::get('update-area-slugs', function () {
-    $areas = \App\Models\Area::all();
-    foreach ($areas as $area) {
-        if (empty($area->slug)) {
-            $area->slug = \Illuminate\Support\Str::slug($area->name);
-            $area->save();
-        }
-    }
-    return 'Slugs updated!';
-});
