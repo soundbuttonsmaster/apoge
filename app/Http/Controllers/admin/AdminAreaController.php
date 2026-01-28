@@ -43,7 +43,11 @@ class AdminAreaController extends Controller
         if ($request->hasFile('image')) {
             $image = $request->file('image');
             $imageName = time() . '.' . $image->getClientOriginalExtension();
-            $image->move(public_path('uploads/areas'), $imageName);
+            $path = public_path('uploads/areas');
+            if (!File::exists($path)) {
+                File::makeDirectory($path, 0755, true);
+            }
+            $image->move($path, $imageName);
             $area->image = $imageName;
         }
 
@@ -82,7 +86,11 @@ class AdminAreaController extends Controller
             }
             $image = $request->file('image');
             $imageName = time() . '.' . $image->getClientOriginalExtension();
-            $image->move(public_path('uploads/areas'), $imageName);
+            $path = public_path('uploads/areas');
+            if (!File::exists($path)) {
+                File::makeDirectory($path, 0755, true);
+            }
+            $image->move($path, $imageName);
             $area->image = $imageName;
         }
 
