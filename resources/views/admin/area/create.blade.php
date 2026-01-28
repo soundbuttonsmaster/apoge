@@ -57,6 +57,27 @@
                                         </div>
                                     </div>
 
+                                    <div class="col-sm-12">
+                                        <div class="form-group">
+                                            <label for="meta_title">Meta Title:</label>
+                                            <input type="text" name="meta_title" id="meta_title" class="form-control" value="{{ old('meta_title', isset($area) ? $area->meta_title : '') }}">
+                                        </div>
+                                    </div>
+
+                                    <div class="col-sm-12">
+                                        <div class="form-group">
+                                            <label for="meta_keywords">Meta Keywords:</label>
+                                            <textarea name="meta_keywords" id="meta_keywords" class="form-control">{{ old('meta_keywords', isset($area) ? $area->meta_keywords : '') }}</textarea>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-sm-12">
+                                        <div class="form-group">
+                                            <label for="meta_description">Meta Description:</label>
+                                            <textarea name="meta_description" id="meta_description" class="form-control">{{ old('meta_description', isset($area) ? $area->meta_description : '') }}</textarea>
+                                        </div>
+                                    </div>
+
                                     <div class="col-sm-6">
                                         <div class="form-group">
                                             <label><input type="checkbox" name="status" id="status" value="1"

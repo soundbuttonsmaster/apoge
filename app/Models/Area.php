@@ -9,5 +9,5 @@ class Area extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['name', 'slug', 'image', 'short_description', 'full_description', 'status'];
+    protected $fillable = ['name', 'slug', 'image', 'short_description', 'full_description', 'meta_title', 'meta_keywords', 'meta_description', 'status'];
 }

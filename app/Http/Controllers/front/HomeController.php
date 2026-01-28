@@ -555,9 +555,9 @@ class HomeController extends Controller
     {
         $area = Area::where('slug', $slug)->where('status', 1)->firstOrFail();
 
-        $meta_title = $area->name . ' | Areas We Cover | Apogee Agrotech';
-        $meta_keywords = $area->name . ', Apogee Agrotech, Laser Land Leveller';
-        $meta_description = $area->short_description ?? 'We serve in ' . $area->name . '. Contact Apogee Agrotech for best agricultural equipment.';
+        $meta_title = $area->meta_title ?: $area->name . ' | Areas We Cover | Apogee Agrotech';
+        $meta_keywords = $area->meta_keywords ?: $area->name . ', Apogee Agrotech, Laser Land Leveller';
+        $meta_description = $area->meta_description ?: ($area->short_description ?? 'We serve in ' . $area->name . '. Contact Apogee Agrotech for best agricultural equipment.');
 
         return view('front.area-detail', compact('area', 'meta_title', 'meta_keywords', 'meta_description'));
     }

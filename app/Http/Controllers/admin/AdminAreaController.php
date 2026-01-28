@@ -35,6 +35,9 @@ class AdminAreaController extends Controller
         $area->slug = Str::slug($request->name);
         $area->short_description = $request->short_description;
         $area->full_description = $request->full_description;
+        $area->meta_title = $request->meta_title;
+        $area->meta_keywords = $request->meta_keywords;
+        $area->meta_description = $request->meta_description;
         $area->status = $request->status ? 1 : 0;
 
         if ($request->hasFile('image')) {
@@ -67,6 +70,9 @@ class AdminAreaController extends Controller
         $area->slug = Str::slug($request->name);
         $area->short_description = $request->short_description;
         $area->full_description = $request->full_description;
+        $area->meta_title = $request->meta_title;
+        $area->meta_keywords = $request->meta_keywords;
+        $area->meta_description = $request->meta_description;
         $area->status = $request->status ? 1 : 0;
 
         if ($request->hasFile('image')) {
