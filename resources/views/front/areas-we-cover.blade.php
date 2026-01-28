@@ -15,9 +15,20 @@
                 @if(isset($areas) && count($areas) > 0)
                     @foreach($areas as $area)
                         <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
-                            <div class="area-box p-3 border rounded text-center shadow-sm">
-                                <h5 class="m-0">{{ $area->name }}</h5>
-                            </div>
+                            <a href="{{ route('home.area_detail', $area->slug) }}" class="text-decoration-none text-dark">
+                                <div class="area-box p-3 border rounded text-center shadow-sm h-100">
+                                    @if($area->image)
+                                        <div class="mb-3">
+                                            <img src="{{ asset('uploads/areas/' . $area->image) }}" alt="{{ $area->name }}"
+                                                class="img-fluid rounded" style="max-height: 150px; object-fit: cover;">
+                                        </div>
+                                    @endif
+                                    <h5 class="m-0 mb-2">{{ $area->name }}</h5>
+                                    @if($area->short_description)
+                                        <p class="small text-muted mb-0">{{ Str::limit($area->short_description, 100) }}</p>
+                                    @endif
+                                </div>
+                            </a>
                         </div>
                     @endforeach
                 @else

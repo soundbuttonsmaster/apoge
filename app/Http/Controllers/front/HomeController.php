@@ -551,4 +551,15 @@ class HomeController extends Controller
         return view('front.areas-we-cover', compact('areas', 'meta_title', 'meta_keywords', 'meta_description'));
     }
 
+    public function AreaDetail($slug)
+    {
+        $area = Area::where('slug', $slug)->where('status', 1)->firstOrFail();
+
+        $meta_title = $area->name . ' | Areas We Cover | Apogee Agrotech';
+        $meta_keywords = $area->name . ', Apogee Agrotech, Laser Land Leveller';
+        $meta_description = $area->short_description ?? 'We serve in ' . $area->name . '. Contact Apogee Agrotech for best agricultural equipment.';
+
+        return view('front.area-detail', compact('area', 'meta_title', 'meta_keywords', 'meta_description'));
+    }
+
 }

@@ -11,7 +11,7 @@
                         </div>
                         <div class="card-body">
                             <form action="{{ isset($area) ? route('admin.area.update', $area->id) : route('admin.area.store') }}" method="POST"
-                                data-parsley-validate>
+                                enctype="multipart/form-data" data-parsley-validate>
                                 @csrf
                                 @if(isset($area))
                                     @method('POST')
@@ -25,6 +25,35 @@
                                             @error('name')
                                                 <p class="text-danger">{{ $message }}</p>
                                             @enderror
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <label for="image">Image:</label>
+                                            <input type="file" name="image" id="image" class="form-control">
+                                            @if(isset($area) && $area->image)
+                                                <div class="mt-2">
+                                                    <img src="{{ asset('uploads/areas/' . $area->image) }}" width="100" alt="Area Image">
+                                                </div>
+                                            @endif
+                                            @error('image')
+                                                <p class="text-danger">{{ $message }}</p>
+                                            @enderror
+                                        </div>
+                                    </div>
+
+                                    <div class="col-sm-12">
+                                        <div class="form-group">
+                                            <label for="short_description">Short Description:</label>
+                                            <textarea name="short_description" id="short_description" class="form-control">{{ old('short_description', isset($area) ? $area->short_description : '') }}</textarea>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-sm-12">
+                                        <div class="form-group">
+                                            <label for="full_description">Full Description:</label>
+                                            <textarea name="full_description" id="full_description" class="form-control">{{ old('full_description', isset($area) ? $area->full_description : '') }}</textarea>
                                         </div>
                                     </div>
 
@@ -50,4 +79,8 @@
             </div>
         </div>
     </main>
+    <script src="{{ asset('ckeditor/ckeditor.js') }}"></script>
+    <script>
+        CKEDITOR.replace('full_description');
+    </script>
 @endsection
