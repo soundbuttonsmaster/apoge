@@ -16544,6 +16544,12 @@ svg path {
   color: #000;
 }
 
+.tf-shop-control h1 {
+  font-weight: 600;
+  font-size: 25px;
+  color: #000;
+}
+
 .tf-shop-control {
   display: -webkit-box;
   display: -moz-box;
@@ -22035,6 +22041,13 @@ svg path {
 
 
 .content-inner h2 {
+  font-weight: 600;
+  font-size: 22px;
+  margin: 0px;
+  padding: 0px;
+}
+
+.content-inner h1 {
   font-weight: 600;
   font-size: 22px;
   margin: 0px;

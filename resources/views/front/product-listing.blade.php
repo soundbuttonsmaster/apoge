@@ -55,8 +55,7 @@
                                         @if (!empty($AllCategory))
                                             @foreach ($AllCategory as $cat)
                                                 <li>
-                                                    <div class="link">{{ $cat->name }}<i
-                                                            class="fa fa-chevron-down"></i></div>
+                                                    <div class="link">{{ $cat->name }}<i class="fa fa-chevron-down"></i></div>
                                                     @php
                                                         $subcategory = \App\Models\SubCategory::where(
                                                             'category_id',
@@ -83,17 +82,17 @@
 
 
                                     <!--
-                                                                      <ul class="category-list">
-                                                                        <li class="item"> <a href="laser-land-leveller.html">Laser Land Leveller</a> </li>
+                                                                          <ul class="category-list">
+                                                                            <li class="item"> <a href="laser-land-leveller.html">Laser Land Leveller</a> </li>
 
 
 
 
 
-                                                                        <li class="item"> <a href="#">GNSS Land Leveller</a> </li>
-                                                                        <li class="item"> <a href="#">Rotavator</a> </li>
-                                                                         
-                                                                      </ul> -->
+                                                                            <li class="item"> <a href="#">GNSS Land Leveller</a> </li>
+                                                                            <li class="item"> <a href="#">Rotavator</a> </li>
+
+                                                                          </ul> -->
                                 </div>
                             </div>
 
@@ -105,21 +104,21 @@
                         <div class="tf-shop-control">
                             <div class="control-lef">
 
-                                <h2>{{ $subcategory_name ?? ($category_name ?? '') }}</h2>
+                                <h1>{{ $subcategory_name ?? ($category_name ?? '') }}</h1>
                             </div>
                             <!--  <div class="control-right">
-                                                                    <div class="tf-control-sorting">
-                                                                      <div class="tf-dropdown-sort">
-                                                                        <div class="tf-btn style-2" data-bs-toggle="dropdown"> <span class="text-sort-value">Default sorting</span> <i class="icon-arrow_down"></i> </div>
-                                                                        <div class="dropdown-menu ">
-                                                                          <div class="select-item "> <span class="text-value-item"> New Post </span> </div>
-                                                                          <div class="select-item"> <span class="text-value-item"> Regular Post </span> </div>
-                                                                          <div class="select-item active"> <span class="text-value-item"> Lastest Posts </span> </div>
-                                                                          <div class="select-item "> <span class="text-value-item"> All Post </span> </div>
+                                                                        <div class="tf-control-sorting">
+                                                                          <div class="tf-dropdown-sort">
+                                                                            <div class="tf-btn style-2" data-bs-toggle="dropdown"> <span class="text-sort-value">Default sorting</span> <i class="icon-arrow_down"></i> </div>
+                                                                            <div class="dropdown-menu ">
+                                                                              <div class="select-item "> <span class="text-value-item"> New Post </span> </div>
+                                                                              <div class="select-item"> <span class="text-value-item"> Regular Post </span> </div>
+                                                                              <div class="select-item active"> <span class="text-value-item"> Lastest Posts </span> </div>
+                                                                              <div class="select-item "> <span class="text-value-item"> All Post </span> </div>
+                                                                            </div>
+                                                                          </div>
                                                                         </div>
-                                                                      </div>
-                                                                    </div>
-                                                                  </div> -->
+                                                                      </div> -->
                         </div>
 
 
@@ -129,8 +128,7 @@
                                 @foreach ($productlisting as $item)
                                     <div class="col-lg-4">
                                         <div class="card-provide img-hover">
-                                            <div class="has-border"> <a
-                                                    href="{{ route('home.product_datels', $item->slug) }}">
+                                            <div class="has-border"> <a href="{{ route('home.product_datels', $item->slug) }}">
                                                     <div class="image">
                                                         @if (!empty($item->product_image) && isset(json_decode($item->product_image)[0]))
                                                             <img src="{{ asset('uploads/products/list/' . json_decode($item->product_image)[0]) }}"
@@ -139,7 +137,8 @@
 
                                                     </div>
                                                     <div class="title font-worksans hover-text-secondary">
-                                                        {{ Str::limit($item->product_name, 18) }}</div>
+                                                        {{ Str::limit($item->product_name, 18) }}
+                                                    </div>
                                                     <p class="text">{{ Str::limit($item->short_description, 53) }} </p>
                                                     <span class="tf-btn-read"> View Details </span>
                                                 </a> </div>
@@ -159,14 +158,14 @@
 
 
                         <!--  <div class=" tf-page-pagination">
-                                                                  <ul>
-                                                                    <li> <a class="active" href="javascript:void(0)">1</a> </li>
-                                                                    <li> <a href="#">2</a> </li>
-                                                                    <li> <a href="#">3</a> </li>
-                                                                  </ul>
-                                                                </div> -->
+                                                                      <ul>
+                                                                        <li> <a class="active" href="javascript:void(0)">1</a> </li>
+                                                                        <li> <a href="#">2</a> </li>
+                                                                        <li> <a href="#">3</a> </li>
+                                                                      </ul>
+                                                                    </div> -->
                     </div>
                 </div>
             </div>
         </div>
-    @endsection
+@endsection
