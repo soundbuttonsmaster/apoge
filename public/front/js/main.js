@@ -53,19 +53,21 @@
 
             $(document).on(
                 "click",
-                ".menu-item-has-children-mobile",
-                function () {
+                ".menu-item-has-children-mobile > .item-menu-mobile",
+                function (e) {
+                    e.preventDefault();
+                    var $parent = $(this).parent();
                     var args = { duration: 200 };
-                    if ($(this).hasClass("active")) {
-                        $(this).children(".sub-menu-mobile").slideUp(args);
-                        $(this).removeClass("active");
+                    if ($parent.hasClass("active")) {
+                        $parent.children(".sub-menu-mobile").slideUp(args);
+                        $parent.removeClass("active");
                     } else {
                         $(".sub-menu-mobile").slideUp(args);
-                        $(this).children(".sub-menu-mobile").slideDown(args);
+                        $parent.children(".sub-menu-mobile").slideDown(args);
                         $(".menu-item-has-children-mobile").removeClass(
                             "active"
                         );
-                        $(this).addClass("active");
+                        $parent.addClass("active");
                     }
                 }
             );
@@ -387,7 +389,7 @@
             progressPath.getBoundingClientRect();
             progressPath.style.transition =
                 progressPath.style.WebkitTransition =
-                    "stroke-dashoffset 10ms linear";
+                "stroke-dashoffset 10ms linear";
             var updateprogress = function () {
                 var scroll = $(window).scrollTop();
                 var height = $(document).height() - $(window).height();
@@ -437,7 +439,7 @@
                     // Logic cho màn hình lớn hơn hoặc bằng 550px
                     if (
                         scrollPosition + windowHeight >
-                            sectionOffsetTop + 100 &&
+                        sectionOffsetTop + 100 &&
                         scrollPosition < sectionOffsetTop + sectionHeight - 100
                     ) {
                         $(this).addClass("active-animate");
@@ -787,20 +789,20 @@
 
 
 
-$(function() {
-    var Accordion = function(el, multiple) {
+$(function () {
+    var Accordion = function (el, multiple) {
         this.el = el || {};
         this.multiple = multiple || false;
 
         // Variables privadas
         var links = this.el.find('.link');
         // Evento
-        links.on('click', {el: this.el, multiple: this.multiple}, this.dropdown)
+        links.on('click', { el: this.el, multiple: this.multiple }, this.dropdown)
     }
 
-    Accordion.prototype.dropdown = function(e) {
+    Accordion.prototype.dropdown = function (e) {
         var $el = e.data.el;
-            $this = $(this),
+        $this = $(this),
             $next = $this.next();
 
         $next.slideToggle();
@@ -809,7 +811,7 @@ $(function() {
         if (!e.data.multiple) {
             $el.find('.submenu').not($next).slideUp().parent().removeClass('open');
         };
-    }   
+    }
 
     var accordion = new Accordion($('#accordion'), false);
 });
