@@ -20,9 +20,8 @@
                                         <div class="content">
                                             <p class="sub-title font-snowfall tf-fade-top fade-item-1"> Redefining the
                                                 Agriculture</p>
-                                            <h1 class="title font-farmhouse tf-fade-right fade-item-2"> Laser Land Levelling
-                                                equipment for
-                                                agriculture</h1>
+                                            <h1 class="title font-farmhouse tf-fade-right fade-item-2"> Laser Land Leveller
+                                                for Precision Agriculture</h1>
                                             <div class="img-item "> <img
                                                     src="{{ asset('front') }}/images/item/line-throw-title.png"
                                                     class="tf-trainsition-draw-left access-trainsition"
@@ -144,8 +143,8 @@
         <section class="s-break-page">
             <!-- <div class="img-item item-1"> <img src="{{ asset('front') }}/images/item/grass-4.png" alt="" class="" /> </div> -->
             <!--   <div class="img-item item-2 wow zoomIn">
-                                                                                <div class="scroll-element-3"> <img src="{{ asset('front') }}/images/item/barn.png" alt="" class="" /> </div>
-                                                                              </div> -->
+                                                                                        <div class="scroll-element-3"> <img src="{{ asset('front') }}/images/item/barn.png" alt="" class="" /> </div>
+                                                                                      </div> -->
             <!-- <div class="img-item item-3"> <img src="{{ asset('front') }}/images/item/page-title-top.png" alt="" class="" /> </div> -->
         </section>
         <!-- /.Section-break-page -->
@@ -234,7 +233,7 @@
                                     <p class="sub-title wow fadeInUp" data-wow-delay="0s">We have 15 years of agriculture
                                         farming experience
                                     </p>
-                                    <h1 class="title text-container tf-animate-2"> Apogee Group</h1>
+                                    <h2 class="title text-container tf-animate-2"> Apogee Group</h2>
                                 </div>
                                 <p class="text-1">APOGEE Agrotech, with its headquarters located in Hapur, stands as one of
                                     the highly
@@ -330,9 +329,9 @@
                     <p class="sub-title">What We Provide </p>
                     <p class="title text-anime-style-1 overflow-hidden">Land Levelling Implements</p>
                     <!--  <p class=" text">
-                                                                                                                                                                                                Duis eleifend euismod arcu, nec faucibus mauris finibus id. Integer mattis, tellus non finibus
-                                                                                                                                                                                                rutrum.
-                                                                                                                                                                                            </p> -->
+                                                                                                                                                                                                                Duis eleifend euismod arcu, nec faucibus mauris finibus id. Integer mattis, tellus non finibus
+                                                                                                                                                                                                                rutrum.
+                                                                                                                                                                                                            </p> -->
                     <div class="img-item"> <img class="tf-animate-1" src="{{ asset('front') }}/images/item/rice-plant-2.png"
                             alt="Rice Image Icon" /> </div>
                 </div>
@@ -426,11 +425,11 @@
                                     delivering top-quality
                                     value and services</div>
                                 <!-- <p class="sub">
-                                                                                                                    Ultrices sagittis orci a
-                                                                                                                    scelerisque purus semper eget
-                                                                                                                    duis at. Sollicitudin nibh sit
-                                                                                                                    amet commodo nulla.
-                                                                                                                </p> -->
+                                                                                                                            Ultrices sagittis orci a
+                                                                                                                            scelerisque purus semper eget
+                                                                                                                            duis at. Sollicitudin nibh sit
+                                                                                                                            amet commodo nulla.
+                                                                                                                        </p> -->
                             </li>
                             <li>
                                 <p class="sub"> We, here, ensure the best service across PAN India and internationally.
@@ -537,10 +536,10 @@
                             </div>
                         </div>
                         <!--  <div class="col-lg-12">
-                                                                                      <div class="bot">
-                                                                                        <div class="swiper-pagination style-1 pagination-s-project"></div>
-                                                                                        <a href="#" class="hover-text-4">View All</a> </div>
-                                                                                    </div> -->
+                                                                                              <div class="bot">
+                                                                                                <div class="swiper-pagination style-1 pagination-s-project"></div>
+                                                                                                <a href="#" class="hover-text-4">View All</a> </div>
+                                                                                            </div> -->
                     </div>
                 </div>
             </div>
@@ -795,7 +794,9 @@
                                     <div id="collapseFour" class="accordion-collapse collapse"
                                         data-bs-parent="#accordionExample">
                                         <div class="accordion-body">
-                                            Crops that can be grown using the laser land levelling technology in India include wheat, rice, cane, cotton, and maize, which are all grown in the various types of soil conditions found in India.
+                                            Crops that can be grown using the laser land levelling technology in India
+                                            include wheat, rice, cane, cotton, and maize, which are all grown in the various
+                                            types of soil conditions found in India.
                                         </div>
                                     </div>
                                 </div>
@@ -811,7 +812,8 @@
                                     <div id="collapseFive" class="accordion-collapse collapse"
                                         data-bs-parent="#accordionExample">
                                         <div class="accordion-body">
-                                            Apogee Agrotech is the leading and most reliable manufacturer of both laser land levellers and GNSS land levellers in India.
+                                            Apogee Agrotech is the leading and most reliable manufacturer of both laser land
+                                            levellers and GNSS land levellers in India.
                                         </div>
                                     </div>
                                 </div>
@@ -866,10 +868,10 @@
                                         </div>
                                     </div>
                                     <!--  <div class="swiper-slide">
-                                                                                            <div class="slide-partner">
-                                                                                              <div class="image"><img src="{{ asset('front') }}/images/partner/02.jpg" alt=""></div>
-                                                                                            </div>
-                                                                                          </div> -->
+                                                                                                    <div class="slide-partner">
+                                                                                                      <div class="image"><img src="{{ asset('front') }}/images/partner/02.jpg" alt=""></div>
+                                                                                                    </div>
+                                                                                                  </div> -->
                                     <div class="swiper-slide">
                                         <div class="slide-partner">
                                             <div class="image"> <img src="{{ asset('front') }}/images/partner/03.jpg"
