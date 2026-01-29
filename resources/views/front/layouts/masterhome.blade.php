@@ -588,8 +588,7 @@ src="https://www.facebook.com/tr?id=851416281111227&ev=PageView&noscript=1"
                                                             href="{{ route('home.about_us') }}">About Us</a></li>
                                                     <li class="menu-item"><a
                                                             href="{{ route('home.time_line') }}">Time line</a></li>
-                                                    <li class="menu-item"><a
-                                                            href="{{ route('home.areas_we_cover') }}">Areas We Cover</a></li>
+
                                                 </ul>
                                             </li>
                                             <li class="menu-item menu-item-has-children-mobile"> <a
@@ -661,6 +660,9 @@ src="https://www.facebook.com/tr?id=851416281111227&ev=PageView&noscript=1"
                                             <li class="menu-item menu-item-has-children-mobile"> <a
                                                     href="{{ route('home.testimonials') }}" class="item-menu-mobile">Testimonials</a></li>
                                             <!-- <li class="menu-item menu-item-has-children-mobile"><a href="#" class="item-menu-mobile">Dealer</a></li> -->
+                                            <li class="menu-item menu-item-has-children-mobile"><a
+                                                    href="{{ route('home.areas_we_cover') }}"
+                                                    class="item-menu-mobile">Areas We Cover</a></li>
                                             <li class="menu-item menu-item-has-children-mobile"><a
                                                     href="{{ route('home.contact_us') }}"
                                                     class="item-menu-mobile">Contact</a></li>

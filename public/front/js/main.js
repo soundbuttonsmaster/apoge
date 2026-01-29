@@ -55,19 +55,21 @@
                 "click",
                 ".menu-item-has-children-mobile > .item-menu-mobile",
                 function (e) {
-                    e.preventDefault();
                     var $parent = $(this).parent();
-                    var args = { duration: 200 };
-                    if ($parent.hasClass("active")) {
-                        $parent.children(".sub-menu-mobile").slideUp(args);
-                        $parent.removeClass("active");
-                    } else {
-                        $(".sub-menu-mobile").slideUp(args);
-                        $parent.children(".sub-menu-mobile").slideDown(args);
-                        $(".menu-item-has-children-mobile").removeClass(
-                            "active"
-                        );
-                        $parent.addClass("active");
+                    if ($parent.find(".sub-menu-mobile").length > 0) {
+                        e.preventDefault();
+                        var args = { duration: 200 };
+                        if ($parent.hasClass("active")) {
+                            $parent.children(".sub-menu-mobile").slideUp(args);
+                            $parent.removeClass("active");
+                        } else {
+                            $(".sub-menu-mobile").slideUp(args);
+                            $parent.children(".sub-menu-mobile").slideDown(args);
+                            $(".menu-item-has-children-mobile").removeClass(
+                                "active"
+                            );
+                            $parent.addClass("active");
+                        }
                     }
                 }
             );
