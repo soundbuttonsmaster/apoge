@@ -11,7 +11,7 @@
                     @if($area->image)
                         <div class="mb-5 text-center">
                             <img src="{{ asset('uploads/areas/' . $area->image) }}" alt="{{ $area->name }}"
-                                class="img-fluid rounded shadow" style="max-height: 500px;">
+                                class="img-fluid rounded shadow" style="width: 100%; height: 450px; object-fit: cover;">
                         </div>
                     @endif
 
