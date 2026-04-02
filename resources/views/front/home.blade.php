@@ -638,10 +638,8 @@
                         </g>
                     </svg> </div>
             </div>
-            <div class="s-img-item scroll-element-3"> <img class="scale-1-1 lazyload"
-                    src="{{ asset('front') }}/images/section/yellow-f.png"
-                    data-src="{{ asset('front') }}/./images/section/yellow-f.png"
-                    alt="Golden yellow agricultural field ready for harvest, representing a successful and well-managed crop season">
+            <div class="s-img-item scroll-element-3 scale-1-1 customer-feedback-bg" role="img"
+                aria-label="Golden yellow agricultural field ready for harvest, representing a successful and well-managed crop season">
             </div>
         </section>
         <!-- /.Section testimonial 3 -->

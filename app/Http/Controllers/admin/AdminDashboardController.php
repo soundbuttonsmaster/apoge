@@ -8,6 +8,7 @@ use App\Models\Order;
 use App\Models\User;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Artisan;
 use DB;
 use Validator;
 use Session;
@@ -98,5 +99,26 @@ class AdminDashboardController extends Controller
         $enqury = Enquiry::find($id);
         $enqury->delete();
         return redirect()->back()->with(['message' => 'Enquiry Deleted Successfully', 'alert-type' => 'success']);
+    }
+
+    public function sitemap()
+    {
+        $sitemapPath = public_path('sitemap.xml');
+        $sitemapExists = file_exists($sitemapPath);
+        $sitemapLastModified = $sitemapExists ? Carbon::createFromTimestamp(filemtime($sitemapPath)) : null;
+        $sitemapUrl = url('sitemap.xml');
+
+        return view('admin.sitemap.index', compact('sitemapExists', 'sitemapLastModified', 'sitemapUrl'));
+    }
+
+    public function generateSitemap()
+    {
+        try {
+            Artisan::call('sitemap:generate');
+            return redirect()->back()->with(['message' => 'Sitemap generated successfully', 'alert-type' => 'success']);
+        } catch (\Throwable $e) {
+            report($e);
+            return redirect()->back()->with(['message' => 'Sitemap generation failed. Please check logs.', 'alert-type' => 'error']);
+        }
     }
 }

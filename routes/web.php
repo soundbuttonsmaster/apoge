@@ -65,6 +65,8 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'middleware' => 'AdminAuth'
     Route::get('/logout', [AdminAtuthController::class, 'logout'])->name('logout');
     Route::match(['get', 'post'], '/change-password', [AdminDashboardController::class, 'adminChangePassword']);
     Route::post('PsswordChange', [AdminDashboardController::class, 'PsswordChange'])->name('PsswordChange');
+    Route::get('/sitemap', [AdminDashboardController::class, 'sitemap'])->name('sitemap.index');
+    Route::post('/sitemap/generate', [AdminDashboardController::class, 'generateSitemap'])->name('sitemap.generate');
 
 
     Route::group(['prefix' => 'category', 'as' => 'category.'], function () {

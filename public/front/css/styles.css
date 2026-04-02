@@ -15720,6 +15720,18 @@ svg path {
   bottom: 0;
 }
 
+.s-testimonial-3 .s-img-item.customer-feedback-bg {
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 180px;
+  background-image: url("../images/section/yellow-f.png");
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  background-size: cover;
+  pointer-events: none;
+}
+
 .s-farm-event {
   background-color: transparent;
   padding: 0px;

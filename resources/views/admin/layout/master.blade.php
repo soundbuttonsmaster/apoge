@@ -186,6 +186,12 @@
                             Areas We Cover
                         </a>
 
+                        <a class="nav-link {{ Route::is('admin.sitemap.index') ? 'active' : '' }}"
+                            href="{{ route('admin.sitemap.index') }}">
+                            <div class="sb-nav-link-icon"><i class="fa fa-sitemap"></i></div>
+                            Sitemap
+                        </a>
+
 
                     </div>
                 </div>
