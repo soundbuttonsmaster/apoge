@@ -74,7 +74,8 @@ INSERT INTO `enquiries` VALUES ('16','Shelby Maestas','maestas.shelby@hotmail.co
 
 Sign up today for free trial :-  http://moneyrobot.marketinghelp.online/
 
-✅ No credit card required','2025-06-08 02:27:14','2025-06-08 02:27:14');
+✅ No credit card required
+','2025-06-08 02:27:14','2025-06-08 02:27:14');
 INSERT INTO `enquiries` VALUES ('17','GeorgeUnede','yawiviseya67@gmail.com','8253413687','France','Zdravo, htio sam znati vašu cijenu.','2025-06-12 14:59:21','2025-06-12 14:59:21');
 INSERT INTO `enquiries` VALUES ('18','LeeUnede','yawiviseya67@gmail.com','8511936776','Poland','Salam, qiymətinizi bilmək istədim.','2025-06-15 08:02:56','2025-06-15 08:02:56');
 INSERT INTO `enquiries` VALUES ('19','GeorgeUnede','yawiviseya67@gmail.com','8699143292','Poland','Kaixo, zure prezioa jakin nahi nuen.','2025-06-16 18:33:25','2025-06-16 18:33:25');
@@ -177,7 +178,8 @@ After 24 hours','2025-08-22 21:43:33','2025-08-22 21:43:33');
 INSERT INTO `enquiries` VALUES ('64','Kevinzek','dsfs2k9@gmail.com','8414314937','Japan','Cargo delivery from China is trustworthy and fast. 
 Our company delivers custom solutions for companies of any size. 
 We manage all logistics processes to make your supply chain seamless. 
-<a href=\"https://asia-cargo.site/\">air freight from china</a> ','2025-08-23 04:56:40','2025-08-23 04:56:40');
+<a href=\"https://asia-cargo.site/\">air freight from china</a> 
+','2025-08-23 04:56:40','2025-08-23 04:56:40');
 INSERT INTO `enquiries` VALUES ('65','EllisIroks','lambertgary0@gmail.com','8335475835','Czech Republic','URGENT! YOU’RE CHOSEN FOR $213,945.20! https://script.google.com/macros/s/AKfycbyI_F_Jmx3lz-hMLaYUT_Vkq6xoElcKJe3fAhuT01lKGOdeYsJVYwTvTKc4uSB7Mn9y/exec/1f6j9a3e/3x8r/d/ai/7f7i8l3p/7c6t/o/a7/3q1u7f5u/4q0t/v/me','2025-08-24 10:46:30','2025-08-24 10:46:30');
 INSERT INTO `enquiries` VALUES ('66','Test','Vivekkapoor08@gmail.com','8167826481','Test','Test','2025-08-28 22:40:25','2025-08-28 22:40:25');
 INSERT INTO `enquiries` VALUES ('67','HarlanRoops','nomin.momin+162m0@mail.ru','8222492869','New Zealand','Mfwdjwdhefiejfh fhiwuewuoioruiwes jkcsjhcksdlalsdjfhgh ejdowkkDIEWHRUEOFIW JIEWFOKDWDJEWIHFIEWFJEWFJIkhfjejfie efjfwjdfe apogeeagrotech.com','2025-09-03 14:45:16','2025-09-03 14:45:16');
@@ -306,7 +308,8 @@ INSERT INTO `enquiries` VALUES ('116','MediaGuard AI','deal@mediaguardai.com','8
 MediaGuard is here to save the day! 
 Well, say hello to MediaGuard! Say goodbye to monthly fees, and lots of them that add up fast. Get MediaGuard for a small one-ti','2025-11-10 16:53:42','2025-11-10 16:53:42');
 INSERT INTO `enquiries` VALUES ('117','Edwardhedia','joanbush1920@salpingomyu.ru','8226258189','Iceland','Escazu Chocolates, a bean-to-bar chocolate shop in Raleigh, North Carolina, sources most of its beans from Latin America. The shop said it has always worked with smaller farmers and paid them three to four times the commodity price of cacao – which essent','2025-11-10 17:32:15','2025-11-10 17:32:15');
-INSERT INTO `enquiries` VALUES ('118','RufusFog','marierykaczewski1928@salpingomyu.ru','8954168394','Haiti','Cheung, who regularly expresses hostility toward reporters on social media platform X, asserted in a Friday night post that, “some reporters have been caught” taking pictures of sensitive information and “eavesdropping on private, closed-door meetings.” ','2025-11-10 17:32:28','2025-11-10 17:32:28');
+INSERT INTO `enquiries` VALUES ('118','RufusFog','marierykaczewski1928@salpingomyu.ru','8954168394','Haiti','Cheung, who regularly expresses hostility toward reporters on social media platform X, asserted in a Friday night post that, “some reporters have been caught” taking pictures of sensitive information and “eavesdropping on private, closed-door meetings.” 
+','2025-11-10 17:32:28','2025-11-10 17:32:28');
 INSERT INTO `enquiries` VALUES ('119','HectorNuapy','ritadavis1984@salpingomyu.ru','8518446574','Iran','Members of the White House press corps are now restricted from the press secretary’s office, the latest in a series of Trump administration actions to limit media access. 
 <a href=https://kra--43.cc>kra41 cc</a> 
 The new rule says journalists cannot acc','2025-11-10 17:41:20','2025-11-10 17:41:20');
@@ -610,7 +613,8 @@ INSERT INTO `enquiries` VALUES ('219','HenyHeamy','henyas@domopichka.icu','86861
 Почему нужно выбрать нас? 
 Актуальный дизайн, который цепляет взгляд 
 Адаптация под любые устройства (ПК, смартфоны, планшеты) 
-SEO-оптимизация для роста в поисковых системах ','2025-12-05 23:28:25','2025-12-05 23:28:25');
+SEO-оптимизация для роста в поисковых системах 
+','2025-12-05 23:28:25','2025-12-05 23:28:25');
 INSERT INTO `enquiries` VALUES ('220','LeeUnede','zekisuquc419@gmail.com','8397742965','France','Hej, jeg ønskede at kende din pris.','2025-12-06 06:30:43','2025-12-06 06:30:43');
 INSERT INTO `enquiries` VALUES ('221','LeeUnede','zekisuquc419@gmail.com','8913144796','Georgia','Hola, volia saber el seu preu.','2025-12-06 10:54:13','2025-12-06 10:54:13');
 INSERT INTO `enquiries` VALUES ('222','Walterlon','micucciodthersa6k@gmx.com','8732515117','Benin','KRAKEN DRUGS MARKET — действующие зеркала 2024-2025 
@@ -826,7 +830,8 @@ INSERT INTO `enquiries` VALUES ('307','AndrewPorne','yaroslav.sevastyanov.1988@m
  
 Прочностью https://yaschiki.ru/product/poddon-2800-2500-280/
   Древесина на','2025-12-25 13:01:56','2025-12-25 13:01:56');
-INSERT INTO `enquiries` VALUES ('308','RandyFoord','ramil_gilmanow93@mail.ru','8958653876','Guatemala','При планировании затрат на «мокрые» или вентилируемые фасады цена определится после оценки состояния объекта, а также после подбора подходящих материалов согласно пожеланиям заказчика https://zod07.ru/dekorativnye-elementy/fasadnaja-lepnina/kronshtejn-4l','2025-12-26 03:13:04','2025-12-26 03:13:04');
+INSERT INTO `enquiries` VALUES ('308','RandyFoord','ramil_gilmanow93@mail.ru','8958653876','Guatemala','При планировании затрат на «мокрые» или вентилируемые фасады цена определится после оценки состояния объекта, а также после подбора подходящих материалов согласно пожеланиям заказчика https://zod07.ru/dekorativnye-elementy/fasadnaja-lepnina/kronshtejn-4l
+','2025-12-26 03:13:04','2025-12-26 03:13:04');
 INSERT INTO `enquiries` VALUES ('309','Nikitadep','nikitafofanov46@gmail.com','8481651252','Kazakhstan','Good day! Hope this message finds you well. 
  
 Greetings, I\'m writing to selected webmasters about sponsorship programs. This is a development grant offer. Interested in learning details? Please contact me on WhatsApp +66928160350вЂ¬','2025-12-26 10:20:25','2025-12-26 10:20:25');
@@ -1072,9 +1077,9 @@ INSERT INTO `farmer_registrations` VALUES ('12','vijay','7073826034','Uttar Prad
 INSERT INTO `farmer_registrations` VALUES ('13','Vijaypal Kumavat','9257934906','Rajasthan','Hhh','बिस्सू','331027','Hhhh','Gggg','2025-05-14','2025-05-13 04:59:44','2025-05-13 04:59:44','1024587770842354','2025-08-31 23:59:59','1',NULL,'CUST901227',NULL);
 INSERT INTO `farmer_registrations` VALUES ('14','Bde Aks','9042519764','Uttar Pradesh','Delhi','Noida','201301','Dual Slope Laser Kit','SLRT - 75','2025-05-13','2025-05-13 05:19:07','2025-05-13 05:19:07','1411704761893991','2025-08-31 23:59:59','1',NULL,'CUST435073',NULL);
 INSERT INTO `farmer_registrations` VALUES ('15','Vanshika','1234509876','Uttar Pradesh','Haridwar','Noida','201301','Dual Slope Laser Kit','SLRT - 75','2025-05-06','2025-05-13 07:24:40','2025-05-13 07:24:40','0299465704220897','2025-08-31 23:59:59','1',NULL,'CUST937931',NULL);
-INSERT INTO `farmer_registrations` VALUES ('16','Apogee','9760150034','UP','Bulandshahr','Hapur','245101','Apogee Agrotech','bahubali','2025-05-13','2025-05-13 11:29:21','2025-05-13 11:29:21','3645202143644335','2025-08-31 23:59:59','1',NULL,'CUST186482',NULL);
+INSERT INTO `farmer_registrations` VALUES ('16','Apogee','7624003454','UP','Bulandshahr','Hapur','245101','Apogee Agrotech','bahubali','2025-05-13','2025-05-13 11:29:21','2025-05-13 11:29:21','3645202143644335','2025-08-31 23:59:59','1',NULL,'CUST186482',NULL);
 INSERT INTO `farmer_registrations` VALUES ('17','Manish','8272838381','Utter Pradesh','Hapur','Select','245101','Apogee','Bahubali','2025-05-13','2025-05-13 11:31:16','2025-05-13 11:31:16','0440641292283576','2025-08-31 23:59:59','1',NULL,'CUST936540',NULL);
-INSERT INTO `farmer_registrations` VALUES ('18','Apogee','9760150034','UP','Bulandshahr','Hapur','245101','Apogee Agrotech','bahubali','2025-05-13','2025-05-13 11:31:56','2025-05-13 11:31:56','1077540379411381','2025-08-31 23:59:59','1',NULL,'CUST352408',NULL);
+INSERT INTO `farmer_registrations` VALUES ('18','Apogee','7624003354','UP','Bulandshahr','Hapur','245101','Apogee Agrotech','bahubali','2025-05-13','2025-05-13 11:31:56','2025-05-13 11:31:56','1077540379411381','2025-08-31 23:59:59','1',NULL,'CUST352408',NULL);
 INSERT INTO `farmer_registrations` VALUES ('19','Bde Aks','0987654326','Uttar Pradesh','Delhi','Noida','201301','Dual Slope Laser Kit','SLRT - 75','2025-05-15','2025-05-15 06:10:28','2025-05-15 06:10:28','7340623762576404','2025-08-31 23:59:59','1',NULL,'CUST893434',NULL);
 INSERT INTO `farmer_registrations` VALUES ('20','vijay','7073226134','Uttar Pradesh','Rudaki','juhyghyju','331027','test','sdsd','2025-05-14','2025-05-15 06:11:24','2025-05-15 06:11:24','2698010386923731','2025-08-31 23:59:59','1',NULL,'CUST314289',NULL);
 INSERT INTO `farmer_registrations` VALUES ('21','Idols','9999099999','noida','Rudaki','juhyghyju','331027','test','sdsd','2025-05-10','2025-05-15 06:18:25','2025-05-15 06:18:25','6356858550497349','2025-08-31 23:59:59','1',NULL,'CUST619816',NULL);
