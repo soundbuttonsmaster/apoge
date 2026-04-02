@@ -12,7 +12,7 @@
         if ($isHomePage) {
             $defaultTitle = 'Laser Land Leveller India | Best Laser Land Leveler Manufacturer | Apogee Agrotech';
             $defaultKeywords = 'laser land leveller, laser land leveler, laser land leveller india, laser land leveler manufacturer india, best laser land leveller, laser guided land leveller, GNSS land leveller, laser land leveller price, laser land leveller machine, laser land leveller for agriculture, laser land leveller bucket, laser land leveller system, precision land levelling, agricultural land leveller, laser leveller equipment, laser land leveller dealer, laser land leveller supplier, laser land leveller UP, laser land leveller Hapur, apogee laser land leveller, bahubali laser land leveller, laser land leveller cost, laser land leveller benefits, laser land leveller technology';
-            $defaultDescription = 'Apogee Agrotech - India\'s Leading Manufacturer of Laser Land Leveller & Laser Land Leveler Equipment. Best Quality GNSS & Laser Guided Land Levelling Systems for Precision Agriculture. Get Best Price on Laser Land Levellers in India. Call +91 7624002265';
+            $defaultDescription = 'Apogee Agrotech - India\'s Leading Manufacturer of Laser Land Leveller & Laser Land Leveler Equipment. Best Quality GNSS & Laser Guided Land Levelling Systems for Precision Agriculture. Get Best Price on Laser Land Levellers in India. Call +91 9760150034';
             $ogImage = asset('front') . '/images/logo.jpg';
             $canonicalUrl = url('/');
         } else {
@@ -150,7 +150,7 @@
         },
         "contactPoint": {
             "@type": "ContactPoint",
-            "telephone": "+91-7624002265",
+            "telephone": "+91-9760150034",
             "contactType": "Sales",
             "email": "sales@apogeeagrotech.com",
             "areaServed": "IN",
@@ -178,7 +178,7 @@
         "image": "{{ asset('front') }}/images/logo.jpg",
         "@id": "{{ url('/') }}",
         "url": "{{ url('/') }}",
-        "telephone": "+91-7624002265",
+        "telephone": "+91-9760150034",
         "priceRange": "$$",
         "address": {
             "@type": "PostalAddress",
@@ -412,9 +412,9 @@
                                     class="">India's Agriculture Sector</span> </div>
                             <div class="topbar-right">
                                 <ul class="contact-list">
-                                    <li class="item"> <a href="tel:+91 7624002265" class="icon" aria-label="Call us"> <i
+                                    <li class="item"> <a href="tel:+91 9760150034" class="icon" aria-label="Call us"> <i
                                                 class="fa-solid fa-phone-volume"></i> </a> <a
-                                            href="tel:+91 7624002265">+91 7624002265</a> </li>
+                                            href="tel:+91 9760150034">+91 9760150034</a> </li>
                                     <li class="item"> <a href="mailto:sales@apogeeagrotech.com" class="icon" aria-label="Email us"> <i
                                                 class="far fa-envelope"></i> </a> <a
                                             href="mailto:sales@apogeeagrotech.com">sales@apogeeagrotech.com</a> </li>
@@ -570,7 +570,7 @@
                                         <i class="icon-basket"></i>
                                     </a> -->
                                 </div>
-                                <div class="wg-welcome"><a href="https://api.whatsapp.com/send?phone=917624002265"
+                                <div class="wg-welcome"><a href="https://api.whatsapp.com/send?phone=919760150034"
                                         target="_blank" aria-label="Contact us on WhatsApp"> <i class="fab fa-whatsapp"></i></a> </div>
                                 <div class="mobile-button"> <span></span> </div>
                             </div>
@@ -832,7 +832,7 @@
                                         </a>
                                     </div> -->
                                     <div class="wg-welcome"> <a
-                                            href="https://api.whatsapp.com/send?phone=917624002265" target="_blank" aria-label="Contact us on WhatsApp">
+                                            href="https://api.whatsapp.com/send?phone=919760150034" target="_blank" aria-label="Contact us on WhatsApp">
                                             <i class="fab fa-whatsapp"></i></a></div>
                                     <div class="mobile-button"> <span></span> </div>
                                 </div>
@@ -896,7 +896,7 @@
                                             Hapur, UP, 245101 </p>
                                     </li>
                                     <li> <i class="fa-solid fa-phone"></i>
-                                        <p class="phone-number fs-15">7624002265, 9760150034 </p>
+                                        <p class="phone-number fs-15">9760150034 </p>
                                     </li>
                                     <li> <i class="icon-package-box"></i>
                                         <p class="email fs-15"> sales@apogeeagrotech.com </p>

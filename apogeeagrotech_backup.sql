@@ -1,5 +1,5 @@
 INSERT INTO `admins` VALUES ('1','Admin','admin@gmail.com',NULL,'admin@gmail.com','$2y$10$LdbjWZz2m3aUOb4RAtZRoeFDEkYnEpZL6UzmizExl58EbVzDACeyu',NULL,NULL);
-INSERT INTO `become_a_dealers` VALUES ('10','Apogee','apogeeleveller123@gmail.com','7624002254','UP','Bulandshahr','chandok','laser land leveller','2025-03-17 08:08:08','2025-03-17 08:08:08');
+INSERT INTO `become_a_dealers` VALUES ('10','Apogee','apogeeleveller123@gmail.com','9760150034','UP','Bulandshahr','chandok','laser land leveller','2025-03-17 08:08:08','2025-03-17 08:08:08');
 INSERT INTO `become_a_dealers` VALUES ('12','Super deluxe bed room near sea beech','aryapathak07@gmail.com','6201569381','up','asdfgn','dftgyui','zxcvbnm','2025-05-20 16:58:54','2025-05-20 16:58:54');
 INSERT INTO `become_a_dealers` VALUES ('13','Bharat Bajpai','bharat0401195@gmail.com','9140913625','Uttar Pradesh','Sitapur','Bramhawalu','Agriculture Je','2025-07-09 17:16:27','2025-07-09 17:16:27');
 INSERT INTO `become_a_dealers` VALUES ('14','Ashwin','ashwinpanwar86@gmail.com','9927241272','Uttar Pradesh','Muzaffarnagar','Kutubpur','I am interested','2025-12-16 10:24:45','2025-12-16 10:24:45');
@@ -49,7 +49,7 @@ INSERT INTO `categories` VALUES ('28','Rotavator',NULL,'rotavator','1','0','2025
 INSERT INTO `categories` VALUES ('29','GNSS Land Leveller',NULL,'gnss-land-leveller','1','0','2025-03-03 12:24:51','2025-11-06 05:19:50','GNSS Land Leveller Manufacturer India, Precision Farming Solutions','GNSS Land Leveller Manufacturer India, Precision Farming Solutions','Discover a leading GNSS land leveller manufacturer offering 2D & 3D systems, GNSS sensors and antennas for high-accuracy agricultural leveling and irrigation efficiency.',NULL);
 INSERT INTO `categories` VALUES ('30','Laser Land Leveller',NULL,'laser-land-leveller','1','0','2025-03-03 12:25:05','2025-11-06 05:19:27','Laser Land Leveller Manufacturer in India,  Laser Land Leveller Supplier in India','Laser Land Leveller Manufacturer in India,  Laser Land Leveller Supplier in India','Apogee Agrotech — trusted Laser Land Leveller Manufacturer & Supplier in India offering LD & HD Series, GNSS levellers, and Laser Equipment Kits for precise land levelling.',NULL);
 INSERT INTO `categories` VALUES ('38','Gyrovator',NULL,'gyrovator','1','0','2026-01-23 05:24:36','2026-01-23 05:24:36',NULL,NULL,NULL,NULL);
-INSERT INTO `dealers` VALUES ('19','Apogee','apogeeleveller123@gmail.com','7624002254','UP','Bulandshahr','chandok','1','2025-03-24 05:20:23','2025-03-24 05:20:32');
+INSERT INTO `dealers` VALUES ('19','Apogee','apogeeleveller123@gmail.com','9760150034','UP','Bulandshahr','chandok','1','2025-03-24 05:20:23','2025-03-24 05:20:32');
 INSERT INTO `enquiries` VALUES ('6','Ajay k','ajaykk76@yahoo.com','9849018586','Andhra pradesh','Plz send GNSS land levler brocher','2025-05-20 21:46:43','2025-05-20 21:46:43');
 INSERT INTO `enquiries` VALUES ('7','SimonUnede','aferinohis056@gmail.com','8522589862','United kingdom','Hej, jeg ønskede at kende din pris.','2025-05-22 11:59:13','2025-05-22 11:59:13');
 INSERT INTO `enquiries` VALUES ('8','CharlieUnede','yawiviseya67@gmail.com','8325374535','United kingdom','Hej, jeg ønskede at kende din pris.','2025-05-24 11:27:10','2025-05-24 11:27:10');
@@ -1061,7 +1061,7 @@ INSERT INTO `farmer_registrations` VALUES ('1','Vanshika','1234567890','Uttar Pr
 INSERT INTO `farmer_registrations` VALUES ('2','Testing','0987654321','UP','asdf','hgf','765122','Dual Slope Laser Kit','SLRT - 75','2025-04-29','2025-04-29 07:57:00','2025-04-29 07:57:00',NULL,NULL,'0',NULL,'CUST756288',NULL);
 INSERT INTO `farmer_registrations` VALUES ('3','Bde Aks','0987654312','Uttarakhand','Haridwar','Roorkee','247667','Dual Slope Laser Kit','SLRT - 75','2025-04-29','2025-04-29 07:58:45','2025-04-29 07:58:45',NULL,NULL,'0',NULL,'CUST471062',NULL);
 INSERT INTO `farmer_registrations` VALUES ('4','Vanshika AKS','1234567809','Uttar Pradesh','Delhi','Noida','201301','Dual Slope Laser Kit','SLRT - 75','2025-05-01','2025-05-01 10:08:17','2025-05-01 10:08:27','7476206097810694','2025-08-31 23:59:59','1',NULL,'CUST351524',NULL);
-INSERT INTO `farmer_registrations` VALUES ('5','Apogee','7624002254','UP','Bulandshahr','Hapur','245101','Apogee Agrotech','bahubali','2025-05-07','2025-05-07 09:51:43','2025-05-07 09:52:30','5360865164772804','2025-08-31 23:59:59','1',NULL,'CUST524023',NULL);
+INSERT INTO `farmer_registrations` VALUES ('5','Apogee','9760150034','UP','Bulandshahr','Hapur','245101','Apogee Agrotech','bahubali','2025-05-07','2025-05-07 09:51:43','2025-05-07 09:52:30','5360865164772804','2025-08-31 23:59:59','1',NULL,'CUST524023',NULL);
 INSERT INTO `farmer_registrations` VALUES ('6','Shalu','7042708846','UP','Bulandshahr','Hapur','245101','Apogee Agrotech','bahubali','2025-05-08','2025-05-08 06:22:47','2025-05-08 06:23:10','9437862980575564','2025-08-31 23:59:59','1',NULL,'CUST227193',NULL);
 INSERT INTO `farmer_registrations` VALUES ('7','vijay','7073826134','Uttar Pradesh','test','juhyghyju','331027','test','sdsd','2025-05-31','2025-05-09 13:01:26','2025-05-09 13:01:26','9672898420658726','2025-08-31 23:59:59','1',NULL,'CUST544068',NULL);
 INSERT INTO `farmer_registrations` VALUES ('8','vijay','7073826188','noida','asdf34535','juhyghyju','331027','test','sdsd','2025-05-09','2025-05-12 03:53:32','2025-05-12 03:53:32','3972012548183186','2025-08-31 23:59:59','1',NULL,'CUST173658',NULL);
@@ -1072,9 +1072,9 @@ INSERT INTO `farmer_registrations` VALUES ('12','vijay','7073826034','Uttar Prad
 INSERT INTO `farmer_registrations` VALUES ('13','Vijaypal Kumavat','9257934906','Rajasthan','Hhh','बिस्सू','331027','Hhhh','Gggg','2025-05-14','2025-05-13 04:59:44','2025-05-13 04:59:44','1024587770842354','2025-08-31 23:59:59','1',NULL,'CUST901227',NULL);
 INSERT INTO `farmer_registrations` VALUES ('14','Bde Aks','9042519764','Uttar Pradesh','Delhi','Noida','201301','Dual Slope Laser Kit','SLRT - 75','2025-05-13','2025-05-13 05:19:07','2025-05-13 05:19:07','1411704761893991','2025-08-31 23:59:59','1',NULL,'CUST435073',NULL);
 INSERT INTO `farmer_registrations` VALUES ('15','Vanshika','1234509876','Uttar Pradesh','Haridwar','Noida','201301','Dual Slope Laser Kit','SLRT - 75','2025-05-06','2025-05-13 07:24:40','2025-05-13 07:24:40','0299465704220897','2025-08-31 23:59:59','1',NULL,'CUST937931',NULL);
-INSERT INTO `farmer_registrations` VALUES ('16','Apogee','7624003454','UP','Bulandshahr','Hapur','245101','Apogee Agrotech','bahubali','2025-05-13','2025-05-13 11:29:21','2025-05-13 11:29:21','3645202143644335','2025-08-31 23:59:59','1',NULL,'CUST186482',NULL);
+INSERT INTO `farmer_registrations` VALUES ('16','Apogee','9760150034','UP','Bulandshahr','Hapur','245101','Apogee Agrotech','bahubali','2025-05-13','2025-05-13 11:29:21','2025-05-13 11:29:21','3645202143644335','2025-08-31 23:59:59','1',NULL,'CUST186482',NULL);
 INSERT INTO `farmer_registrations` VALUES ('17','Manish','8272838381','Utter Pradesh','Hapur','Select','245101','Apogee','Bahubali','2025-05-13','2025-05-13 11:31:16','2025-05-13 11:31:16','0440641292283576','2025-08-31 23:59:59','1',NULL,'CUST936540',NULL);
-INSERT INTO `farmer_registrations` VALUES ('18','Apogee','7624003354','UP','Bulandshahr','Hapur','245101','Apogee Agrotech','bahubali','2025-05-13','2025-05-13 11:31:56','2025-05-13 11:31:56','1077540379411381','2025-08-31 23:59:59','1',NULL,'CUST352408',NULL);
+INSERT INTO `farmer_registrations` VALUES ('18','Apogee','9760150034','UP','Bulandshahr','Hapur','245101','Apogee Agrotech','bahubali','2025-05-13','2025-05-13 11:31:56','2025-05-13 11:31:56','1077540379411381','2025-08-31 23:59:59','1',NULL,'CUST352408',NULL);
 INSERT INTO `farmer_registrations` VALUES ('19','Bde Aks','0987654326','Uttar Pradesh','Delhi','Noida','201301','Dual Slope Laser Kit','SLRT - 75','2025-05-15','2025-05-15 06:10:28','2025-05-15 06:10:28','7340623762576404','2025-08-31 23:59:59','1',NULL,'CUST893434',NULL);
 INSERT INTO `farmer_registrations` VALUES ('20','vijay','7073226134','Uttar Pradesh','Rudaki','juhyghyju','331027','test','sdsd','2025-05-14','2025-05-15 06:11:24','2025-05-15 06:11:24','2698010386923731','2025-08-31 23:59:59','1',NULL,'CUST314289',NULL);
 INSERT INTO `farmer_registrations` VALUES ('21','Idols','9999099999','noida','Rudaki','juhyghyju','331027','test','sdsd','2025-05-10','2025-05-15 06:18:25','2025-05-15 06:18:25','6356858550497349','2025-08-31 23:59:59','1',NULL,'CUST619816',NULL);
@@ -1298,8 +1298,8 @@ INSERT INTO `farmer_registrations` VALUES ('238','Online Consulting','5678909876
 INSERT INTO `farmer_registrations` VALUES ('239','asdfadsdf','7073822432','Andhra Pradesh','Adilabad','Tamsi',NULL,'asdf','asdf','2025-06-14','2025-06-02 23:33:41','2025-06-02 23:33:41','2435642906091499','2025-09-30 23:59:59','1',NULL,'CUST597508','asdf');
 INSERT INTO `farmer_registrations` VALUES ('240','Shalu','9768767760','Andhra Pradesh','Guntur','Gurazala',NULL,'Apogee','Rl-600','2025-06-02','2025-06-03 19:56:08','2025-06-03 19:56:08','1849182347522180','2025-09-30 23:59:59','1',NULL,'CUST828661','Hapur, 245101');
 INSERT INTO `find_a_dealers` VALUES ('15','vijay','test@gmail.com','9999999999',NULL,NULL,'2025-03-19 09:57:01','2025-03-19 09:57:01');
-INSERT INTO `find_a_dealers` VALUES ('40','Apogee','apogeeleveller123@gmail.com','7624002254','UP','Bulandshahr','2025-04-07 05:32:30','2025-04-07 05:32:30');
-INSERT INTO `find_a_dealers` VALUES ('41','Apogee','apogeeleveller123@gmail.com','7624002254','UP','Bulandshahr','2025-04-07 05:39:22','2025-04-07 05:39:22');
+INSERT INTO `find_a_dealers` VALUES ('40','Apogee','apogeeleveller123@gmail.com','9760150034','UP','Bulandshahr','2025-04-07 05:32:30','2025-04-07 05:32:30');
+INSERT INTO `find_a_dealers` VALUES ('41','Apogee','apogeeleveller123@gmail.com','9760150034','UP','Bulandshahr','2025-04-07 05:39:22','2025-04-07 05:39:22');
 INSERT INTO `find_a_dealers` VALUES ('42','vijay','admin@gmail.com','9999999999','noida',NULL,'2025-04-07 07:43:21','2025-04-07 07:43:21');
 INSERT INTO `find_a_dealers` VALUES ('43','vijay','admin@gmail.com','9999999999','up','Bulandshahr','2025-04-07 07:44:05','2025-04-07 07:44:05');
 INSERT INTO `find_a_dealers` VALUES ('44','Polo T-Shirts','vijay@gmail.com','9999999999','Bulandshahr','up','2025-04-07 07:47:34','2025-04-07 07:47:34');
@@ -1315,11 +1315,11 @@ INSERT INTO `find_a_dealers` VALUES ('53','vijay','admin@gmail.com','9999999999'
 INSERT INTO `find_a_dealers` VALUES ('54','vijay','admin@gmail.com','6376206134','up','Bulandshahr','2025-04-07 08:05:59','2025-04-07 08:05:59');
 INSERT INTO `find_a_dealers` VALUES ('55','vijay','admin@gmail.com','9999999999','up','Bulandshahr','2025-04-07 08:08:18','2025-04-07 08:08:18');
 INSERT INTO `find_a_dealers` VALUES ('57','Bde Aks','bdeaksweb@gmail.com','9042519764','Uttar Pradesh','Delhi','2025-04-07 08:47:14','2025-04-07 08:47:14');
-INSERT INTO `find_a_dealers` VALUES ('58','Apogee','apogeeleveller123@gmail.com','7624002254','UP','Bulandshahr','2025-04-07 08:48:46','2025-04-07 08:48:46');
+INSERT INTO `find_a_dealers` VALUES ('58','Apogee','apogeeleveller123@gmail.com','9760150034','UP','Bulandshahr','2025-04-07 08:48:46','2025-04-07 08:48:46');
 INSERT INTO `find_a_dealers` VALUES ('59','vijay','test@gmail.com','9999999999','up','Bulandshahr','2025-04-07 09:27:45','2025-04-07 09:27:45');
 INSERT INTO `find_a_dealers` VALUES ('60','Bde Aks','bdeaksweb@gmail.com','9042519764','Uttar Pradesh','Delhi','2025-04-07 09:28:40','2025-04-07 09:28:40');
-INSERT INTO `find_a_dealers` VALUES ('61','Apogge','apogeeleveller123@gmail.com','7624002254','UP','Bulandshahr','2025-04-07 09:29:32','2025-04-07 09:29:32');
-INSERT INTO `find_a_dealers` VALUES ('62','Apogee','apogeeleveller123@gmail.com','7624002254','UP','Bulandshahr','2025-04-08 10:33:23','2025-04-08 10:33:23');
+INSERT INTO `find_a_dealers` VALUES ('61','Apogge','apogeeleveller123@gmail.com','9760150034','UP','Bulandshahr','2025-04-07 09:29:32','2025-04-07 09:29:32');
+INSERT INTO `find_a_dealers` VALUES ('62','Apogee','apogeeleveller123@gmail.com','9760150034','UP','Bulandshahr','2025-04-08 10:33:23','2025-04-08 10:33:23');
 INSERT INTO `find_a_dealers` VALUES ('63','vijay','admin@gmail.com','6376206134','noida','asdf','2025-04-29 04:26:20','2025-04-29 04:26:20');
 INSERT INTO `find_a_dealers` VALUES ('64','vijay','test@gmail.com','6376206155','up','bund','2025-05-05 12:09:10','2025-05-05 12:09:10');
 INSERT INTO `find_a_dealers` VALUES ('65','Intimate Care','admin@gmail.com','9717297904','up','bu','2025-05-05 12:10:10','2025-05-05 12:10:10');

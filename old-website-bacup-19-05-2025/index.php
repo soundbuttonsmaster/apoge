@@ -26,7 +26,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   "description": "Explore the impact of apogee's advanced indigeneous land levelling implements on agricultural precision. Elevate your farming efficiency for maximum yield.", 
   "logo": "https://www.apogeeagrotech.com/assets/images/logo.png",
   "email": "sales@apogeeagrotech.com",
-  "telephone": "+91-7624002254",
+  "telephone": "+91-9760150034",
   "founder": "Gurdave Singh",
   "sameAs" : ["https://www.youtube.com/@apogee_agro", "https://www.instagram.com/apogee_agro/"],
   "address": {

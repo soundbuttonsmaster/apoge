@@ -324,6 +324,28 @@
 
         <!-- Section our expertise -->
         @if (!empty($products))
+            @php
+                $homepageImagePool = [
+                    'web-exh-01.jpg',
+                    'web-exh-02.jpg',
+                    'web-exh-03.jpg',
+                    'web-exh-04.jpg',
+                    'web-exh-05.jpg',
+                    'web-exh-06.jpg',
+                    'web-exh-07.jpg',
+                    'web-exh-08.jpg',
+                    'web-exh-09.jpg',
+                    'web-exh-10.jpg',
+                    'web-exh-11.jpg',
+                    'web-exh-12.jpg',
+                    'web-exh-13.jpg',
+                    'web-exh-14.jpg',
+                    'web-exh-15.jpg',
+                    'web-exh-16.jpg',
+                    'web-exh-17.jpg',
+                    'web-exh-18.jpg',
+                ];
+            @endphp
             <section class="s-service has-img-item">
                 <div class="heading-section text-center has-text has-img-item  mt-0">
                     <p class="sub-title">What We Provide </p>
@@ -338,15 +360,19 @@
                 <div class="s-slider">
                     <div class="tf-container w-1290">
                         <div class="row">
-                            @foreach ($products as $item)
+                            @foreach ($products as $index => $item)
                                 <div class="col-lg-3">
                                     <div class="card-provide img-hover">
                                         <div class="has-border"> <a href="{{ route('home.product_datels', $item->slug) }}">
                                                 <div class="image">
-                                                    @if (!empty($item->product_image) && isset(json_decode($item->product_image)[0]))
-                                                        <img src="{{ asset('uploads/products/list/' . json_decode($item->product_image)[0]) }}"
-                                                            alt="{{ $item->product_name }} - Laser Land Leveller by Apogee Agrotech"
-                                                            class="lazyload">
+                                                    @php
+                                                        $poolIndex = count($homepageImagePool) > 0 ? $index % count($homepageImagePool) : 0;
+                                                        $poolImage = $homepageImagePool[$poolIndex] ?? null;
+                                                    @endphp
+
+                                                    @if (!empty($poolImage))
+                                                        <img src="{{ asset('front') }}/images/homepage/journey/{{ $poolImage }}"
+                                                            alt="{{ $item->product_name }} - Apogee Agrotech" class="lazyload">
                                                     @endif
 
                                                 </div>

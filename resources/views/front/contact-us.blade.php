@@ -149,8 +149,8 @@
                                         <p class="text"><a href="mailto:sales@apogeeagrotech.com"><i
                                                     class="fa fa-envelope"></i>
                                                 sales@apogeeagrotech.com</a><br>
-                                            <a href="tel:+91 7624002265"><i class="fa fa-phone"></i>+91
-                                                7624002265</a>
+                                            <a href="tel:+91 9760150034"><i class="fa fa-phone"></i>+91
+                                                9760150034</a>
                                         </p>
                                     </div>
                                 </li>
@@ -179,8 +179,8 @@
                                         <p class="text"><a href="mailto:sales@apogeeagrotech.com"><i
                                                     class="fa fa-envelope"></i>
                                                 sales@apogeeagrotech.com</a><br>
-                                            <a href="tel:+91 7624002261"><i class="fa fa-phone"></i> +91
-                                                7624002261</a>
+                                            <a href="tel:+91 9760150034"><i class="fa fa-phone"></i> +91
+                                                9760150034</a>
                                         </p>
                                     </div>
                                 </li>
@@ -208,8 +208,8 @@
                                         <p class="text"><a href="mailto:sales@apogeeagrotech.com"><i
                                                     class="fa fa-envelope"></i>
                                                 sales@apogeeagrotech.com</a><br>
-                                            <a href="tel:+91 7624002266"><i class="fa fa-phone"></i>+91
-                                                7624002266</a>
+                                            <a href="tel:+91 9760150034"><i class="fa fa-phone"></i>+91
+                                                9760150034</a>
                                         </p>
                                     </div>
                                 </li>
@@ -236,9 +236,9 @@
                                         <p class="text"><a href="mailto:sales@apogeeagrotech.com"><i
                                                     class="fa fa-envelope"></i>
                                                 sales@apogeeagrotech.com</a><br>
-                                            <a href="tel:+91 9896830281"><i class="fa fa-phone"></i>+91
-                                                9896830281</a>
-                                            <a href="tel:+91 9837212286">+91 9837212286</a>
+                                            <a href="tel:+91 9760150034"><i class="fa fa-phone"></i>+91
+                                                9760150034</a>
+                                            <a href="tel:+91 9760150034">+91 9760150034</a>
                                         </p>
                                     </div>
                                 </li>

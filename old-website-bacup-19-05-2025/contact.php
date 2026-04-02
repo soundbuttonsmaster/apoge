@@ -103,7 +103,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                                 <h5>Uttar Pradesh</h5>
                                 <div class="mt-3">
                                     <ul>
-                                        <li class="mb-1"><a href="tel:+91 7624002265"><i class="fas fa-mobile-alt"></i> +91 7624002265</a></li>
+                                        <li class="mb-1"><a href="tel:+91 9760150034"><i class="fas fa-mobile-alt"></i> +91 9760150034</a></li>
                                         <li class="mb-1"><a href="#"><i class="fas fa-map-marker-alt"></i> Plot No. 540, Near Reliance Petrol Pump, Garh Road, Hapur, UP, 245101</a></li>              
                                     </ul>                  
                                 </div>
@@ -112,7 +112,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                                 <h5>Gujarat</h5>
                                 <div class="mt-3">
                                     <ul>
-                                        <li><a href="tel:+91 7624002261"><i class="fas fa-mobile-alt"></i> +91 7624002261</a></li>
+                                        <li><a href="tel:+91 9760150034"><i class="fas fa-mobile-alt"></i> +91 9760150034</a></li>
                                         <li><a href="#"><i class="fas fa-map-marker-alt"></i> First Floor, Shri Ram Complex, #1401, Kailashpati Chokdi, GIDC, Vitthal Udyognagar, Anand (Gujarat), 388121 </a></li>
                                     </ul>                   
                                 </div>
@@ -121,7 +121,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                                 <h5>Madhya Pradesh</h5>
                                 <div class="mt-3">
                                     <ul>
-                                        <li><a href="tel:+91 7624002266"><i class="fas fa-mobile-alt"></i> +91 7624002266</a></li>
+                                        <li><a href="tel:+91 9760150034"><i class="fas fa-mobile-alt"></i> +91 9760150034</a></li>
                                         <li><a href="#"><i class="fas fa-map-marker-alt"></i> Shanti Market, New Bypass Road, Near Imalia, Bhopal (MP) </a></li>
                                     </ul>                    
                                 </div>
@@ -130,7 +130,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                                 <h5>Haryana</h5>
                                 <div class="mt-3">
                                     <ul>
-                                        <li><a href="tel:+91 7624002266"><i class="fas fa-mobile-alt"></i> +91 9896830281, 9837212286</a></li>
+                                        <li><a href="tel:+91 9760150034"><i class="fas fa-mobile-alt"></i> +91 9760150034</a></li>
                                         <li><a href="#"><i class="fas fa-map-marker-alt"></i> Near Jat Dharamsala Ladhot Road, Sukhpura Chowk Rohtak 124001</a></li>
                                     </ul>                    
                                 </div>

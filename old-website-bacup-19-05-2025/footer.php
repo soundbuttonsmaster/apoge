@@ -28,8 +28,8 @@
                     <h2>Contact Us</h2>
                     <div class="mt-4">
                         <ul class="linkList">
-                            <li><a href="tel:+91 7624002265" target="_blank" class="text-decoration-none" target="_blank"><i class="fa-solid fa-phone"></i> +91 7624002265</a></li>
-                            <!-- <li><a href="tel:+91 7624002261" class="text-decoration-none" target="_blank"><i class="fa-solid fa-phone"></i> +91 7624002261</a></li>                          -->
+                            <li><a href="tel:+91 9760150034" target="_blank" class="text-decoration-none" target="_blank"><i class="fa-solid fa-phone"></i> +91 9760150034</a></li>
+                            <!-- <li><a href="tel:+91 9760150034" class="text-decoration-none" target="_blank"><i class="fa-solid fa-phone"></i> +91 9760150034</a></li>                          -->
                             <li><a href="mailto:sales@apogeeagrotech.com" target="_blank" class="text-decoration-none" target="_blank"><i class="fa-solid fa-envelope"></i> sales@apogeeagrotech.com</a></li>
                             <li><a href="#" class="text-decoration-none" target="_blank"><i class="fa-solid fa-location-dot" ></i> Plot No. 540,541, Near Reliance Petrol Pump, Garh Road, Hapur, UP, 245101</a></li>
                         </ul>

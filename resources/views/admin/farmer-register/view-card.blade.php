@@ -26,8 +26,7 @@
                         <div class="fcardfooterCT">
                             <img src="{{ asset('admin') }}/images/farmer-card/fcardcall-icon.jpg" alt="icon" class="callicon">
                             <ul>
-                                <li>+91 9760150035,</li>
-                                <li>+91 9557592525</li>
+                                <li>+91 9760150034</li>
                             </ul>
                         </div>
                         <a href="https://www.apogeeagrotech.com/" class="farcardfooterlink"><img

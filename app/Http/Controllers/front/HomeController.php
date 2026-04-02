@@ -34,7 +34,7 @@ class HomeController extends Controller
         // Optimized SEO meta tags for Laser Land Leveller keywords
         $meta_title = !empty($headerContent->meta_title) ? $headerContent->meta_title : 'Laser Land Leveller India | Best Laser Land Leveler Manufacturer | Apogee Agrotech';
         $meta_keywords = !empty($headerContent->meta_keywords) ? $headerContent->meta_keywords : 'laser land leveller, laser land leveler, laser land leveller india, laser land leveler manufacturer india, best laser land leveller, laser guided land leveller, GNSS land leveller, laser land leveller price, laser land leveller machine, laser land leveller for agriculture, laser land leveller bucket, laser land leveller system, precision land levelling, agricultural land leveller, laser leveller equipment, laser land leveller dealer, laser land leveller supplier, laser land leveller UP, laser land leveller Hapur, apogee laser land leveller, bahubali laser land leveller, laser land leveller cost, laser land leveller benefits, laser land leveller technology, laser land leveller manufacturers, laser land leveller exporters, laser land leveller price in india, laser land leveller online, buy laser land leveller';
-        $meta_description = !empty($headerContent->meta_description) ? $headerContent->meta_description : 'Apogee Agrotech - India\'s Leading Manufacturer of Laser Land Leveller & Laser Land Leveler Equipment. Best Quality GNSS & Laser Guided Land Levelling Systems for Precision Agriculture. Get Best Price on Laser Land Levellers in India. Call +91 7624002265';
+        $meta_description = !empty($headerContent->meta_description) ? $headerContent->meta_description : 'Apogee Agrotech - India\'s Leading Manufacturer of Laser Land Leveller & Laser Land Leveler Equipment. Best Quality GNSS & Laser Guided Land Levelling Systems for Precision Agriculture. Get Best Price on Laser Land Levellers in India. Call +91 9760150034';
         $header_content = @$headerContent->head_content;
         return view('front.home', compact('headerContent', 'products', 'meta_title', 'meta_keywords', 'meta_description', 'header_content', 'testimonials'));
     }
@@ -43,7 +43,7 @@ class HomeController extends Controller
     {
         $meta_title = "About Us - Laser Land Leveller Manufacturer India | Apogee Agrotech";
         $meta_keywords = "about apogee agrotech, laser land leveller manufacturer, laser land leveler company india, agricultural equipment manufacturer, precision farming equipment, GNSS land leveller manufacturer, laser guided equipment, apogee agrotech history, laser land leveller company";
-        $meta_description = "Learn about Apogee Agrotech - India's leading manufacturer of Laser Land Leveller and Laser Land Leveler equipment. Discover our journey in precision agriculture and commitment to quality. Call +91 7624002265";
+        $meta_description = "Learn about Apogee Agrotech - India's leading manufacturer of Laser Land Leveller and Laser Land Leveler equipment. Discover our journey in precision agriculture and commitment to quality. Call +91 9760150034";
         $schema_type = 'AboutPage';
         return view('front.company.about-us', compact('meta_title', 'meta_keywords', 'meta_description', 'schema_type'));
     }
@@ -125,7 +125,7 @@ class HomeController extends Controller
 
         $meta_title = !empty($category->meta_title) ? $category->meta_title : $category_name . ' - Laser Land Leveller Products | Apogee Agrotech';
         $meta_keywords = !empty($category->meta_keywords) ? $category->meta_keywords : strtolower($category_name) . ', laser land leveller, laser land leveler, precision agriculture equipment, agricultural machinery, apogee agrotech products';
-        $meta_description = !empty($category->meta_description) ? $category->meta_description : 'Explore ' . $category_name . ' products by Apogee Agrotech. Best quality Laser Land Leveller equipment for precision agriculture. Get best prices in India. Call +91 7624002265';
+        $meta_description = !empty($category->meta_description) ? $category->meta_description : 'Explore ' . $category_name . ' products by Apogee Agrotech. Best quality Laser Land Leveller equipment for precision agriculture. Get best prices in India. Call +91 9760150034';
         $header_content = @$category->head_content;
         $schema_type = 'CollectionPage';
         return view('front.product-listing', compact('productlisting', 'category_name', 'AllCategory', 'headerContent', 'meta_title', 'meta_keywords', 'meta_description', 'header_content', 'schema_type', 'category'));
@@ -314,7 +314,7 @@ class HomeController extends Controller
     {
         $meta_title = "Contact Us - Laser Land Leveller Manufacturer | Apogee Agrotech";
         $meta_keywords = "contact apogee agrotech, laser land leveller contact, laser land leveller manufacturer contact, agricultural equipment inquiry, precision farming contact, laser land leveller support, apogee agrotech phone number";
-        $meta_description = "Contact Apogee Agrotech for Laser Land Leveller inquiries, product information, dealer opportunities, and support. Call +91 7624002265 or email sales@apogeeagrotech.com. Located in Hapur, UP, India.";
+        $meta_description = "Contact Apogee Agrotech for Laser Land Leveller inquiries, product information, dealer opportunities, and support. Call +91 9760150034 or email sales@apogeeagrotech.com. Located in Hapur, UP, India.";
         $schema_type = 'ContactPage';
         return view('front.contact-us', compact('meta_title', 'meta_keywords', 'meta_description', 'schema_type'));
     }

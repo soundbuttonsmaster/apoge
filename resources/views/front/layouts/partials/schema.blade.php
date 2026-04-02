@@ -28,7 +28,7 @@
                     },
                     "contactPoint": {
                         "@type": "ContactPoint",
-                        "telephone": "+91-7624002265",
+                        "telephone": "+91-9760150034",
                         "contactType": "Sales",
                         "email": "sales@apogeeagrotech.com"
                     }
@@ -187,7 +187,7 @@
                     },
                     "contactPoint": {
                         "@type": "ContactPoint",
-                        "telephone": "+91-7624002265",
+                        "telephone": "+91-9760150034",
                         "contactType": "Sales",
                         "email": "sales@apogeeagrotech.com",
                         "areaServed": "IN",

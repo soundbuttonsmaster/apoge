@@ -9,7 +9,7 @@
                           <ul class="m-0 p-0">
                               <li><a href="mailto:sales@apogeeagrotech.com" class="text-white text-decoration-none" target="_blank"><i class="fa-solid fa-envelope"></i> sales@apogeeagrotech.com</a></li>
                               <li><a href="#" class="text-white text-decoration-none" target="_blank"><i class="fa-solid fa-location-dot"></i> Garh Road, Hapur, UP, 245101</a></li>
-                              <li><a href="tel:7624002265" class="text-white text-decoration-none" target="_blank"><i class="fa-solid fa-phone"></i>  +91 7624002265</a></li>
+                              <li><a href="tel:9760150034" class="text-white text-decoration-none" target="_blank"><i class="fa-solid fa-phone"></i>  +91 9760150034</a></li>
                           </ul>
                       </div>
                   </div>
@@ -141,7 +141,7 @@
                           <ul class="m-0 p-0">
                               <li><a href="mailto:sales@apogeeagrotech.com" class="text-white text-decoration-none" target="_blank"><i class="fa-solid fa-envelope"></i> sales@apogeeagrotech.com</a></li>
                               <li><a href="#" class="text-white text-decoration-none" target="_blank"><i class="fa-solid fa-location-dot"></i> Hapur, Uttar Pradesh, 245101</a></li>
-                              <li><a href="tel:7624004488" class="text-white text-decoration-none" target="_blank"><i class="fa-solid fa-phone"></i>  +91 7624004488</a></li>
+                              <li><a href="tel:9760150034" class="text-white text-decoration-none" target="_blank"><i class="fa-solid fa-phone"></i>  +91 9760150034</a></li>
                           </ul>
                       </div>
                   </div>
