@@ -6,6 +6,7 @@ use App\Models\Blog;
 use App\Models\Category;
 use App\Models\Product;
 use App\Models\SubCategory;
+use App\Models\Area;
 use Illuminate\Http\Response;
 
 class SitemapController extends Controller
@@ -20,7 +21,7 @@ class SitemapController extends Controller
 
     private function generateSitemap()
     {
-        $baseUrl = config('app.url');
+        $baseUrl = rtrim(config('app.url'), '/');
         $currentDate = now()->toAtomString();
 
         $xml = '<?xml version="1.0" encoding="UTF-8"?>' . "\n";
@@ -46,6 +47,7 @@ class SitemapController extends Controller
             ['url' => '/contact-us', 'priority' => '0.9', 'changefreq' => 'monthly'],
             ['url' => '/farmer-registration', 'priority' => '0.6', 'changefreq' => 'monthly'],
             ['url' => '/find-a-farmer-card', 'priority' => '0.6', 'changefreq' => 'monthly'],
+            ['url' => '/areas-we-cover', 'priority' => '0.8', 'changefreq' => 'weekly'],
             ['url' => '/privacy-policy', 'priority' => '0.5', 'changefreq' => 'yearly'],
         ];
 
@@ -90,6 +92,13 @@ class SitemapController extends Controller
         foreach ($blogs as $blog) {
             $lastmod = $blog->updated_at ? $blog->updated_at->toAtomString() : $currentDate;
             $xml .= $this->addUrl($baseUrl . '/blog-details/' . $blog->slug, $lastmod, '0.7', 'monthly');
+        }
+
+        // Areas We Cover
+        $areas = Area::where('status', 1)->get();
+        foreach ($areas as $area) {
+            $lastmod = $area->updated_at ? $area->updated_at->toAtomString() : $currentDate;
+            $xml .= $this->addUrl($baseUrl . '/areas-we-cover/' . $area->slug, $lastmod, '0.7', 'weekly');
         }
 
         $xml .= '</urlset>';

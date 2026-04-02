@@ -1,247 +1,344 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset
-      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
-            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
-<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+        http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
 
+  <url>
+    <loc>https://www.apogeeagrotech.com/</loc>
+    <lastmod>2026-04-02T06:05:24+00:00</lastmod>
+    <priority>1.0</priority>
+    <changefreq>daily</changefreq>
+  </url>
 
-<url>
-  <loc>https://www.apogeeagrotech.com/</loc>
-  <lastmod>2025-11-06T11:11:54+00:00</lastmod>
-  <priority>1.00</priority>
-</url>
-<url>
-  <loc>https://www.apogeeagrotech.com/company/about-us</loc>
-  <lastmod>2025-11-06T11:11:54+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://www.apogeeagrotech.com/company/time-line</loc>
-  <lastmod>2025-11-06T11:11:54+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://www.apogeeagrotech.com/p/laser-land-leveller</loc>
-  <lastmod>2025-11-06T11:11:54+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://www.apogeeagrotech.com/p/laser-land-leveller/laser-equipment-kit</loc>
-  <lastmod>2025-11-06T11:11:54+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://www.apogeeagrotech.com/p/laser-land-leveller/ld-series-laser-land-leveller</loc>
-  <lastmod>2025-11-06T11:11:54+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://www.apogeeagrotech.com/p/laser-land-leveller/hd-series-laser-land-leveller</loc>
-  <lastmod>2025-11-06T11:11:54+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://www.apogeeagrotech.com/p/gnss-land-leveller</loc>
-  <lastmod>2025-11-06T11:11:54+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://www.apogeeagrotech.com/p/gnss-land-leveller/2d-gnss-land-leveller</loc>
-  <lastmod>2025-11-06T11:11:54+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://www.apogeeagrotech.com/p/gnss-land-leveller/3d-gnss-land-leveller</loc>
-  <lastmod>2025-11-06T11:11:54+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://www.apogeeagrotech.com/p/rotavator</loc>
-  <lastmod>2025-11-06T11:11:54+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://www.apogeeagrotech.com/p/rotavator/super-rotavator</loc>
-  <lastmod>2025-11-06T11:11:54+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://www.apogeeagrotech.com/p/rotavator/super-max-rotavator</loc>
-  <lastmod>2025-11-06T11:11:54+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://www.apogeeagrotech.com/media/image-gallery</loc>
-  <lastmod>2025-11-06T11:11:54+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://www.apogeeagrotech.com/media/video-gallery</loc>
-  <lastmod>2025-11-06T11:11:54+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://www.apogeeagrotech.com/media/blog</loc>
-  <lastmod>2025-11-06T11:11:54+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://www.apogeeagrotech.com/network/become-dealer</loc>
-  <lastmod>2025-11-06T11:11:54+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://www.apogeeagrotech.com/network/find-a-dealer</loc>
-  <lastmod>2025-11-06T11:11:54+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://www.apogeeagrotech.com/testimonials</loc>
-  <lastmod>2025-11-06T11:11:54+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://www.apogeeagrotech.com/contact-us</loc>
-  <lastmod>2025-11-06T11:11:54+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://www.apogeeagrotech.com/farmer-registration</loc>
-  <lastmod>2025-11-06T11:11:54+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://www.apogeeagrotech.com/front/brochure/Company-Profile-Apogee-Agrotech.pdf</loc>
-  <lastmod>2025-06-02T12:36:52+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://www.apogeeagrotech.com/product-details/super-max-rotavator</loc>
-  <lastmod>2025-11-06T11:11:54+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://www.apogeeagrotech.com/product-details/super-rotavator</loc>
-  <lastmod>2025-11-06T11:11:54+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://www.apogeeagrotech.com/product-details/dual-slope-standard-laser-land-leveller</loc>
-  <lastmod>2025-11-06T11:11:54+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://www.apogeeagrotech.com/product-details/dual-slope-fighter-laser-land-leveller</loc>
-  <lastmod>2025-11-06T11:11:54+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://www.apogeeagrotech.com/product-details/standard-zero-slope-laser-land-leveller</loc>
-  <lastmod>2025-11-06T11:11:54+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://www.apogeeagrotech.com/product-details/2d-gnss-land-leveller</loc>
-  <lastmod>2025-11-06T11:11:54+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://www.apogeeagrotech.com/product-details/fighter-zero-slope-laser-land-leveller</loc>
-  <lastmod>2025-11-06T11:11:54+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://www.apogeeagrotech.com/product-details/dual-slope-bahubali-laser-land-leveller</loc>
-  <lastmod>2025-11-06T11:11:54+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://www.apogeeagrotech.com/product-details/zero-slope-bahubali-laser-land-leveller</loc>
-  <lastmod>2025-11-06T11:11:54+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://www.apogeeagrotech.com/privacy-policy</loc>
-  <lastmod>2025-11-06T11:11:54+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://www.apogeeagrotech.com/product-details/laser-transmitter</loc>
-  <lastmod>2025-11-06T11:11:54+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://www.apogeeagrotech.com/product-details/laser-receiver</loc>
-  <lastmod>2025-11-06T11:11:54+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://www.apogeeagrotech.com/product-details/laser-land-leveller-equipment-kit-zero-level</loc>
-  <lastmod>2025-11-06T11:11:54+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://www.apogeeagrotech.com/blog-details/how-to-care-for-cows-to-have-the-best-quality-meat</loc>
-  <lastmod>2025-11-06T11:11:54+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://www.apogeeagrotech.com/uploads/products/brochure/1750337839_Rotavator-super-max.pdf</loc>
-  <lastmod>2025-06-19T12:57:19+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://www.apogeeagrotech.com/uploads/products/brochure/1750226272_Rotavator%20Super.pdf</loc>
-  <lastmod>2025-06-18T05:57:52+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://www.apogeeagrotech.com/uploads/products/brochure/1751614170_Laser%20Leveller%20with%20Standard%20Bucket%206.pdf</loc>
-  <lastmod>2025-07-04T07:29:30+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://www.apogeeagrotech.com/uploads/products/brochure/1751614782_Laser%20Leveller%20with%20Sports%20Bucket%202.pdf</loc>
-  <lastmod>2025-07-04T07:39:42+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://www.apogeeagrotech.com/uploads/products/brochure/1751521278_Laser%20Leveller%20with%20Standard%20Bucket%205.pdf</loc>
-  <lastmod>2025-07-03T05:41:18+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://www.apogeeagrotech.com/uploads/products/brochure/1749979226_Company-Profile-Apogee-Agrotech%20(1).pdf</loc>
-  <lastmod>2025-06-15T09:20:26+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://www.apogeeagrotech.com/uploads/products/brochure/1751521005_Laser%20Leveller%20with%20Sports%20Bucket%201.pdf</loc>
-  <lastmod>2025-07-03T05:36:45+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://www.apogeeagrotech.com/uploads/products/brochure/1751614541_Laser%20Leveller%20with%20Bahubali%20Bucket.pdf</loc>
-  <lastmod>2025-07-04T07:35:41+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://www.apogeeagrotech.com/uploads/products/brochure/1742553997_Laser%20Leveller.pdf</loc>
-  <lastmod>2025-03-21T10:46:37+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://www.apogeeagrotech.com/uploads/products/brochure/1761742437_Laser%20Land%20Leveller%20Equipment%20Kit.pdf</loc>
-  <lastmod>2025-10-29T12:53:57+00:00</lastmod>
-  <priority>0.51</priority>
-</url>
-<url>
-  <loc>https://www.apogeeagrotech.com/uploads/products/brochure/1761742188_Laser%20Land%20Leveller%20Equipment%20Kit.pdf</loc>
-  <lastmod>2025-10-29T12:49:48+00:00</lastmod>
-  <priority>0.51</priority>
-</url>
+  <url>
+    <loc>https://www.apogeeagrotech.com/company/about-us</loc>
+    <lastmod>2026-04-02T06:05:24+00:00</lastmod>
+    <priority>0.9</priority>
+    <changefreq>monthly</changefreq>
+  </url>
 
+  <url>
+    <loc>https://www.apogeeagrotech.com/company/time-line</loc>
+    <lastmod>2026-04-02T06:05:24+00:00</lastmod>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+
+  <url>
+    <loc>https://www.apogeeagrotech.com/media/image-gallery</loc>
+    <lastmod>2026-04-02T06:05:24+00:00</lastmod>
+    <priority>0.8</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+
+  <url>
+    <loc>https://www.apogeeagrotech.com/media/video-gallery</loc>
+    <lastmod>2026-04-02T06:05:24+00:00</lastmod>
+    <priority>0.8</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+
+  <url>
+    <loc>https://www.apogeeagrotech.com/media/blog</loc>
+    <lastmod>2026-04-02T06:05:24+00:00</lastmod>
+    <priority>0.9</priority>
+    <changefreq>daily</changefreq>
+  </url>
+
+  <url>
+    <loc>https://www.apogeeagrotech.com/network/become-dealer</loc>
+    <lastmod>2026-04-02T06:05:24+00:00</lastmod>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+
+  <url>
+    <loc>https://www.apogeeagrotech.com/network/find-a-dealer</loc>
+    <lastmod>2026-04-02T06:05:24+00:00</lastmod>
+    <priority>0.7</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+
+  <url>
+    <loc>https://www.apogeeagrotech.com/testimonials</loc>
+    <lastmod>2026-04-02T06:05:24+00:00</lastmod>
+    <priority>0.8</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+
+  <url>
+    <loc>https://www.apogeeagrotech.com/contact-us</loc>
+    <lastmod>2026-04-02T06:05:24+00:00</lastmod>
+    <priority>0.9</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+
+  <url>
+    <loc>https://www.apogeeagrotech.com/farmer-registration</loc>
+    <lastmod>2026-04-02T06:05:24+00:00</lastmod>
+    <priority>0.6</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+
+  <url>
+    <loc>https://www.apogeeagrotech.com/find-a-farmer-card</loc>
+    <lastmod>2026-04-02T06:05:24+00:00</lastmod>
+    <priority>0.6</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+
+  <url>
+    <loc>https://www.apogeeagrotech.com/areas-we-cover</loc>
+    <lastmod>2026-04-02T06:05:24+00:00</lastmod>
+    <priority>0.8</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+
+  <url>
+    <loc>https://www.apogeeagrotech.com/privacy-policy</loc>
+    <lastmod>2026-04-02T06:05:24+00:00</lastmod>
+    <priority>0.5</priority>
+    <changefreq>yearly</changefreq>
+  </url>
+
+  <url>
+    <loc>https://www.apogeeagrotech.com/p/rotavator</loc>
+    <lastmod>2025-11-06T15:50:04+00:00</lastmod>
+    <priority>0.9</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+
+  <url>
+    <loc>https://www.apogeeagrotech.com/p/rotavator/super-max-rotavator</loc>
+    <lastmod>2025-11-06T15:06:50+00:00</lastmod>
+    <priority>0.85</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+
+  <url>
+    <loc>https://www.apogeeagrotech.com/p/rotavator/super-rotavator</loc>
+    <lastmod>2025-11-06T15:06:34+00:00</lastmod>
+    <priority>0.85</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+
+  <url>
+    <loc>https://www.apogeeagrotech.com/p/gnss-land-leveller</loc>
+    <lastmod>2025-11-06T15:49:50+00:00</lastmod>
+    <priority>0.9</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+
+  <url>
+    <loc>https://www.apogeeagrotech.com/p/gnss-land-leveller/3d-gnss-land-leveller</loc>
+    <lastmod>2025-11-06T15:06:17+00:00</lastmod>
+    <priority>0.85</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+
+  <url>
+    <loc>https://www.apogeeagrotech.com/p/gnss-land-leveller/2d-gnss-land-leveller</loc>
+    <lastmod>2025-03-03T22:57:14+00:00</lastmod>
+    <priority>0.85</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+
+  <url>
+    <loc>https://www.apogeeagrotech.com/p/laser-land-leveller</loc>
+    <lastmod>2025-11-06T15:49:27+00:00</lastmod>
+    <priority>0.9</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+
+  <url>
+    <loc>https://www.apogeeagrotech.com/p/laser-land-leveller/hd-series-laser-land-leveller</loc>
+    <lastmod>2025-11-06T15:05:34+00:00</lastmod>
+    <priority>0.85</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+
+  <url>
+    <loc>https://www.apogeeagrotech.com/p/laser-land-leveller/ld-series-laser-land-leveller</loc>
+    <lastmod>2025-11-06T15:05:13+00:00</lastmod>
+    <priority>0.85</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+
+  <url>
+    <loc>https://www.apogeeagrotech.com/p/laser-land-leveller/laser-equipment-kit</loc>
+    <lastmod>2025-11-06T14:47:57+00:00</lastmod>
+    <priority>0.85</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+
+  <url>
+    <loc>https://www.apogeeagrotech.com/p/gyrovator</loc>
+    <lastmod>2026-01-23T15:54:36+00:00</lastmod>
+    <priority>0.9</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+
+  <url>
+    <loc>https://www.apogeeagrotech.com/p/gyrovator/maxx-gyrovator</loc>
+    <lastmod>2026-01-23T15:55:54+00:00</lastmod>
+    <priority>0.85</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+
+  <url>
+    <loc>https://www.apogeeagrotech.com/product-details/bahubali-laser-land-leveller</loc>
+    <lastmod>2026-01-23T17:17:03+00:00</lastmod>
+    <priority>0.8</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+
+  <url>
+    <loc>https://www.apogeeagrotech.com/product-details/dual-slope-bahubali-laser-land-leveller</loc>
+    <lastmod>2025-11-06T14:53:29+00:00</lastmod>
+    <priority>0.8</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+
+  <url>
+    <loc>https://www.apogeeagrotech.com/product-details/fighter-laser-land-leveller</loc>
+    <lastmod>2026-01-23T17:00:21+00:00</lastmod>
+    <priority>0.8</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+
+  <url>
+    <loc>https://www.apogeeagrotech.com/product-details/2d-gnss-land-leveller</loc>
+    <lastmod>2026-01-23T17:30:26+00:00</lastmod>
+    <priority>0.8</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+
+  <url>
+    <loc>https://www.apogeeagrotech.com/product-details/standard-laser-land-leveller</loc>
+    <lastmod>2026-01-23T16:59:34+00:00</lastmod>
+    <priority>0.8</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+
+  <url>
+    <loc>https://www.apogeeagrotech.com/product-details/dual-slope-fighter-laser-land-leveller</loc>
+    <lastmod>2025-11-06T15:02:02+00:00</lastmod>
+    <priority>0.8</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+
+  <url>
+    <loc>https://www.apogeeagrotech.com/product-details/dual-slope-standard-laser-land-leveller</loc>
+    <lastmod>2025-11-06T15:01:38+00:00</lastmod>
+    <priority>0.8</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+
+  <url>
+    <loc>https://www.apogeeagrotech.com/product-details/super-rotavator</loc>
+    <lastmod>2025-11-06T15:00:57+00:00</lastmod>
+    <priority>0.8</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+
+  <url>
+    <loc>https://www.apogeeagrotech.com/product-details/super-max-rotavator</loc>
+    <lastmod>2025-11-06T15:00:35+00:00</lastmod>
+    <priority>0.8</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+
+  <url>
+    <loc>https://www.apogeeagrotech.com/product-details/rl-700-transmitter</loc>
+    <lastmod>2026-01-23T17:38:45+00:00</lastmod>
+    <priority>0.8</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+
+  <url>
+    <loc>https://www.apogeeagrotech.com/product-details/ld-receiver</loc>
+    <lastmod>2026-01-23T17:38:31+00:00</lastmod>
+    <priority>0.8</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+
+  <url>
+    <loc>https://www.apogeeagrotech.com/product-details/rl-600-transmitter</loc>
+    <lastmod>2026-01-23T17:37:58+00:00</lastmod>
+    <priority>0.8</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+
+  <url>
+    <loc>https://www.apogeeagrotech.com/product-details/control-box-200</loc>
+    <lastmod>2026-01-23T17:37:35+00:00</lastmod>
+    <priority>0.8</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+
+  <url>
+    <loc>https://www.apogeeagrotech.com/product-details/hd-receiver</loc>
+    <lastmod>2026-01-23T17:37:22+00:00</lastmod>
+    <priority>0.8</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+
+  <url>
+    <loc>https://www.apogeeagrotech.com/product-details/rl-800-transmitter</loc>
+    <lastmod>2026-01-23T16:21:55+00:00</lastmod>
+    <priority>0.8</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+
+  <url>
+    <loc>https://www.apogeeagrotech.com/product-details/3d-gnss-land-leveller</loc>
+    <lastmod>2026-01-28T10:05:33+00:00</lastmod>
+    <priority>0.8</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+
+  <url>
+    <loc>https://www.apogeeagrotech.com/blog-details/how-to-care-for-cows-to-have-the-best-quality-meat</loc>
+    <lastmod>2025-03-17T22:24:29+00:00</lastmod>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+
+  <url>
+    <loc>https://www.apogeeagrotech.com/areas-we-cover/anand</loc>
+    <lastmod>2026-01-28T10:54:02+00:00</lastmod>
+    <priority>0.7</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+
+  <url>
+    <loc>https://www.apogeeagrotech.com/areas-we-cover/gandhinagar</loc>
+    <lastmod>2026-01-28T10:56:07+00:00</lastmod>
+    <priority>0.7</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+
+  <url>
+    <loc>https://www.apogeeagrotech.com/areas-we-cover/vadodara</loc>
+    <lastmod>2026-01-28T10:57:10+00:00</lastmod>
+    <priority>0.7</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+
+  <url>
+    <loc>https://www.apogeeagrotech.com/areas-we-cover/ahmedabad</loc>
+    <lastmod>2026-01-31T04:14:02+00:00</lastmod>
+    <priority>0.7</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+
+  <url>
+    <loc>https://www.apogeeagrotech.com/areas-we-cover/gujarat</loc>
+    <lastmod>2026-01-31T11:57:51+00:00</lastmod>
+    <priority>0.7</priority>
+    <changefreq>weekly</changefreq>
+  </url>
 
 </urlset>
