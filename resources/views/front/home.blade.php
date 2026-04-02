@@ -485,52 +485,46 @@
                         <div class="col-lg-12">
                             <div class="swiper-container slider-s-project">
                                 <div class="swiper-wrapper">
-                                    <div class="swiper-slide">
-                                        <div class="box-portfolio style-5">
-                                            <div class="image"> <img
-                                                    src="{{ asset('front') }}/images/section/s-project-3.jpg"
-                                                    data-src="{{ asset('front') }}/images/section/s-project-3.jpg"
-                                                    alt="Apogee Camp event showcasing laser land levellers and educating farmers about modern agricultural technologies"
-                                                    class="lazyload" /> </div>
-                                            <div class="content">
-                                                <p class="sub font-farmhouse text-upper"> Agriculture - farm </p>
-                                                <a href="#"
-                                                    class="title fs-23 font-worksans fw-6 hover-text-secondary">Apogeeagrotech
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
+                                    @php
+                                        $journeyImages = [
+                                            'web-exh-01.jpg',
+                                            'web-exh-02.jpg',
+                                            'web-exh-03.jpg',
+                                            'web-exh-04.jpg',
+                                            'web-exh-05.jpg',
+                                            'web-exh-06.jpg',
+                                            'web-exh-07.jpg',
+                                            'web-exh-08.jpg',
+                                            'web-exh-09.jpg',
+                                            'web-exh-10.jpg',
+                                            'web-exh-11.jpg',
+                                            'web-exh-12.jpg',
+                                            'web-exh-13.jpg',
+                                            'web-exh-14.jpg',
+                                            'web-exh-15.jpg',
+                                            'web-exh-16.jpg',
+                                            'web-exh-17.jpg',
+                                            'web-exh-18.jpg',
+                                        ];
+                                    @endphp
 
-                                    <div class="swiper-slide">
-                                        <div class="box-portfolio style-5">
-                                            <div class="image"> <img
-                                                    src="{{ asset('front') }}/images/section/s-project-1.jpg"
-                                                    data-src="{{ asset('front') }}/./images/section/s-project-1.jpg"
-                                                    alt="Apogee Bahubali GNSS Camp demonstrating GPS-enabled land levelling technology to farmers in real field conditions"
-                                                    class="lazyload" /> </div>
-                                            <div class="content">
-                                                <p class="sub font-farmhouse text-upper"> Agriculture - farm </p>
-                                                <a href="#"
-                                                    class="title fs-23 font-worksans fw-6 hover-text-secondary">Apogeeagrotech
-                                                </a>
+                                    @foreach ($journeyImages as $index => $journeyImage)
+                                        <div class="swiper-slide">
+                                            <div class="box-portfolio style-5">
+                                                <div class="image">
+                                                    <img src="{{ asset('front') }}/images/homepage/journey/{{ $journeyImage }}"
+                                                        data-src="{{ asset('front') }}/images/homepage/journey/{{ $journeyImage }}"
+                                                        alt="Apogee Agrotech journey image {{ $index + 1 }}" class="lazyload" />
+                                                </div>
+                                                <div class="content">
+                                                    <p class="sub font-farmhouse text-upper"> Agriculture - farm </p>
+                                                    <a href="#"
+                                                        class="title fs-23 font-worksans fw-6 hover-text-secondary">Apogeeagrotech
+                                                    </a>
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <div class="box-portfolio style-5">
-                                            <div class="image"> <img
-                                                    src="{{ asset('front') }}/images/section/s-project-2.jpg"
-                                                    data-src="{{ asset('front') }}/./images/section/s-project-2.jpg"
-                                                    alt="Farmers attending Apogee Camp to learn about laser land levellers and modern GNSS-based farming technologies"
-                                                    class="lazyload" /> </div>
-                                            <div class="content">
-                                                <p class="sub font-farmhouse text-upper"> Agriculture - farm </p>
-                                                <a href="#"
-                                                    class="title fs-23 font-worksans fw-6 hover-text-secondary">Apogeeagrotech
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
+                                    @endforeach
 
                                 </div>
                             </div>
