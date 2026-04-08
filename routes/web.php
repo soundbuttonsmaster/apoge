@@ -20,6 +20,7 @@ use App\Http\Controllers\admin\AdminVideogalleryController;
 use App\Http\Controllers\admin\AdminSubscribeContoller;
 use App\Http\Controllers\admin\AdminFarmerCardController;
 use App\Http\Controllers\admin\AdminAreaController;
+use App\Http\Controllers\admin\AdminSitemapController;
 
 // for reports
 
@@ -217,6 +218,9 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'middleware' => 'AdminAuth'
     Route::get('ganrate-farmer-card/{id}', [AdminFarmerCardController::class, 'ganrateFarmerCard'])->name('ganrate_farmer_card');
     Route::get('view-farmer-card/{id}', [AdminFarmerCardController::class, 'ViewFarmerCard'])->name('view_farmer_card');
     // Route::get('delete-enquiry/{id}', [AdminDashboardController::class, 'DeleteEnquiry'])->name('delete_enquiry');
+
+    Route::get('sitemap-generator', [AdminSitemapController::class, 'index'])->name('sitemap.index');
+    Route::post('sitemap-generator', [AdminSitemapController::class, 'generate'])->name('sitemap.generate');
 
 });
 

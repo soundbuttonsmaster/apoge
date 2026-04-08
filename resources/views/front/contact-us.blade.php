@@ -149,8 +149,7 @@
                                         <p class="text"><a href="mailto:sales@apogeeagrotech.com"><i
                                                     class="fa fa-envelope"></i>
                                                 sales@apogeeagrotech.com</a><br>
-                                            <a href="tel:+91 7624002265"><i class="fa fa-phone"></i>+91
-                                                7624002265</a>
+                                            {{-- Phone removed as requested --}}
                                         </p>
                                     </div>
                                 </li>

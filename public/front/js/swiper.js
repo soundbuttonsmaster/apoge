@@ -20,7 +20,7 @@ if ($(".slider-home-1").length > 0) {
         },
     });
 }
-if (".slider-home-2".length > 0) {
+if ($(".slider-home-2").length > 0) {
     var swiper = new Swiper(".slider-home-2", {
         slidesPerView: 1,
         centeredSlides: true,
@@ -37,7 +37,7 @@ if (".slider-home-2".length > 0) {
         },
     });
 }
-if (".slider-home-3".length > 0) {
+if ($(".slider-home-3").length > 0) {
     var swiper = new Swiper(".slider-home-3", {
         slidesPerView: 1,
         centeredSlides: true,
@@ -54,7 +54,7 @@ if (".slider-home-3".length > 0) {
         },
     });
 }
-if (".slider-provide".length > 0) {
+if ($(".slider-provide").length > 0) {
     var swiper = new Swiper(".slider-provide", {
         slidesPerView: 3,
         loop: true,
@@ -78,7 +78,7 @@ if (".slider-provide".length > 0) {
         },
     });
 }
-if (".slider-why-us".length > 0) {
+if ($(".slider-why-us").length > 0) {
     var swiper = new Swiper(".slider-why-us", {
         slidesPerView: 4,
         loop: true,
@@ -86,7 +86,7 @@ if (".slider-why-us".length > 0) {
     });
 }
 
-if (".slider-partner".length > 0) {
+if ($(".slider-partner").length > 0) {
     var swiper = new Swiper(".slider-partner", {
         slidesPerView: 6,
         loop: true,
@@ -166,6 +166,7 @@ if ($(".testimonial-thumbs").length > 0) {
     });
     var main = new Swiper(".slider-testimonial-3", {
         spaceBetween: 0,
+        autoHeight: true,
         observer: true,
         observeParents: true,
         thumbs: {
@@ -178,11 +179,19 @@ if ($(".testimonial-thumbs").length > 0) {
     });
 }
 
-if (".slider-s-project".length > 0) {
+if ($(".slider-s-project").length > 0) {
     var swiper = new Swiper(".slider-s-project", {
-        slidesPerView: 2,
+        slidesPerView: 3,
         loop: true,
         spaceBetween: 30,
+        autoplay: {
+            delay: 3000,
+            disableOnInteraction: false,
+        },
+        navigation: {
+            nextEl: ".btn-slide-project.btn-next",
+            prevEl: ".btn-slide-project.btn-prev",
+        },
         pagination: {
             el: ".swiper-pagination.pagination-s-project",
             clickable: true,

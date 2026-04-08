@@ -103,7 +103,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                                 <h5>Uttar Pradesh</h5>
                                 <div class="mt-3">
                                     <ul>
-                                        <li class="mb-1"><a href="tel:+91 7624002265"><i class="fas fa-mobile-alt"></i> +91 7624002265</a></li>
+                                        <li class="mb-1"><a href="tel:+91 9760150034"><i class="fas fa-mobile-alt"></i> +91 9760150034</a></li>
                                         <li class="mb-1"><a href="#"><i class="fas fa-map-marker-alt"></i> Plot No. 540, Near Reliance Petrol Pump, Garh Road, Hapur, UP, 245101</a></li>              
                                     </ul>                  
                                 </div>

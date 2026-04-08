@@ -449,8 +449,6 @@
         </section>
         <!-- /.Section why us -->
 
-        <!-- Section our commitments -->
-
         <!-- Section project -->
         <section class="s-project">
             <div class="heading-side has-img-item" style="margin-bottom: 0px; padding-bottom: 0px;">
@@ -485,61 +483,48 @@
                         <div class="col-lg-12">
                             <div class="swiper-container slider-s-project">
                                 <div class="swiper-wrapper">
-                                    <div class="swiper-slide">
-                                        <div class="box-portfolio style-5">
-                                            <div class="image"> <img
-                                                    src="{{ asset('front') }}/images/section/s-project-3.jpg"
-                                                    data-src="{{ asset('front') }}/images/section/s-project-3.jpg"
-                                                    alt="Apogee Camp event showcasing laser land levellers and educating farmers about modern agricultural technologies"
-                                                    class="lazyload" /> </div>
-                                            <div class="content">
-                                                <p class="sub font-farmhouse text-upper"> Agriculture - farm </p>
-                                                <a href="#"
-                                                    class="title fs-23 font-worksans fw-6 hover-text-secondary">Apogeeagrotech
-                                                </a>
+                                    @for ($i = 1; $i <= 18; $i++)
+                                        <div class="swiper-slide">
+                                            <div class="box-portfolio style-5">
+                                                <div class="image"> <img
+                                                        src="{{ asset('front') }}/images/section/s-project-{{ $i }}.jpg"
+                                                        data-src="{{ asset('front') }}/images/section/s-project-{{ $i }}.jpg"
+                                                        alt="Apogee Experience Journey - Image {{ $i }}"
+                                                        class="lazyload" /> </div>
+                                                <div class="content">
+                                                    <p class="sub font-farmhouse text-upper"> Agriculture - farm </p>
+                                                    <a href="#"
+                                                        class="title fs-23 font-worksans fw-6 hover-text-secondary">Apogeeagrotech
+                                                    </a>
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
-
-                                    <div class="swiper-slide">
-                                        <div class="box-portfolio style-5">
-                                            <div class="image"> <img
-                                                    src="{{ asset('front') }}/images/section/s-project-1.jpg"
-                                                    data-src="{{ asset('front') }}/./images/section/s-project-1.jpg"
-                                                    alt="Apogee Bahubali GNSS Camp demonstrating GPS-enabled land levelling technology to farmers in real field conditions"
-                                                    class="lazyload" /> </div>
-                                            <div class="content">
-                                                <p class="sub font-farmhouse text-upper"> Agriculture - farm </p>
-                                                <a href="#"
-                                                    class="title fs-23 font-worksans fw-6 hover-text-secondary">Apogeeagrotech
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <div class="box-portfolio style-5">
-                                            <div class="image"> <img
-                                                    src="{{ asset('front') }}/images/section/s-project-2.jpg"
-                                                    data-src="{{ asset('front') }}/./images/section/s-project-2.jpg"
-                                                    alt="Farmers attending Apogee Camp to learn about laser land levellers and modern GNSS-based farming technologies"
-                                                    class="lazyload" /> </div>
-                                            <div class="content">
-                                                <p class="sub font-farmhouse text-upper"> Agriculture - farm </p>
-                                                <a href="#"
-                                                    class="title fs-23 font-worksans fw-6 hover-text-secondary">Apogeeagrotech
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-
+                                    @endfor
                                 </div>
                             </div>
                         </div>
-                        <!--  <div class="col-lg-12">
-                                                                                              <div class="bot">
-                                                                                                <div class="swiper-pagination style-1 pagination-s-project"></div>
-                                                                                                <a href="#" class="hover-text-4">View All</a> </div>
-                                                                                            </div> -->
+                        <div class="col-lg-12">
+                            <div class="bot" style="justify-content: center;">
+                                <div class="navigation-wrap" style="display: flex; gap: 20px;">
+                                    <div class="btn-slide-project btn-prev" style="cursor: pointer;"> <svg version="1.0"
+                                            xmlns="http://www.w3.org/2000/svg" width="50px" height="15px"
+                                            viewBox="0 0 68 18" preserveAspectRatio="xMidYMid meet">
+                                            <g fill="#0d401c">
+                                                <path
+                                                    d="M6.3 14.3 c-3.5 -2.1 -6.3 -4.2 -6.3 -4.9 0 -0.6 2.7 -3 6 -5.3 6.4 -4.5 8.3 -4.1 2.6 0.6 l-3.5 2.8 24.7 0 c23.6 0 38.2 0.9 38.2 2.3 0 0.4 -7.3 0.3 -16.3 -0.1 -9 -0.5 -23.3 -0.5 -31.8 0 l-15.4 0.8 5.3 2.9 c5 2.8 6.6 4.6 4 4.6 -0.7 0 -4.1 -1.7 -7.5 -3.7z" />
+                                            </g>
+                                        </svg> </div>
+                                    <div class="btn-slide-project btn-next" style="cursor: pointer;"> <svg version="1.0"
+                                            xmlns="http://www.w3.org/2000/svg" width="50px" height="15px"
+                                            viewBox="0 0 80 20" preserveAspectRatio="xMidYMid meet">
+                                            <g fill="#0d401c">
+                                                <path
+                                                    d="M63 19 c0 -0.5 2.6 -2.4 5.8 -4.2 l5.7 -3.3 -19.5 -0.8 c-11 -0.5 -27.1 -0.5 -37 0.1 -9.6 0.5 -17.7 0.7 -17.9 0.5 -2.4 -1.9 22 -3.5 48.7 -3.1 l25.2 0.3 -4.6 -3.9 c-2.5 -2.1 -4.3 -4 -4 -4.3 0.7 -0.7 14.6 8.9 14.6 10.2 0 1.1 -14.3 9.5 -16.2 9.5 -0.4 0 -0.8 -0.4 -0.8 -1z" />
+                                            </g>
+                                        </svg> </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -644,44 +629,37 @@
                         </g>
                     </svg> </div>
             </div>
-            <div class="s-img-item scroll-element-3"> <img class="scale-1-1 lazyload"
-                    src="{{ asset('front') }}/images/section/yellow-f.png"
-                    data-src="{{ asset('front') }}/./images/section/yellow-f.png"
-                    alt="Golden yellow agricultural field ready for harvest, representing a successful and well-managed crop season">
+            <div class="s-testimonial-3__pre-stats" aria-hidden="true">
+                <div class="s-img-item scroll-element-3"></div>
             </div>
-        </section>
-        <!-- /.Section testimonial 3 -->
-
-        <!-- Section counter -->
-        <section class="s-counter has-img-item ">
-            <div class="tf-container w-1290">
+            <div class="tf-container w-1290 s-testimonial-3__stats-container">
                 <div class="row">
                     <div class="col-lg-12">
-                        <div class="wg-counter p-0">
+                        <div class="wg-counter wg-counter--home-stats p-0" aria-label="Company statistics">
                             <div class="counter-item">
-                                <div class="icon"> <i class="icon-barley"></i> </div>
+                                <div class="icon" aria-hidden="true"> <i class="icon-barley"></i> </div>
                                 <div class="counter">
                                     <div class="odometer fs-65 style-1 style-1-1"> 1000 </div>
                                 </div>
                                 <p class="sub">Agricultural Implements</p>
                             </div>
                             <div class="counter-item">
-                                <div class="icon"> <i class="fa fa-users"></i> </div>
+                                <div class="icon" aria-hidden="true"> <i class="fa fa-users"></i> </div>
                                 <div class="counter">
                                     <div class="odometer fs-65 style-1 style-1-2"> 1000 </div>
-                                    <span class="sub-odo">+</span>
+                                    <span class="sub-odo" aria-hidden="true">+</span>
                                 </div>
                                 <p class="sub">Dealers Nationwide</p>
                             </div>
                             <div class="counter-item">
-                                <div class="icon"> <i class="fa-solid fa-tractor"></i> </div>
+                                <div class="icon" aria-hidden="true"> <i class="fa-solid fa-tractor"></i> </div>
                                 <div class="counter">
                                     <div class="odometer fs-65 style-1-3"> 1000 </div>
                                 </div>
                                 <p class="sub">Years Of Experience</p>
                             </div>
                             <div class="counter-item">
-                                <div class="icon"> <i class="icon-barley"></i> </div>
+                                <div class="icon" aria-hidden="true"> <i class="icon-barley"></i> </div>
                                 <div class="counter">
                                     <div class="odometer fs-65 style-1-4"> 1000 </div>
                                 </div>
@@ -691,24 +669,13 @@
                     </div>
                 </div>
             </div>
-            <div class="s-img-item item-1"> <img src="{{ asset('front') }}/images/item/brown-top.png"
-                    alt="Brown Top decorative separator" width="1920" height="72"
-                    style="width: 100%; height: auto; object-fit: contain;" />
-            </div>
-            <div class="s-img-item item-2 zoomIn wow">
-                <div class="scroll-element-4"> <img src="{{ asset('front') }}/images/item/tructor.png" alt="img" />
-                </div>
-            </div>
-            <div class="s-img-item item-bottom"> <img src="{{ asset('front') }}/images/item/brown-bottom.png"
-                    alt="Brown Bottom decorative separator" width="1920" height="72"
-                    style="width: 100%; height: auto; object-fit: contain;" /> </div>
         </section>
         <!-- /.Section counter -->
 
         <!-- Section break page -->
         <section class="s-break-page style-2">
             <div class="content">
-                <h2 class="font-farmhouse text-center text-anime-style-1"> Take a look at our indigenous <br>
+                <h2 class="font-farmhouse text-center"> Take a look at our indigenous <br>
                     agriculture equipment to <br>
                     overcome the farming challenges </h2>
             </div>
