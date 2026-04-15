@@ -133,143 +133,145 @@
     @if($isHomePage)
     <script type="application/ld+json">
     {
-        "@context": "https://schema.org",
-        "@type": "Organization",
-        "name": "Apogee Agrotech Pvt. Ltd.",
-        "alternateName": "Apogee Agrotech",
-        "url": "{{ url('/') }}",
-        "logo": "{{ asset('front') }}/images/logo.jpg",
-        "description": "India's Leading Manufacturer of Laser Land Leveller and Laser Land Leveler Equipment for Precision Agriculture",
-        "address": {
-            "@type": "PostalAddress",
-            "streetAddress": "Plot No. 540,541, Near Reliance Petrol Pump, Garh Road",
-            "addressLocality": "Hapur",
-            "addressRegion": "Uttar Pradesh",
-            "postalCode": "245101",
-            "addressCountry": "IN"
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Apogee Agrotech",
+      "alternateName": "Apogee Group",
+      "url": "https://www.apogeeagrotech.com",
+      "logo": "https://www.apogeeagrotech.com/front/images/logo.jpg",
+      "description": "Apogee Agrotech is a leading manufacturer of Laser Land Levellers, GNSS Land Levellers, and precision agriculture equipment in India, headquartered in Hapur, Uttar Pradesh.",
+      "foundingDate": "2009",
+      "email": "sales@apogeeagrotech.com",
+      "telephone": "+917624002265",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Plot No. 540, 541, Near Reliance Petrol Pump, Garh Road",
+        "addressLocality": "Hapur",
+        "addressRegion": "Uttar Pradesh",
+        "postalCode": "245101",
+        "addressCountry": "IN"
+      },
+      "contactPoint": [
+        {
+          "@type": "ContactPoint",
+          "telephone": "+917624002265",
+          "contactType": "Sales",
+          "areaServed": "IN",
+          "availableLanguage": ["English", "Hindi"]
         },
-        "contactPoint": {
-            "@type": "ContactPoint",
-            "telephone": "+91-9760150034",
-            "contactType": "Sales",
-            "email": "sales@apogeeagrotech.com",
-            "areaServed": "IN",
-            "availableLanguage": ["en", "hi"]
-        },
-        "sameAs": [
-            "https://www.youtube.com/@apogee_agro",
-            "https://www.facebook.com/apogeeagrotech/",
-            "https://www.instagram.com/apogee_agro/",
-            "https://www.linkedin.com/company/apogee-agrotech-pvt-ltd"
-        ],
-        "aggregateRating": {
-            "@type": "AggregateRating",
-            "ratingValue": "4.8",
-            "reviewCount": "150"
+        {
+          "@type": "ContactPoint",
+          "telephone": "+919760150034",
+          "contactType": "Customer Support",
+          "areaServed": "IN",
+          "availableLanguage": ["English", "Hindi"]
         }
+      ],
+      "sameAs": [
+        "https://www.facebook.com/apogeeagrotech"
+      ]
     }
     </script>
     
     <script type="application/ld+json">
     {
-        "@context": "https://schema.org",
-        "@type": "LocalBusiness",
-        "name": "Apogee Agrotech Pvt. Ltd.",
-        "image": "{{ asset('front') }}/images/logo.jpg",
-        "@id": "{{ url('/') }}",
-        "url": "{{ url('/') }}",
-        "telephone": "+91-9760150034",
-        "priceRange": "$$",
-        "address": {
-            "@type": "PostalAddress",
-            "streetAddress": "Plot No. 540,541, Near Reliance Petrol Pump, Garh Road",
-            "addressLocality": "Hapur",
-            "addressRegion": "Uttar Pradesh",
-            "postalCode": "245101",
-            "addressCountry": "IN"
-        },
-        "geo": {
-            "@type": "GeoCoordinates",
-            "latitude": 28.7306,
-            "longitude": 77.7806
-        },
-        "openingHoursSpecification": {
-            "@type": "OpeningHoursSpecification",
-            "dayOfWeek": [
-                "Monday",
-                "Tuesday",
-                "Wednesday",
-                "Thursday",
-                "Friday",
-                "Saturday"
-            ],
-            "opens": "09:00",
-            "closes": "18:30"
-        },
-        "areaServed": {
-            "@type": "Country",
-            "name": "India"
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "Apogee Agrotech",
+      "image": "https://www.apogeeagrotech.com/front/images/logo.jpg",
+      "url": "https://www.apogeeagrotech.com",
+      "telephone": "+917624002265",
+      "email": "sales@apogeeagrotech.com",
+      "description": "Manufacturer and supplier of Laser Land Levellers, GNSS Land Levellers, Rotavators, and precision farming equipment in India.",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Plot No. 540, 541, Near Reliance Petrol Pump, Garh Road",
+        "addressLocality": "Hapur",
+        "addressRegion": "Uttar Pradesh",
+        "postalCode": "245101",
+        "addressCountry": "IN"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": "28.7283",
+        "longitude": "77.7767"
+      },
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": [
+            "Monday", "Tuesday", "Wednesday",
+            "Thursday", "Friday", "Saturday"
+          ],
+          "opens": "09:00",
+          "closes": "18:30"
         }
+      ],
+      "hasMap": "https://www.google.com/maps?q=Apogee+Agrotech+Hapur+UP"
     }
     </script>
     
     <script type="application/ld+json">
     {
-        "@context": "https://schema.org",
-        "@type": "WebSite",
-        "name": "Apogee Agrotech",
-        "url": "{{ url('/') }}",
-        "potentialAction": {
-            "@type": "SearchAction",
-            "target": {
-                "@type": "EntryPoint",
-                "urlTemplate": "{{ url('/') }}?s={search_term_string}"
-            },
-            "query-input": "required name=search_term_string"
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is a laser land leveller?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A laser land leveller is a precision farming machine used to level agricultural land accurately for better water distribution and higher crop yield."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the difference between a laser land leveller and a GNSS land leveller?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A laser land leveller uses laser signals to level the field, while a GNSS land leveller uses GPS satellite technology and is ideal for larger and more uneven fields."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does laser land levelling really save water?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Laser land levelling ensures the ground is evenly levelled so that water is distributed uniformly throughout the field, significantly reducing water wastage."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Which crops are suitable for laser land levelling in India?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Crops suitable for laser land levelling in India include wheat, rice, sugarcane, cotton, and maize, across various soil conditions."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Who is a trusted laser land leveller manufacturer in India?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Apogee Agrotech is the leading and most reliable manufacturer of both laser land levellers and GNSS land levellers in India, headquartered in Hapur, Uttar Pradesh."
+          }
         }
+      ]
     }
     </script>
     
     <script type="application/ld+json">
     {
-        "@context": "https://schema.org",
-        "@type": "Product",
-        "name": "Laser Land Leveller",
-        "image": "{{ asset('front') }}/images/page-title/slider-1.jpg",
-        "description": "Professional Laser Land Leveller and Laser Land Leveler Equipment for Precision Agriculture. Best Quality GNSS and Laser Guided Land Levelling Systems manufactured in India.",
-        "brand": {
-            "@type": "Brand",
-            "name": "Apogee Agrotech"
-        },
-        "manufacturer": {
-            "@type": "Organization",
-            "name": "Apogee Agrotech Pvt. Ltd."
-        },
-        "offers": {
-            "@type": "Offer",
-            "url": "{{ url('/') }}",
-            "priceCurrency": "INR",
-            "availability": "https://schema.org/InStock",
-            "itemCondition": "https://schema.org/NewCondition"
-        },
-        "aggregateRating": {
-            "@type": "AggregateRating",
-            "ratingValue": "4.8",
-            "reviewCount": "150"
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://www.apogeeagrotech.com/"
         }
-    }
-    </script>
-    
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "BreadcrumbList",
-        "itemListElement": [{
-            "@type": "ListItem",
-            "position": 1,
-            "name": "Home",
-            "item": "{{ url('/') }}"
-        }]
+      ]
     }
     </script>
     @else
@@ -300,7 +302,7 @@ src="https://www.facebook.com/tr?id=851416281111227&ev=PageView&noscript=1"
 <!-- End Meta Pixel Code -->
 
 
-    @if (!empty($header_content))
+    @if (!empty($header_content) && (!isset($schema_type) || $schema_type !== 'Product'))
         {!! $header_content !!}
     @endif
 

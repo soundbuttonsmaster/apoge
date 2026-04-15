@@ -164,8 +164,79 @@
                                                                         <li> <a href="#">3</a> </li>
                                                                       </ul>
                                                                     </div> -->
+
+                        @if(request()->is('p/laser-land-leveller'))
+                            <div class="mt-5">
+                                <p>A laser land leveller is an advanced agricultural implement designed to create perfectly level fields using laser-guided technology. It provides an even distribution of water across crops, increases crop yield, and significantly reduces time and money spent on irrigation.</p>
+                                <p>At Apogee Agrotech we sell high-quality laser land levellers which have been engineered for durability, accuracy, and efficiency to provide farmers with the tools they need to increase their productivity while conserving resources.</p>
+                                <br>
+                                <h2>What is a Laser Land Leveller?</h2>
+                                <p>A laser land leveling system is a tractor-based operation that utilizes a transmitter, receiver, control box, and hydraulic system; combined these parts provide the ability to automatically level land by using laser signals to control the height of the bucket holding material used in land leveling operations.</p>
+                                <p>The result is a smooth and level surface on which to plant crops as well as to have improved soil health, reduced water use from irrigation because of the removal of any uneven patches of land.</p>
+                                <p>This technology eliminates uneven patches, reduces water wastage, and enhances soil health.</p>
+                                <br>                           
+                                <h2>Key Features of Our Laser Land Leveller</h2>
+                                <ul class="laser-features-list">
+                                    <li>Superior laser precision for Land Leveling Accuracy</li>
+                                    <li>Tough all welded construction for Durability</li>
+                                    <li>Hydraulic System designed for a smooth operating system</li>
+                                    <li>Designed for easy compatibility with most tractors</li>
+                                    <li>Designed for low maintenance, to minimize down time</li>
+                                </ul>
+                                <br>
+                                <h2>Benefits of Using a Laser Land Leveller</h2>
+                                <br>
+                                <h3>1. Improved Water Management</h3>
+                                <p>Uniform fields allow a pattern of water distribution resulting in as much as 30% less water usage.</p>
+                                <h3>2. Increased Crop Production</h3>
+                                <p>A level surface provides for better germination and even growth of crops.</p>
+                                <h3>3. Reduced Fertilizer Runoff</h3>
+                                <p>Prevention of nutrient runoff provides richer soil.</p>
+                                <h3>4. Savings in Time and Money</h3>
+                                <p>Reduces the need for labor and speeds up the time taken for irrigation.</p>
+                                <h3>5. Greater Field Efficiency</h3>
+                                <p>Elimination of low and high spots will lead to more efficient farming practices.</p>
+                                <br>
+                                <h2>Why Choose Apogee Agrotech?</h2>
+                                <ul class="laser-features-list">
+                                    <li>Trusted manufacturer of agricultural equipment</li>
+                                    <li>Advanced laser technology integration</li>
+                                    <li>Competitive pricing</li>
+                                    <li>Reliable after-sales support</li>
+                                    <li>Custom solutions for different farm sizes</li>
+                                </ul>
+                                <br>
+                                <h2>FAQs</h2>
+                                <h3>1. What is a laser land leveller used for?</h3>
+                                <p>A laser land leveller is used to level agricultural fields with high precision, ensuring uniform water distribution and better crop yield.</p>
+                                <h3>2. How does a laser land leveller work?</h3>
+                                <p>It uses a laser transmitter to create a reference level. The receiver on the machine detects this signal and automatically adjusts the levelling blade through a hydraulic system.</p>
+                                <h3>3. What are the benefits of using a laser land leveller?</h3>
+                                <p>It improves crop yield, saves water, reduces fertilizer loss, and enhances overall farming efficiency.</p>
+                                <h3>4. Is a laser land leveller suitable for all types of crops?</h3>
+                                <p>Yes, it is suitable for various crops like wheat, rice, and other field crops where uniform land leveling is essential.</p>
+                                <h3>5. What tractor power is required for a laser land leveller?</h3>
+                                <p>Typically, a tractor with 45 HP or above is recommended, depending on the model and field conditions.</p>
+                            </div>
+                        @endif
                     </div>
                 </div>
             </div>
         </div>
+
+        @if(request()->is('p/laser-land-leveller'))
+            <style>
+                .laser-features-list {
+                    list-style: disc !important;
+                    margin: 0 0 16px 0;
+                    padding-left: 24px !important;
+                }
+
+                .laser-features-list li {
+                    display: list-item !important;
+                    list-style: disc !important;
+                    margin-bottom: 6px;
+                }
+            </style>
+        @endif
 @endsection

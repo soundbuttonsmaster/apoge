@@ -46,7 +46,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="swiper-slide">
+                <div class="swiper-slide hero-slide hero-slide-2">
                     <div class="slide-home-1">
                         <div class="image overflow-hidden"> <img src="{{ asset('front') }}/images/page-title/slider-2.jpg"
                                 alt="Farmer using GNSS land leveller by Apogee Agrotech for accurate and efficient land preparation in agriculture"
@@ -81,7 +81,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="swiper-slide">
+                <div class="swiper-slide hero-slide hero-slide-3">
                     <div class="slide-home-1">
                         <div class="image overflow-hidden"> <img src="{{ asset('front') }}/images/page-title/slider-3.jpg"
                                 alt="Apogee Auto Steering Set" class="tf-animate-zoom-in-out" width="1920" height="1080" />
