@@ -7,6 +7,7 @@ use App\Models\Blog;
 use App\Models\Category;
 use App\Models\Product;
 use App\Models\SubCategory;
+use App\Models\Area;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
 
@@ -60,6 +61,7 @@ class AdminSitemapController extends Controller
             ['url' => '/farmer-registration', 'priority' => '0.6', 'changefreq' => 'monthly'],
             ['url' => '/find-a-farmer-card', 'priority' => '0.6', 'changefreq' => 'monthly'],
             ['url' => '/privacy-policy', 'priority' => '0.5', 'changefreq' => 'yearly'],
+            ['url' => '/areas-we-cover', 'priority' => '0.9', 'changefreq' => 'monthly'],
         ];
 
         foreach ($staticPages as $page) {
@@ -82,14 +84,17 @@ class AdminSitemapController extends Controller
         foreach ($products as $product) {
             $lastmod = $product->updated_at ? $product->updated_at->toAtomString() : $currentDate;
             $url = $baseUrl . '/product-details/' . $product->slug;
-            $xml .= $this->addUrl($url, $lastmod, '0.8', 'weekly');
 
             if (!empty($product->product_image)) {
                 $images = json_decode($product->product_image);
                 if (!empty($images) && isset($images[0])) {
                     $imageUrl = $baseUrl . '/uploads/products/list/' . $images[0];
                     $xml .= $this->addUrlWithImage($url, $lastmod, '0.8', 'weekly', $imageUrl, $product->product_name);
+                } else {
+                    $xml .= $this->addUrl($url, $lastmod, '0.8', 'weekly');
                 }
+            } else {
+                $xml .= $this->addUrl($url, $lastmod, '0.8', 'weekly');
             }
         }
 
@@ -97,6 +102,12 @@ class AdminSitemapController extends Controller
         foreach ($blogs as $blog) {
             $lastmod = $blog->updated_at ? $blog->updated_at->toAtomString() : $currentDate;
             $xml .= $this->addUrl($baseUrl . '/blog-details/' . $blog->slug, $lastmod, '0.7', 'monthly');
+        }
+
+        $areas = Area::where('status', 1)->get();
+        foreach ($areas as $area) {
+            $lastmod = $area->updated_at ? $area->updated_at->toAtomString() : $currentDate;
+            $xml .= $this->addUrl($baseUrl . '/areas-we-cover/' . $area->slug, $lastmod, '0.8', 'weekly');
         }
 
         $xml .= '</urlset>';
