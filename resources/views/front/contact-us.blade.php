@@ -149,7 +149,7 @@
                                         <p class="text"><a href="mailto:sales@apogeeagrotech.com"><i
                                                     class="fa fa-envelope"></i>
                                                 sales@apogeeagrotech.com</a><br>
-                                            {{-- Phone removed as requested --}}
+                                            <a href="tel:+91 9760150034"><i class="fa fa-phone"></i> +91 9760150034</a>
                                         </p>
                                     </div>
                                 </li>
