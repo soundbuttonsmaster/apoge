@@ -6,11 +6,12 @@
             <div class="swiper-wrapper">
 
 
-                <div class="swiper-slide">
+                <div class="swiper-slide hero-slide hero-slide-1">
                     <div class="slide-home-1">
                         <div class="image overflow-hidden">
-                            <img src="{{ asset('front') }}/images/page-title/slider-1.jpg"
-                                alt="Apogee Bahubali Laser Land Leveller Bucket" class="tf-animate-zoom-in-out"
+                            <img src="{{ asset('front') }}/images/page-title/slider-1.jpg?v=20260722c"
+                                alt="Apogee Bahubali Laser Land Leveller Bucket"
+                                class="tf-animate-zoom-in-out"
                                 fetchpriority="high" width="1920" height="1080" loading="eager" decoding="async" />
                         </div>
                         <div class="content-wrap">

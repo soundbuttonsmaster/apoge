@@ -66,7 +66,7 @@
                                     </ul>
                                 </div>
                                 <div class="entry-image"> <img class="lazyload"
-                                        src="{{ asset('uploads/blog/datels/' . $blogdatels->image) }}" alt="">
+                                        src="{{ asset('uploads/blog/datels/' . $blogdatels->image) }}" alt="{{ $blogdatels->title }}">
                                 </div>
                                 {!! $blogdatels->full_description !!}
                                
@@ -85,7 +85,7 @@
                                                 <li class="item img-hover">
                                                     <div class="image hover-item"> <img
                                                             src="{{ asset('uploads/blog/thumb/' . $item->image) }}"
-                                                            alt=""> </div>
+                                                            alt="{{ $item->title }}"> </div>
                                                     <div class="content">
                                                         <p class="date">{{ $item->created_at->format('d F Y') }}</p>
                                                         <a class="name-post " href="{{ route('home.blog_datels', $item->slug) }}"> {{$item->title}} </a>

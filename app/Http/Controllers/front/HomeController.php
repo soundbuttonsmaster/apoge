@@ -182,7 +182,8 @@ class HomeController extends Controller
         $meta_keywords = 'laser land leveller blog, precision agriculture articles, farming tips, agricultural equipment news, laser land leveller guides, farming technology blog, apogee agrotech blog';
         $meta_description = 'Read latest articles, news, and tips about Laser Land Leveller equipment, precision agriculture, and farming technology. Expert insights from Apogee Agrotech.';
         $schema_type = 'Blog';
-        return view('front.media.blog', compact('blog', 'meta_title', 'meta_keywords', 'meta_description', 'schema_type'));
+        $ogImage = asset('front/images/laser-land-leveller.png');
+        return view('front.media.blog', compact('blog', 'meta_title', 'meta_keywords', 'meta_description', 'schema_type', 'ogImage'));
     }
     public function BlogDatels($slug)
     {
@@ -199,7 +200,15 @@ class HomeController extends Controller
         $meta_description = !empty($blogdatels->meta_description) ? $blogdatels->meta_description : (!empty($blogdatels->short_description) ? strip_tags($blogdatels->short_description) : $blogdatels->title . ' - Read latest insights about Laser Land Leveller and precision agriculture from Apogee Agrotech.');
         $header_content = @$blogdatels->head_content;
         $schema_type = 'BlogPosting';
-        return view('front.media.blog-datels', compact('blogdatels', 'blogs', 'meta_title', 'meta_keywords', 'meta_description', 'header_content', 'schema_type'));
+        $featuredFile = public_path('uploads/blog/featured/' . pathinfo($blogdatels->image, PATHINFO_FILENAME) . '.jpg');
+        if (is_file($featuredFile)) {
+            $ogImage = asset('uploads/blog/featured/' . pathinfo($blogdatels->image, PATHINFO_FILENAME) . '.jpg');
+        } elseif (!empty($blogdatels->image) && is_file(public_path('uploads/blog/datels/' . $blogdatels->image))) {
+            $ogImage = asset('uploads/blog/datels/' . $blogdatels->image);
+        } else {
+            $ogImage = asset('front/images/laser-land-leveller.png');
+        }
+        return view('front.media.blog-datels', compact('blogdatels', 'blogs', 'meta_title', 'meta_keywords', 'meta_description', 'header_content', 'schema_type', 'ogImage'));
 
     }
 

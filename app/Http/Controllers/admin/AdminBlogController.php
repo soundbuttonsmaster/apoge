@@ -5,6 +5,7 @@ namespace App\Http\Controllers\admin;
 use App\Http\Controllers\Controller;
 use App\Models\Blog;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Artisan;
 use Validator;
 use Image;
 use Str;
@@ -77,6 +78,8 @@ class AdminBlogController extends Controller
         $blogObj->head_content = $req->head_content;
         $blogObj->status =  $req->status ?? 0;
         $blogObj->save();
+
+        Artisan::call('blogs:generate-featured-images', ['--slug' => $blogObj->slug]);
 
         return redirect('admin/blog/create')->with(['message' => 'Blog Added successfully !', 'alert-type' => 'success']);
     }
@@ -162,6 +165,9 @@ class AdminBlogController extends Controller
         $blogObj->head_content = $req->head_content;
         $blogObj->status =  $req->status ?? 0;
         $blogObj->save();
+
+        Artisan::call('blogs:generate-featured-images', ['--slug' => $blogObj->slug]);
+
         return redirect('admin/blog/create')->with(['message' => 'Blog Updated successfully !', 'alert-type' => 'success']);
     }
 

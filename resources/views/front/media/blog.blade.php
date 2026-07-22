@@ -70,7 +70,7 @@
                                     <div class="image">
                                         <a href="{{ route('home.blog_datels', $item->slug) }}">
                                             <div class="video-wrap hover-item"> <img class="lazyload"
-                                                    src="{{ asset('uploads/blog/list/' . $item->image) }}" alt="Apogee Agrotech blog covering modern farming techniques, laser land levelling, and agricultural equipment insights" /> </div>
+                                                    src="{{ asset('uploads/blog/list/' . $item->image) }}" alt="{{ $item->title }}" /> </div>
                                             <div class="entry-date">
                                                 <p class="day"> {{ $item->created_at->format('d') }} </p>
                                                 <p class="month-year"> {{ $item->created_at->format('M y') }} </p>

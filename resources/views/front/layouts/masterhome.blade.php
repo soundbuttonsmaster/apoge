@@ -13,13 +13,13 @@
             $defaultTitle = 'Laser Land Leveller India | Best Laser Land Leveler Manufacturer | Apogee Agrotech';
             $defaultKeywords = 'laser land leveller, laser land leveler, laser land leveller india, laser land leveler manufacturer india, best laser land leveller, laser guided land leveller, GNSS land leveller, laser land leveller price, laser land leveller machine, laser land leveller for agriculture, laser land leveller bucket, laser land leveller system, precision land levelling, agricultural land leveller, laser leveller equipment, laser land leveller dealer, laser land leveller supplier, laser land leveller UP, laser land leveller Hapur, apogee laser land leveller, bahubali laser land leveller, laser land leveller cost, laser land leveller benefits, laser land leveller technology';
             $defaultDescription = 'Apogee Agrotech - India\'s Leading Manufacturer of Laser Land Leveller & Laser Land Leveler Equipment. Best Quality GNSS & Laser Guided Land Levelling Systems for Precision Agriculture. Get Best Price on Laser Land Levellers in India.';
-            $ogImage = asset('front') . '/images/logo.jpg';
+            $ogImage = !empty($ogImage) ? $ogImage : asset('front') . '/images/logo.jpg';
             $canonicalUrl = url('/');
         } else {
             $defaultTitle = !empty($meta_title) ? $meta_title : 'Apogee Agrotech - Laser Land Levelling Equipment';
             $defaultKeywords = !empty($meta_keywords) ? $meta_keywords : 'laser land leveller, laser land leveler, GNSS land leveller, agricultural equipment';
             $defaultDescription = !empty($meta_description) ? $meta_description : 'Apogee Agrotech - Leading Manufacturer of Laser Land Leveller Equipment in India';
-            $ogImage = asset('front') . '/images/logo.jpg';
+            $ogImage = !empty($ogImage) ? $ogImage : asset('front') . '/images/logo.jpg';
             $canonicalUrl = url()->current();
         }
         
@@ -122,7 +122,7 @@
     
     @if($isHomePage)
     <!-- Preload critical LCP image and resources -->
-    <link rel="preload" as="image" href="{{ asset('front') }}/images/page-title/slider-1.jpg" fetchpriority="high">
+    <link rel="preload" as="image" href="{{ asset('front') }}/images/page-title/slider-1.jpg?v=20260722c" fetchpriority="high">
     <link rel="preload" as="image" href="{{ asset('front') }}/images/logo.jpg" fetchpriority="high">
     <link rel="preload" href="{{ asset('front') }}/css/bootstrap.css" as="style">
     <link rel="preload" href="{{ asset('front') }}/css/styles.css" as="style">
