@@ -5,11 +5,14 @@
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
     <meta name="description" content="" />
     <meta name="author" content="" />
     <title>Apogee Group | Admin</title>
-    <link href="{{ asset('admin') }}/css/styles.css" rel="stylesheet" />
-    <link href="{{ asset('admin') }}/css/all.min.css" rel="stylesheet" />
+    <link href="{{ asset('admin') }}/css/styles.css?v={{ @filemtime(public_path('admin/css/styles.css')) ?: time() }}" rel="stylesheet" />
+    <link href="{{ asset('admin') }}/css/all.min.css?v={{ @filemtime(public_path('admin/css/all.min.css')) ?: time() }}" rel="stylesheet" />
     <link href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css" rel="stylesheet"
         crossorigin="anonymous" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js"
@@ -230,6 +233,20 @@
 
 
     <script type="text/javascript" src="https://parsleyjs.org/dist/parsley.js"></script>
+    <script>
+        // Clear stale PWA caches that were serving old admin/front pages
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.getRegistrations().then(function(regs) {
+                regs.forEach(function(reg) { reg.update(); });
+            });
+            if (window.caches) {
+                caches.keys().then(function(keys) {
+                    keys.filter(function(k) { return k.indexOf('v3-20260722') === -1; })
+                        .forEach(function(k) { caches.delete(k); });
+                });
+            }
+        }
+    </script>
     <!---------------- Toaster ------------------->
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
     <script>

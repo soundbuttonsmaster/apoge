@@ -177,7 +177,8 @@ class HomeController extends Controller
     }
     public function Blog()
     {
-        $blog = Blog::where('status', 1)->latest()->get();
+        Blog::publishDue();
+        $blog = Blog::published()->latest()->get();
         $meta_title = 'Blog - Laser Land Leveller Articles, News & Tips | Apogee Agrotech';
         $meta_keywords = 'laser land leveller blog, precision agriculture articles, farming tips, agricultural equipment news, laser land leveller guides, farming technology blog, apogee agrotech blog';
         $meta_description = 'Read latest articles, news, and tips about Laser Land Leveller equipment, precision agriculture, and farming technology. Expert insights from Apogee Agrotech.';
@@ -187,13 +188,13 @@ class HomeController extends Controller
     }
     public function BlogDatels($slug)
     {
-        // dd($slug);
-        $blogdatels = Blog::where('slug', $slug)->where('status', 1)->first();
+        Blog::publishDue();
+        $blogdatels = Blog::published()->where('slug', $slug)->first();
         if (!$blogdatels) {
             return redirect('404');
         }
 
-        $blogs = Blog::where('status', 1)->latest()->take(5)->get();
+        $blogs = Blog::published()->latest()->take(5)->get();
 
         $meta_title = !empty($blogdatels->meta_title) ? $blogdatels->meta_title : $blogdatels->title . ' - Laser Land Leveller Blog | Apogee Agrotech';
         $meta_keywords = !empty($blogdatels->meta_keywords) ? $blogdatels->meta_keywords : strtolower($blogdatels->title) . ', laser land leveller, precision agriculture, farming tips, agricultural equipment, apogee agrotech blog';

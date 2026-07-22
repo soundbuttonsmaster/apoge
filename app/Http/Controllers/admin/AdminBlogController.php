@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Blog;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Artisan;
+use Illuminate\Support\Carbon;
 use Validator;
 use Image;
 use Str;
@@ -19,14 +20,49 @@ class AdminBlogController extends Controller
         return view('admin.blog.index', compact('blogList'));
     }
 
+    private function applyScheduleAndStatus(Blog $blogObj, Request $req): void
+    {
+        $raw = trim((string) $req->input('scheduled_at', ''));
+        $scheduledAt = null;
+
+        if ($raw !== '') {
+            try {
+                $tz = config('app.timezone');
+                // datetime-local posts "YYYY-MM-DDTHH:mm"
+                if (preg_match('/^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}/', $raw)) {
+                    $scheduledAt = Carbon::createFromFormat('Y-m-d\TH:i', substr($raw, 0, 16), $tz);
+                } else {
+                    $scheduledAt = Carbon::parse($raw, $tz);
+                }
+            } catch (\Throwable $e) {
+                $scheduledAt = null;
+            }
+        }
+
+        $blogObj->scheduled_at = $scheduledAt;
+
+        // Future schedule => keep unpublished until that date/time
+        if ($scheduledAt && $scheduledAt->isFuture()) {
+            $blogObj->status = 0;
+            return;
+        }
+
+        $blogObj->status = $req->boolean('status') ? 1 : 0;
+    }
+
     public function store(Request $req)
     {
         // dd($req->all());
+        if ($req->input('scheduled_at') === '') {
+            $req->merge(['scheduled_at' => null]);
+        }
+
         $validator = Validator::make($req->all(), [
             'title' => 'required|unique:blogs',
             'short_description' => 'required',
             // 'full_description' => 'required',
             'image' => 'required|image|mimes:jpeg,png,jpg|max:6144', // 8MB limit
+            'scheduled_at' => 'nullable|date',
         ], [
             'image.image' => 'The file must be an image.',
             'image.mimes' => 'Only JPEG, PNG, and JPG formats are allowed.',
@@ -76,12 +112,16 @@ class AdminBlogController extends Controller
         $blogObj->meta_keywords = $req->meta_keywords;
         $blogObj->meta_description = $req->meta_description;
         $blogObj->head_content = $req->head_content;
-        $blogObj->status =  $req->status ?? 0;
+        $this->applyScheduleAndStatus($blogObj, $req);
         $blogObj->save();
 
         Artisan::call('blogs:generate-featured-images', ['--slug' => $blogObj->slug]);
 
-        return redirect('admin/blog/create')->with(['message' => 'Blog Added successfully !', 'alert-type' => 'success']);
+        $message = $blogObj->isScheduled()
+            ? 'Blog saved and scheduled for ' . $blogObj->scheduled_at->format('d M Y h:i A') . '!'
+            : 'Blog Added successfully !';
+
+        return redirect('admin/blog/create')->with(['message' => $message, 'alert-type' => 'success']);
     }
 
     public function edit($id)
@@ -94,12 +134,17 @@ class AdminBlogController extends Controller
 
     public function update(Request $req, $id)
     {
+        if ($req->input('scheduled_at') === '') {
+            $req->merge(['scheduled_at' => null]);
+        }
+
         // dd($req->all());
         $validator = Validator::make($req->all(), [
             'title' => 'required|unique:blogs,title,' . $id,
             'short_description' => 'required',
             // 'full_description' => 'required',
             'image' => 'image|mimes:jpeg,png,jpg|max:6144', // 8MB limit
+            'scheduled_at' => 'nullable|date',
         ], [
             'image.image' => 'The file must be an image.',
             'image.mimes' => 'Only JPEG, PNG, and JPG formats are allowed.',
@@ -163,12 +208,16 @@ class AdminBlogController extends Controller
         $blogObj->meta_keywords = $req->meta_keywords;
         $blogObj->meta_description = $req->meta_description;
         $blogObj->head_content = $req->head_content;
-        $blogObj->status =  $req->status ?? 0;
+        $this->applyScheduleAndStatus($blogObj, $req);
         $blogObj->save();
 
         Artisan::call('blogs:generate-featured-images', ['--slug' => $blogObj->slug]);
 
-        return redirect('admin/blog/create')->with(['message' => 'Blog Updated successfully !', 'alert-type' => 'success']);
+        $message = $blogObj->isScheduled()
+            ? 'Blog updated and scheduled for ' . $blogObj->scheduled_at->format('d M Y h:i A') . '!'
+            : 'Blog Updated successfully !';
+
+        return redirect('admin/blog/create')->with(['message' => $message, 'alert-type' => 'success']);
     }
 
 

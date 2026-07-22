@@ -90,7 +90,8 @@ class SitemapController extends Controller
         }
 
         // Blogs
-        $blogs = Blog::where('status', 1)->get();
+        Blog::publishDue();
+        $blogs = Blog::published()->get();
         foreach ($blogs as $blog) {
             $lastmod = $blog->updated_at ? $blog->updated_at->toAtomString() : $currentDate;
             $xml .= $this->addUrl($baseUrl . '/blog-details/' . $blog->slug, $lastmod, '0.7', 'monthly');

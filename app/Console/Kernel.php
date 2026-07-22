@@ -17,6 +17,9 @@ class Kernel extends ConsoleKernel
     {
         // Generate sitemap daily at 2:00 AM
         $schedule->command('sitemap:generate')->dailyAt('02:00');
+
+        // Publish scheduled blogs every minute
+        $schedule->command('blogs:publish-scheduled')->everyMinute()->withoutOverlapping();
     }
 
     /**

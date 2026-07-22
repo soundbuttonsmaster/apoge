@@ -51,6 +51,9 @@
     <!-- Mobile Specific Metas -->
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
     <meta name="theme-color" content="#1a5f2e" />
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
     
@@ -307,11 +310,11 @@ src="https://www.facebook.com/tr?id=851416281111227&ev=PageView&noscript=1"
     @endif
 
     <!-- Critical CSS - Load synchronously to prevent FOUC -->
-    <link rel="stylesheet" href="{{ asset('front') }}/css/bootstrap.css">
-    <link rel="stylesheet" href="{{ asset('front') }}/css/styles.css">
-    <link rel="stylesheet" href="{{ asset('front') }}/font/fonts.css">
-    <link rel="stylesheet" href="{{ asset('front') }}/icons/icomoon/style.css">
-    <link rel="stylesheet" href="{{ asset('front') }}/icons/fontawesome/css/all.min.css">
+    <link rel="stylesheet" href="{{ asset('front') }}/css/bootstrap.css?v={{ @filemtime(public_path('front/css/bootstrap.css')) ?: time() }}">
+    <link rel="stylesheet" href="{{ asset('front') }}/css/styles.css?v={{ @filemtime(public_path('front/css/styles.css')) ?: time() }}">
+    <link rel="stylesheet" href="{{ asset('front') }}/font/fonts.css?v={{ @filemtime(public_path('front/font/fonts.css')) ?: time() }}">
+    <link rel="stylesheet" href="{{ asset('front') }}/icons/icomoon/style.css?v={{ @filemtime(public_path('front/icons/icomoon/style.css')) ?: time() }}">
+    <link rel="stylesheet" href="{{ asset('front') }}/icons/fontawesome/css/all.min.css?v={{ @filemtime(public_path('front/icons/fontawesome/css/all.min.css')) ?: time() }}">
     
     <!-- Non-critical CSS - Load asynchronously -->
     <link rel="preload" href="{{ asset('front') }}/css/swiper-bundle.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
@@ -1192,34 +1195,47 @@ src="https://www.facebook.com/tr?id=851416281111227&ev=PageView&noscript=1"
     <script>
         if ('serviceWorker' in navigator) {
             window.addEventListener('load', function() {
-                navigator.serviceWorker.register('/service-worker.js')
+                // Drop old cache-first workers that served stale HTML
+                navigator.serviceWorker.getRegistrations().then(function(registrations) {
+                    return Promise.all(registrations.map(function(reg) {
+                        return reg.update();
+                    }));
+                }).then(function() {
+                    return caches.keys();
+                }).then(function(keys) {
+                    return Promise.all(keys.filter(function(k) {
+                        return k.indexOf('v3-20260722') === -1;
+                    }).map(function(k) {
+                        return caches.delete(k);
+                    }));
+                }).catch(function() {});
+
+                navigator.serviceWorker.register('/service-worker.js?v=3')
                     .then(function(registration) {
-                        console.log('ServiceWorker registration successful with scope: ', registration.scope);
-                        
-                        // Check for updates every hour
+                        registration.update();
                         setInterval(function() {
                             registration.update();
-                        }, 3600000);
+                        }, 5 * 60 * 1000);
                     })
                     .catch(function(err) {
                         console.log('ServiceWorker registration failed: ', err);
                     });
             });
 
-            // Handle install prompt
-            let deferredPrompt;
-            window.addEventListener('beforeinstallprompt', (e) => {
-                // Prevent Chrome 67 and earlier from automatically showing the prompt
-                e.preventDefault();
-                // Stash the event so it can be triggered later
-                deferredPrompt = e;
-                // Show custom install button or notification
-                console.log('PWA install prompt available');
+            var refreshing = false;
+            navigator.serviceWorker.addEventListener('controllerchange', function() {
+                if (refreshing) return;
+                refreshing = true;
+                window.location.reload();
             });
 
-            // Listen for app installed event
-            window.addEventListener('appinstalled', (evt) => {
-                console.log('PWA was installed');
+            let deferredPrompt;
+            window.addEventListener('beforeinstallprompt', (e) => {
+                e.preventDefault();
+                deferredPrompt = e;
+            });
+
+            window.addEventListener('appinstalled', () => {
                 deferredPrompt = null;
             });
         }
