@@ -23054,12 +23054,14 @@ svg path {
   padding-right: 60px !important;
 }
 
-/* Home hero slider: improve slide 2 and 3 content fit on smaller screens */
+/* Home hero slider: keep content width consistent across all slides */
+.slider-home-1 .hero-slide-1 .content,
 .slider-home-1 .hero-slide-2 .content,
 .slider-home-1 .hero-slide-3 .content {
   max-width: 760px;
 }
 
+.slider-home-1 .hero-slide-1 .title,
 .slider-home-1 .hero-slide-2 .title,
 .slider-home-1 .hero-slide-3 .title {
   line-height: 1.1;
@@ -23067,11 +23069,13 @@ svg path {
 }
 
 @media (max-width: 991px) {
+  .slider-home-1 .hero-slide-1 .content,
   .slider-home-1 .hero-slide-2 .content,
   .slider-home-1 .hero-slide-3 .content {
     max-width: 100%;
   }
 
+  .slider-home-1 .hero-slide-1 .title,
   .slider-home-1 .hero-slide-2 .title,
   .slider-home-1 .hero-slide-3 .title {
     font-size: clamp(36px, 7vw, 56px);
@@ -23079,6 +23083,7 @@ svg path {
     margin-bottom: 14px;
   }
 
+  .slider-home-1 .hero-slide-1 .text,
   .slider-home-1 .hero-slide-2 .text,
   .slider-home-1 .hero-slide-3 .text {
     font-size: 16px;
@@ -23088,6 +23093,7 @@ svg path {
 }
 
 @media (max-width: 767px) {
+  .slider-home-1 .hero-slide-1 .title,
   .slider-home-1 .hero-slide-2 .title,
   .slider-home-1 .hero-slide-3 .title {
     font-size: clamp(28px, 9vw, 42px);
@@ -23095,12 +23101,14 @@ svg path {
     margin-bottom: 10px;
   }
 
+  .slider-home-1 .hero-slide-1 .sub-title,
   .slider-home-1 .hero-slide-2 .sub-title,
   .slider-home-1 .hero-slide-3 .sub-title {
     font-size: 18px;
     margin-bottom: 10px;
   }
 
+  .slider-home-1 .hero-slide-1 .text,
   .slider-home-1 .hero-slide-2 .text,
   .slider-home-1 .hero-slide-3 .text {
     font-size: 14px;
