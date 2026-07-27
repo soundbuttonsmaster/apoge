@@ -205,8 +205,10 @@
     </style>
 
     <script src="{{ asset('ckeditor/ckeditor.js') }}"></script>
+    <script src="{{ asset('js/admin/sanitize-blog-paste-html.js') }}"></script>
+    <script src="{{ asset('js/admin/blog-ckeditor.js') }}"></script>
     <script>
-        CKEDITOR.replace('full_description');
+        initBlogCKEditor('full_description');
 
         (function () {
             var scheduleInput = document.getElementById('scheduled_at');
