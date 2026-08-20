@@ -159,6 +159,7 @@
                                     <th>Title</th>
                                     <th width="90">Photo</th>
                                     <th>Description</th>
+                                    <th width="120">Created At</th>
                                     <th width="110">Status</th>
                                     <th width="150">Scheduled</th>
                                     <th width="60">Edit</th>
@@ -177,6 +178,9 @@
                                             @endif
                                         </td>
                                         <td>{{ \Illuminate\Support\Str::limit($item->short_description, 80) }}</td>
+                                        <td>
+                                            {{ $item->created_at ? $item->created_at->format('d M Y') : '—' }}
+                                        </td>
                                         <td>
                                             @if ($item->isScheduled())
                                                 <span class="badge badge-warning">Scheduled</span>
@@ -203,7 +207,7 @@
                                     </tr>
                                 @empty
                                     <tr>
-                                        <td colspan="8" class="text-center text-muted py-4">No blogs yet.</td>
+                                        <td colspan="9" class="text-center text-muted py-4">No blogs yet.</td>
                                     </tr>
                                 @endforelse
                             </tbody>
