@@ -20,6 +20,16 @@ class AdminBlogController extends Controller
         return view('admin.blog.index', compact('blogList'));
     }
 
+    private function ensureBlogUploadDirs(): void
+    {
+        foreach (['datels', 'list', 'thumb', 'featured'] as $folder) {
+            $path = public_path('uploads/blog/' . $folder);
+            if (!File::isDirectory($path)) {
+                File::makeDirectory($path, 0755, true);
+            }
+        }
+    }
+
     private function applyScheduleAndStatus(Blog $blogObj, Request $req): void
     {
         $raw = trim((string) $req->input('scheduled_at', ''));
@@ -77,6 +87,7 @@ class AdminBlogController extends Controller
         $blogObj = new Blog();
 
         if ($req->hasFile('image')) {
+            $this->ensureBlogUploadDirs();
             $image1 = $req->file('image');
             $image = rand(111, 999) . time() . '_' . $req->file('image')->getClientOriginalName();
             $image_resize = Image::make($req->file('image')->getRealPath());
@@ -158,6 +169,7 @@ class AdminBlogController extends Controller
 
         $blogObj = Blog::findOrFail($id);
         if ($req->hasFile('image')) {
+            $this->ensureBlogUploadDirs();
 
             $image_path = public_path('uploads/blog/datels/' . $blogObj->image);
             if (File::exists($image_path)) {
