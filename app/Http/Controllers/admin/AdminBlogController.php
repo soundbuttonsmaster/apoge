@@ -30,6 +30,15 @@ class AdminBlogController extends Controller
         }
     }
 
+    private function makeBlogImageName($file): string
+    {
+        $ext = strtolower($file->getClientOriginalExtension() ?: 'jpg');
+        $base = pathinfo($file->getClientOriginalName(), PATHINFO_FILENAME);
+        $base = Str::slug($base) ?: 'image';
+
+        return rand(111, 999) . time() . '_' . $base . '.' . $ext;
+    }
+
     private function applyScheduleAndStatus(Blog $blogObj, Request $req): void
     {
         $raw = trim((string) $req->input('scheduled_at', ''));
@@ -89,8 +98,8 @@ class AdminBlogController extends Controller
         if ($req->hasFile('image')) {
             $this->ensureBlogUploadDirs();
             $image1 = $req->file('image');
-            $image = rand(111, 999) . time() . '_' . $req->file('image')->getClientOriginalName();
-            $image_resize = Image::make($req->file('image')->getRealPath());
+            $image = $this->makeBlogImageName($image1);
+            $image_resize = Image::make($image1->getRealPath());
             $width = Image::make($image1)->width();
             if ($width > 800) {
                 $image_resize->resize(800, 400, function ($constraint) {
@@ -186,8 +195,8 @@ class AdminBlogController extends Controller
                 @unlink($image_path);
             }
             $image1 = $req->file('image');
-            $image = rand(111, 999) . time() . '_' . $req->file('image')->getClientOriginalName();
-            $image_resize = Image::make($req->file('image')->getRealPath());
+            $image = $this->makeBlogImageName($image1);
+            $image_resize = Image::make($image1->getRealPath());
             $width = Image::make($image1)->width();
             if ($width > 800) {
                 $image_resize->resize(800, 400, function ($constraint) {
