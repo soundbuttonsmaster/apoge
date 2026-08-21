@@ -1204,13 +1204,13 @@ src="https://www.facebook.com/tr?id=851416281111227&ev=PageView&noscript=1"
                     return caches.keys();
                 }).then(function(keys) {
                     return Promise.all(keys.filter(function(k) {
-                        return k.indexOf('v3-20260722') === -1;
+                        return k.indexOf('v4-20260821') === -1;
                     }).map(function(k) {
                         return caches.delete(k);
                     }));
                 }).catch(function() {});
 
-                navigator.serviceWorker.register('/service-worker.js?v=3')
+                navigator.serviceWorker.register('/service-worker.js?v=4')
                     .then(function(registration) {
                         registration.update();
                         setInterval(function() {

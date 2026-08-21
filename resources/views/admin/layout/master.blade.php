@@ -234,15 +234,14 @@
 
     <script type="text/javascript" src="https://parsleyjs.org/dist/parsley.js"></script>
     <script>
-        // Clear stale PWA caches that were serving old admin/front pages
+        // Clear any PWA service worker on admin so it never hijacks admin GETs (e.g. blog delete)
         if ('serviceWorker' in navigator) {
             navigator.serviceWorker.getRegistrations().then(function(regs) {
-                regs.forEach(function(reg) { reg.update(); });
+                regs.forEach(function(reg) { reg.unregister(); });
             });
             if (window.caches) {
                 caches.keys().then(function(keys) {
-                    keys.filter(function(k) { return k.indexOf('v3-20260722') === -1; })
-                        .forEach(function(k) { caches.delete(k); });
+                    keys.forEach(function(k) { caches.delete(k); });
                 });
             }
         }

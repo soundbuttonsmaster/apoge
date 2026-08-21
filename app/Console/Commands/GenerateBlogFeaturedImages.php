@@ -42,16 +42,21 @@ class GenerateBlogFeaturedImages extends Command
             return 0;
         }
 
-        // Same ~1.9 ratio as the blog card so CSS does not crop title
+        // OG / social card only — do not overwrite uploaded datels/list/thumb
         $sizes = [
             ['dir' => 'featured', 'w' => 1200, 'h' => 630, 'titleSize' => 42],
-            ['dir' => 'datels', 'w' => 900, 'h' => 473, 'titleSize' => 34],
-            ['dir' => 'list', 'w' => 760, 'h' => 400, 'titleSize' => 28],
-            ['dir' => 'thumb', 'w' => 200, 'h' => 200, 'titleSize' => 14],
         ];
 
         foreach ($blogs as $blog) {
-            $filename = $blog->slug . '.jpg';
+            if (empty($blog->image) && empty($blog->title)) {
+                continue;
+            }
+
+            // Match HomeController OG lookup: {basename of blog.image}.jpg
+            $stem = !empty($blog->image)
+                ? pathinfo($blog->image, PATHINFO_FILENAME)
+                : $blog->slug;
+            $filename = $stem . '.jpg';
 
             foreach ($sizes as $size) {
                 $dir = public_path('uploads/blog/' . $size['dir']);
@@ -67,8 +72,6 @@ class GenerateBlogFeaturedImages extends Command
                 );
             }
 
-            $blog->image = $filename;
-            $blog->save();
             $this->info('Generated: ' . $filename);
         }
 

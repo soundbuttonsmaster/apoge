@@ -1,6 +1,6 @@
 // Service Worker for Apogee Agrotech
 // Network-first for HTML/pages so content updates show without hard refresh.
-const CACHE_VERSION = 'v3-20260722';
+const CACHE_VERSION = 'v4-20260821';
 const STATIC_CACHE = 'apogee-static-' + CACHE_VERSION;
 
 const PRECACHE_ASSETS = [
@@ -22,6 +22,7 @@ function shouldBypassCache(url) {
   return (
     path.startsWith('/admin') ||
     path.startsWith('/api') ||
+    path.startsWith('/uploads/blog') ||
     path.includes('/blog') ||
     path.includes('/media') ||
     path.endsWith('.php') ||
@@ -30,6 +31,10 @@ function shouldBypassCache(url) {
 }
 
 function isStaticAsset(url) {
+  // Never treat the service worker script itself as a cacheable asset
+  if (url.pathname === '/service-worker.js') {
+    return false;
+  }
   return /\.(css|js|woff2?|ttf|eot|png|jpe?g|gif|webp|svg|ico|map)(\?.*)?$/i.test(url.pathname);
 }
 
@@ -65,10 +70,10 @@ self.addEventListener('fetch', (event) => {
     return;
   }
 
-  // Always hit the network for HTML / admin / dynamic pages
+  // Always hit the network for HTML / admin / dynamic pages / blog uploads
   if (isNavigationRequest(event.request) || shouldBypassCache(url)) {
     event.respondWith(
-      fetch(event.request, { cache: 'no-store' }).catch(() => caches.match('/'))
+      fetch(event.request, { cache: 'no-store' }).catch(() => caches.match(event.request))
     );
     return;
   }

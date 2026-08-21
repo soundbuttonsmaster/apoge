@@ -256,28 +256,26 @@ class AdminBlogController extends Controller
         $blogObj = Blog::find($id);
 
         if (!$blogObj) {
-            return redirect()->back()->with(['message' => 'Blog not found!', 'alert-type' => 'error']);
+            return redirect('admin/blog/create')->with(['message' => 'Blog not found!', 'alert-type' => 'error']);
         }
 
-        // Delete large image
-        $image_path = public_path('uploads/blog/datels/' . $blogObj->image);
-        if (File::exists($image_path)) {
-            @unlink($image_path);
+        $imageName = $blogObj->image;
+        if (!empty($imageName)) {
+            foreach (['datels', 'list', 'thumb', 'featured'] as $folder) {
+                $image_path = public_path('uploads/blog/' . $folder . '/' . $imageName);
+                if (File::exists($image_path)) {
+                    @unlink($image_path);
+                }
+                // Featured cards are always .jpg from basename
+                $featuredPath = public_path('uploads/blog/' . $folder . '/' . pathinfo($imageName, PATHINFO_FILENAME) . '.jpg');
+                if (File::exists($featuredPath)) {
+                    @unlink($featuredPath);
+                }
+            }
         }
 
-        $image_path = public_path('uploads/blog/list/' . $blogObj->image);
-        if (File::exists($image_path)) {
-            @unlink($image_path);
-        }
-
-        $image_path = public_path('uploads/blog/thumb/' . $blogObj->image);
-        if (File::exists($image_path)) {
-            @unlink($image_path);
-        }
-
-        // Delete gallery record from database
         $blogObj->delete();
 
-        return redirect()->back()->with(['message' => 'Gallery deleted successfully!', 'alert-type' => 'success']);
+        return redirect('admin/blog/create')->with(['message' => 'Blog deleted successfully!', 'alert-type' => 'success']);
     }
 }
