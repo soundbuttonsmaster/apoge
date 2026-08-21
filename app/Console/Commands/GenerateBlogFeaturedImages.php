@@ -24,11 +24,12 @@ class GenerateBlogFeaturedImages extends Command
 
         $this->info('Using background: ' . $bgPath);
 
-        $fontBold = 'C:\\Windows\\Fonts\\arialbd.ttf';
-        $fontRegular = 'C:\\Windows\\Fonts\\arial.ttf';
-        if (!file_exists($fontBold)) {
-            $fontBold = $fontRegular;
+        $fontBold = $this->resolveFont(true);
+        if (!$fontBold) {
+            $this->error('No TTF font found. On Linux install: apt-get install -y fonts-dejavu-core');
+            return 1;
         }
+        $this->info('Using font: ' . $fontBold);
 
         $query = Blog::query();
         if ($slug = $this->option('slug')) {
@@ -73,6 +74,45 @@ class GenerateBlogFeaturedImages extends Command
 
         $this->info('Done. ' . $blogs->count() . ' image(s) created.');
         return 0;
+    }
+
+    /**
+     * Prefer project fonts, then common OS paths (Windows + Linux).
+     */
+    private function resolveFont(bool $bold = true): ?string
+    {
+        $candidates = $bold
+            ? [
+                storage_path('fonts/DejaVuSans-Bold.ttf'),
+                base_path('resources/fonts/DejaVuSans-Bold.ttf'),
+                'C:\\Windows\\Fonts\\arialbd.ttf',
+                'C:\\Windows\\Fonts\\arial.ttf',
+                '/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf',
+                '/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf',
+                '/usr/share/fonts/truetype/liberation/LiberationSans-Bold.ttf',
+                '/usr/share/fonts/truetype/liberation/LiberationSans-Regular.ttf',
+                '/usr/share/fonts/truetype/freefont/FreeSansBold.ttf',
+                '/usr/share/fonts/truetype/freefont/FreeSans.ttf',
+                '/usr/share/fonts/TTF/DejaVuSans-Bold.ttf',
+                '/usr/share/fonts/TTF/DejaVuSans.ttf',
+            ]
+            : [
+                storage_path('fonts/DejaVuSans.ttf'),
+                base_path('resources/fonts/DejaVuSans.ttf'),
+                'C:\\Windows\\Fonts\\arial.ttf',
+                '/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf',
+                '/usr/share/fonts/truetype/liberation/LiberationSans-Regular.ttf',
+                '/usr/share/fonts/truetype/freefont/FreeSans.ttf',
+                '/usr/share/fonts/TTF/DejaVuSans.ttf',
+            ];
+
+        foreach ($candidates as $path) {
+            if ($path && is_readable($path)) {
+                return $path;
+            }
+        }
+
+        return null;
     }
 
     private function generatePlainTitleCard($bgPath, $fontBold, $title, $outPath, array $size)

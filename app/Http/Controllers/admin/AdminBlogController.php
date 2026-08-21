@@ -135,7 +135,11 @@ class AdminBlogController extends Controller
         $this->applyScheduleAndStatus($blogObj, $req);
         $blogObj->save();
 
-        Artisan::call('blogs:generate-featured-images', ['--slug' => $blogObj->slug]);
+        try {
+            Artisan::call('blogs:generate-featured-images', ['--slug' => $blogObj->slug]);
+        } catch (\Throwable $e) {
+            report($e);
+        }
 
         $message = $blogObj->isScheduled()
             ? 'Blog saved and scheduled for ' . $blogObj->scheduled_at->format('d M Y h:i A') . '!'
@@ -232,7 +236,11 @@ class AdminBlogController extends Controller
         $this->applyScheduleAndStatus($blogObj, $req);
         $blogObj->save();
 
-        Artisan::call('blogs:generate-featured-images', ['--slug' => $blogObj->slug]);
+        try {
+            Artisan::call('blogs:generate-featured-images', ['--slug' => $blogObj->slug]);
+        } catch (\Throwable $e) {
+            report($e);
+        }
 
         $message = $blogObj->isScheduled()
             ? 'Blog updated and scheduled for ' . $blogObj->scheduled_at->format('d M Y h:i A') . '!'
