@@ -201,15 +201,22 @@ class HomeController extends Controller
         $meta_description = !empty($blogdatels->meta_description) ? $blogdatels->meta_description : (!empty($blogdatels->short_description) ? strip_tags($blogdatels->short_description) : $blogdatels->title . ' - Read latest insights about Laser Land Leveller and precision agriculture from Apogee Agrotech.');
         $header_content = @$blogdatels->head_content;
         $schema_type = 'BlogPosting';
-        $featuredFile = public_path('uploads/blog/featured/' . pathinfo($blogdatels->image, PATHINFO_FILENAME) . '.jpg');
-        if (is_file($featuredFile)) {
-            $ogImage = asset('uploads/blog/featured/' . pathinfo($blogdatels->image, PATHINFO_FILENAME) . '.jpg');
-        } elseif (!empty($blogdatels->image) && is_file(public_path('uploads/blog/datels/' . $blogdatels->image))) {
-            $ogImage = asset('uploads/blog/datels/' . $blogdatels->image);
-        } else {
-            $ogImage = asset('front/images/laser-land-leveller.png');
-        }
-        return view('front.media.blog-datels', compact('blogdatels', 'blogs', 'meta_title', 'meta_keywords', 'meta_description', 'header_content', 'schema_type', 'ogImage'));
+        $ogImage = $blogdatels->ogImageUrl();
+        $tocData = $blogdatels->withTableOfContents();
+        $blogContentHtml = $tocData['html'];
+        $blogToc = $tocData['items'];
+        return view('front.media.blog-datels', compact(
+            'blogdatels',
+            'blogs',
+            'meta_title',
+            'meta_keywords',
+            'meta_description',
+            'header_content',
+            'schema_type',
+            'ogImage',
+            'blogContentHtml',
+            'blogToc'
+        ));
 
     }
 

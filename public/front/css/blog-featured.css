@@ -1,0 +1,503 @@
+/* Apogee blog: feature panel + text card (stacked) */
+
+.apogee-blog-grid {
+  --apogee-blog-gap: 28px;
+  margin-left: calc(var(--apogee-blog-gap) / -2) !important;
+  margin-right: calc(var(--apogee-blog-gap) / -2) !important;
+}
+
+.apogee-blog-grid > .apogee-blog-grid__col {
+  padding-left: calc(var(--apogee-blog-gap) / 2) !important;
+  padding-right: calc(var(--apogee-blog-gap) / 2) !important;
+  margin-bottom: var(--apogee-blog-gap);
+}
+
+.apogee-blog-stack {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  border-radius: 18px;
+  overflow: hidden;
+  background: #fff;
+  border: 1px solid rgba(13, 64, 28, 0.12);
+  box-shadow: 0 12px 28px rgba(7, 32, 16, 0.08);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.apogee-blog-stack:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 18px 36px rgba(7, 32, 16, 0.14);
+}
+
+.apogee-blog-stack--detail {
+  margin-bottom: 28px;
+}
+
+.apogee-blog-stack--detail .apogee-og-card__panel {
+  border-radius: 18px;
+  min-height: 260px;
+  padding: 28px 28px 22px;
+}
+
+/* —— Feature / image panel —— */
+.apogee-og-card__panel {
+  position: relative;
+  isolation: isolate;
+  display: flex;
+  flex-direction: column;
+  padding: 20px 20px 16px;
+  min-height: 240px;
+  color: #fff;
+  background:
+    radial-gradient(ellipse 70% 55% at 88% 8%, rgba(39, 141, 69, 0.38) 0%, transparent 55%),
+    radial-gradient(ellipse 60% 50% at 8% 92%, rgba(219, 85, 24, 0.18) 0%, transparent 50%),
+    linear-gradient(165deg, #0c2a15 0%, #0a1f10 48%, #06140b 100%);
+}
+
+.apogee-og-card__glow {
+  position: absolute;
+  pointer-events: none;
+  z-index: 0;
+  border-radius: 50%;
+}
+
+.apogee-og-card__glow--tr {
+  top: -30%;
+  right: -15%;
+  width: 220px;
+  height: 220px;
+  background: radial-gradient(circle, rgba(172, 211, 115, 0.22) 0%, transparent 70%);
+}
+
+.apogee-og-card__glow--bl {
+  bottom: -35%;
+  left: -20%;
+  width: 240px;
+  height: 240px;
+  background: radial-gradient(circle, rgba(219, 85, 24, 0.16) 0%, transparent 70%);
+}
+
+.apogee-og-card__head,
+.apogee-og-card__title,
+.apogee-og-card__excerpt,
+.apogee-og-card__foot {
+  position: relative;
+  z-index: 1;
+}
+
+.apogee-og-card__head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.apogee-og-card__brand {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  min-width: 0;
+}
+
+.apogee-og-card__brand img {
+  width: auto;
+  max-width: 140px;
+  height: 32px;
+  object-fit: contain;
+  object-position: left center;
+}
+
+.apogee-blog-stack--detail .apogee-og-card__brand img {
+  max-width: 170px;
+  height: 40px;
+}
+
+.apogee-og-card__eyebrow {
+  font-family: "Nunito Sans", sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.48);
+  line-height: 1.2;
+}
+
+.apogee-og-card__badge {
+  flex-shrink: 0;
+  font-family: "Work Sans", sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.92);
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  border-radius: 999px;
+  padding: 7px 12px;
+  line-height: 1;
+  background: rgba(0, 0, 0, 0.22);
+}
+
+.apogee-og-card__title {
+  font-family: "Work Sans", sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.3;
+  color: #fff;
+  margin: 0 0 10px;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
+}
+
+.apogee-blog-stack--detail .apogee-og-card__title {
+  font-size: 24px;
+  -webkit-line-clamp: 4;
+}
+
+.apogee-og-card__title a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.apogee-og-card__title a:hover {
+  color: #acd373;
+}
+
+.apogee-og-card__excerpt {
+  font-family: "Nunito Sans", sans-serif;
+  font-size: 13px;
+  line-height: 1.45;
+  color: rgba(255, 255, 255, 0.62);
+  margin: 0 0 14px;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  flex-grow: 1;
+}
+
+.apogee-og-card__foot {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: auto;
+  padding-top: 12px;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.apogee-og-card__site {
+  font-family: "Nunito Sans", sans-serif;
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.55);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.apogee-og-card__cta {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: "Work Sans", sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  color: #fff !important;
+  text-decoration: none !important;
+  background: linear-gradient(105deg, #db5518 0%, #f26522 50%, #e8a317 100%);
+  border-radius: 999px;
+  padding: 8px 14px;
+  line-height: 1.2;
+  box-shadow: 0 0 16px rgba(219, 85, 24, 0.4);
+  transition: filter 0.2s ease, transform 0.2s ease;
+}
+
+.apogee-og-card__cta:hover {
+  filter: brightness(1.08);
+  transform: translateY(-1px);
+  color: #fff !important;
+}
+
+.apogee-og-card__cta--static {
+  cursor: default;
+  pointer-events: none;
+}
+
+.apogee-og-card__cta--static:hover {
+  filter: none;
+  transform: none;
+}
+
+/* —— Text card (below feature) —— */
+.apogee-text-card {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 18px 20px 18px;
+  background: #fff;
+}
+
+.apogee-text-card__date {
+  font-family: "Nunito Sans", sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #8a948e;
+  margin: 0 0 10px;
+}
+
+.apogee-text-card__title {
+  font-family: "Work Sans", sans-serif;
+  font-size: 17px;
+  font-weight: 700;
+  line-height: 1.35;
+  margin: 0 0 10px;
+}
+
+.apogee-text-card__title a {
+  color: #072010;
+  text-decoration: none;
+}
+
+.apogee-text-card__title a:hover {
+  color: #db5518;
+}
+
+.apogee-text-card__excerpt {
+  font-family: "Nunito Sans", sans-serif;
+  font-size: 14px;
+  line-height: 1.55;
+  color: #6e7673;
+  margin: 0 0 14px;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
+  flex-grow: 1;
+}
+
+.apogee-text-card__more {
+  font-family: "Work Sans", sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  color: #278d45 !important;
+  text-decoration: none !important;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: auto;
+}
+
+.apogee-text-card__more:hover {
+  color: #db5518 !important;
+}
+
+/* Sidebar thumb */
+.apogee-blog-thumb {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 90px;
+  height: 90px;
+  border-radius: 12px;
+  overflow: hidden;
+  flex-shrink: 0;
+  text-decoration: none;
+  background: linear-gradient(160deg, #0c2a15 0%, #06140b 100%);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.apogee-blog-thumb__glow {
+  position: absolute;
+  inset: -20%;
+  background: radial-gradient(circle at 70% 30%, rgba(39, 141, 69, 0.35), transparent 60%);
+  pointer-events: none;
+}
+
+.apogee-blog-thumb img {
+  position: relative;
+  z-index: 1;
+  max-width: 70px;
+  height: auto;
+  object-fit: contain;
+}
+
+.tf-sidebar .sidebar-item .sb-content .latest-list li {
+  gap: 16px;
+}
+
+@media (max-width: 767px) {
+  .apogee-blog-grid {
+    --apogee-blog-gap: 20px;
+  }
+
+  .apogee-og-card__panel {
+    min-height: 220px;
+    padding: 16px;
+  }
+
+  .apogee-og-card__title {
+    font-size: 16px;
+  }
+
+  .apogee-og-card__foot {
+    flex-wrap: wrap;
+  }
+
+  .apogee-og-card__cta {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .apogee-text-card {
+    padding: 16px;
+  }
+}
+
+/* —— On this page (TOC) —— */
+.apogee-blog-sidebar {
+  position: sticky;
+  top: 100px;
+  align-self: flex-start;
+  max-height: calc(100vh - 120px);
+  overflow-y: auto;
+  padding-right: 4px;
+}
+
+.apogee-toc {
+  position: relative;
+  z-index: 1;
+  margin-bottom: 24px;
+  padding: 22px 20px;
+  border-radius: 12px;
+  background: #121412;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.12);
+}
+
+.apogee-toc__label {
+  font-family: "Work Sans", sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #acd373;
+  margin: 0 0 14px;
+}
+
+.apogee-toc__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.apogee-toc__item {
+  margin: 0;
+}
+
+.apogee-toc__item + .apogee-toc__item {
+  margin-top: 10px;
+}
+
+.apogee-toc__item--h3 .apogee-toc__link,
+.apogee-toc__item--h4 .apogee-toc__link {
+  padding-left: 12px;
+  font-size: 13.5px;
+}
+
+.apogee-toc__item--h4 .apogee-toc__link {
+  padding-left: 20px;
+}
+
+.apogee-toc__link {
+  display: block;
+  font-family: "Nunito Sans", sans-serif;
+  font-size: 14.5px;
+  line-height: 1.45;
+  color: #c5cdc8;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.apogee-toc__link:hover {
+  color: #fff;
+}
+
+.apogee-toc__link.is-active {
+  color: #acd373;
+  font-weight: 600;
+}
+
+.apogee-blog-body h2,
+.apogee-blog-body h3,
+.apogee-blog-body h4 {
+  scroll-margin-top: 110px;
+}
+
+/* Latest posts: clear spacing, no overlap with TOC */
+.apogee-latest-posts {
+  position: relative;
+  z-index: 0;
+  clear: both;
+}
+
+.apogee-latest-posts .sb-content {
+  padding: 8px 15px 12px !important;
+}
+
+.apogee-latest-posts .latest-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.apogee-latest-posts .latest-list li.item {
+  align-items: flex-start !important;
+  gap: 14px !important;
+  padding-top: 16px !important;
+  padding-bottom: 16px !important;
+  margin: 0 !important;
+}
+
+.apogee-latest-posts .latest-list li.item:first-child {
+  padding-top: 16px !important;
+}
+
+.apogee-latest-posts .latest-list li.item:not(:last-child) {
+  border-bottom: 1px dashed var(--Border-6, #e9e4df);
+}
+
+.apogee-latest-posts .latest-list li.item .content {
+  min-width: 0;
+  flex: 1;
+  padding-top: 2px;
+}
+
+.apogee-latest-posts .latest-list li.item .content .date {
+  margin-bottom: 8px !important;
+  line-height: 1.3;
+}
+
+.apogee-latest-posts .latest-list li.item .content .name-post {
+  display: block;
+  line-height: 1.4 !important;
+}
+
+@media (max-width: 991px) {
+  .apogee-blog-sidebar {
+    position: static;
+    top: auto;
+    max-height: none;
+    overflow: visible;
+    margin-top: 36px;
+  }
+
+  .apogee-toc {
+    margin-bottom: 20px;
+  }
+}

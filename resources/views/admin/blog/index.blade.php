@@ -29,13 +29,13 @@
                     <div class="card-body">
                         <div class="row">
                             <div class="col-lg-5 mb-3">
-                                <label class="blog-field-label" for="blog_image">Featured photo</label>
+                                <label class="blog-field-label" for="blog_image">Featured photo <span class="text-muted font-weight-normal">(optional)</span></label>
                                 <div class="blog-file-box">
                                     <input type="file" class="form-control-file" id="blog_image" name="image"
-                                        accept="image/jpeg,image/png,image/jpg" required>
+                                        accept="image/jpeg,image/png,image/jpg">
                                 </div>
                                 <small class="form-text text-muted mt-2">
-                                    Recommended: list 380×200, thumb 90×90, detail 800×400. Max 6MB (JPG/PNG).
+                                    Optional. Public list &amp; detail use a static Apogee feature card. Max 6MB (JPG/PNG).
                                 </small>
                                 @error('image')
                                     <p class="text-danger mb-0 mt-1">{{ $message }}</p>
@@ -175,6 +175,8 @@
                                             @if ($item->image)
                                                 <img src="{{ asset('uploads/blog/thumb/' . $item->image) }}"
                                                     alt="" class="blog-list-thumb">
+                                            @else
+                                                <span class="badge badge-light text-muted">Static card</span>
                                             @endif
                                         </td>
                                         <td>{{ \Illuminate\Support\Str::limit($item->short_description, 80) }}</td>

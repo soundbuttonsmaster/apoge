@@ -80,7 +80,7 @@ class AdminBlogController extends Controller
             'title' => 'required|unique:blogs',
             'short_description' => 'required',
             // 'full_description' => 'required',
-            'image' => 'required|image|mimes:jpeg,png,jpg|max:6144', // 8MB limit
+            'image' => 'nullable|image|mimes:jpeg,png,jpg|max:6144',
             'scheduled_at' => 'nullable|date',
         ], [
             'image.image' => 'The file must be an image.',
@@ -122,6 +122,8 @@ class AdminBlogController extends Controller
             }
             $image_resize->save(public_path('uploads/blog/thumb/' . $image));
             $blogObj->image = $image;
+        } else {
+            $blogObj->image = null;
         }
 
         $blogObj->title =  $req->title;
@@ -167,7 +169,7 @@ class AdminBlogController extends Controller
             'title' => 'required|unique:blogs,title,' . $id,
             'short_description' => 'required',
             // 'full_description' => 'required',
-            'image' => 'image|mimes:jpeg,png,jpg|max:6144', // 8MB limit
+            'image' => 'nullable|image|mimes:jpeg,png,jpg|max:6144',
             'scheduled_at' => 'nullable|date',
         ], [
             'image.image' => 'The file must be an image.',
@@ -184,19 +186,21 @@ class AdminBlogController extends Controller
         if ($req->hasFile('image')) {
             $this->ensureBlogUploadDirs();
 
-            $image_path = public_path('uploads/blog/datels/' . $blogObj->image);
-            if (File::exists($image_path)) {
-                @unlink($image_path);
-            }
+            if (!empty($blogObj->image)) {
+                $image_path = public_path('uploads/blog/datels/' . $blogObj->image);
+                if (File::exists($image_path)) {
+                    @unlink($image_path);
+                }
 
-            $image_path = public_path('uploads/blog/list/' . $blogObj->image);
-            if (File::exists($image_path)) {
-                @unlink($image_path);
-            }
+                $image_path = public_path('uploads/blog/list/' . $blogObj->image);
+                if (File::exists($image_path)) {
+                    @unlink($image_path);
+                }
 
-            $image_path = public_path('uploads/blog/thumb/' . $blogObj->image);
-            if (File::exists($image_path)) {
-                @unlink($image_path);
+                $image_path = public_path('uploads/blog/thumb/' . $blogObj->image);
+                if (File::exists($image_path)) {
+                    @unlink($image_path);
+                }
             }
             $image1 = $req->file('image');
             $image = $this->makeBlogImageName($image1);
@@ -260,17 +264,23 @@ class AdminBlogController extends Controller
         }
 
         $imageName = $blogObj->image;
+        $featuredStem = !empty($imageName)
+            ? pathinfo($imageName, PATHINFO_FILENAME)
+            : ($blogObj->slug ?: null);
+
         if (!empty($imageName)) {
-            foreach (['datels', 'list', 'thumb', 'featured'] as $folder) {
+            foreach (['datels', 'list', 'thumb'] as $folder) {
                 $image_path = public_path('uploads/blog/' . $folder . '/' . $imageName);
                 if (File::exists($image_path)) {
                     @unlink($image_path);
                 }
-                // Featured cards are always .jpg from basename
-                $featuredPath = public_path('uploads/blog/' . $folder . '/' . pathinfo($imageName, PATHINFO_FILENAME) . '.jpg');
-                if (File::exists($featuredPath)) {
-                    @unlink($featuredPath);
-                }
+            }
+        }
+
+        if (!empty($featuredStem)) {
+            $featuredPath = public_path('uploads/blog/featured/' . $featuredStem . '.jpg');
+            if (File::exists($featuredPath)) {
+                @unlink($featuredPath);
             }
         }
 
