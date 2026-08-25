@@ -13,11 +13,25 @@ class AddSeoFieldsToAreasTable extends Migration
      */
     public function up()
     {
-        Schema::table('areas', function (Blueprint $table) {
-            $table->string('meta_title')->nullable()->after('full_description');
-            $table->text('meta_keywords')->nullable()->after('meta_title');
-            $table->text('meta_description')->nullable()->after('meta_keywords');
-        });
+        if (!Schema::hasTable('areas')) {
+            return;
+        }
+
+        if (!Schema::hasColumn('areas', 'meta_title')) {
+            Schema::table('areas', function (Blueprint $table) {
+                $table->string('meta_title')->nullable()->after('full_description');
+            });
+        }
+        if (!Schema::hasColumn('areas', 'meta_keywords')) {
+            Schema::table('areas', function (Blueprint $table) {
+                $table->text('meta_keywords')->nullable()->after('meta_title');
+            });
+        }
+        if (!Schema::hasColumn('areas', 'meta_description')) {
+            Schema::table('areas', function (Blueprint $table) {
+                $table->text('meta_description')->nullable()->after('meta_keywords');
+            });
+        }
     }
 
     /**
@@ -27,8 +41,20 @@ class AddSeoFieldsToAreasTable extends Migration
      */
     public function down()
     {
-        Schema::table('areas', function (Blueprint $table) {
-            $table->dropColumn(['meta_title', 'meta_keywords', 'meta_description']);
-        });
+        if (!Schema::hasTable('areas')) {
+            return;
+        }
+
+        $cols = [];
+        foreach (['meta_title', 'meta_keywords', 'meta_description'] as $col) {
+            if (Schema::hasColumn('areas', $col)) {
+                $cols[] = $col;
+            }
+        }
+        if ($cols) {
+            Schema::table('areas', function (Blueprint $table) use ($cols) {
+                $table->dropColumn($cols);
+            });
+        }
     }
 }
