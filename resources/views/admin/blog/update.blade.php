@@ -205,10 +205,12 @@
     </style>
 
     <script src="{{ asset('ckeditor/ckeditor.js') }}"></script>
-    <script src="{{ asset('js/admin/sanitize-blog-paste-html.js') }}"></script>
-    <script src="{{ asset('js/admin/blog-ckeditor.js') }}"></script>
+    <script src="{{ asset('js/admin/sanitize-blog-paste-html.js') }}?v={{ @filemtime(public_path('js/admin/sanitize-blog-paste-html.js')) ?: time() }}"></script>
+    <script src="{{ asset('js/admin/blog-ckeditor.js') }}?v={{ @filemtime(public_path('js/admin/blog-ckeditor.js')) ?: time() }}"></script>
     <script>
-        initBlogCKEditor('full_description');
+        initBlogCKEditor('full_description', {
+            contentsCss: "{{ asset('css/admin/blog-editor-content.css') }}?v={{ @filemtime(public_path('css/admin/blog-editor-content.css')) ?: time() }}"
+        });
 
         (function () {
             var scheduleInput = document.getElementById('scheduled_at');

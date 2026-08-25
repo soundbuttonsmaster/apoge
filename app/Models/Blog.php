@@ -115,7 +115,7 @@ class Blog extends Model
     }
 
     /**
-     * Inject heading ids and return TOC items from full_description (h2–h4).
+     * Inject heading ids and return TOC items from full_description (h1–h6).
      *
      * @return array{html: string, items: array<int, array{id: string, text: string, level: int}>}
      */
@@ -131,7 +131,7 @@ class Blog extends Model
         $usedIds = [];
 
         $html = preg_replace_callback(
-            '/<(h([2-4]))(\s[^>]*)?>(.*?)<\/\1>/is',
+            '/<(h([1-6]))(\s[^>]*)?>(.*?)<\/\1>/is',
             function ($m) use (&$items, &$usedIds) {
                 $tag = strtolower($m[1]);
                 $level = (int) $m[2];

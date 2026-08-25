@@ -158,9 +158,14 @@
       var trimmed = parts[i].trim();
       if (!trimmed) continue;
       var lower = trimmed.toLowerCase();
+      // Drop Word/Docs noise and size/color that break front typography
       if (lower.indexOf('mso-') === 0) continue;
       if (lower.indexOf('page-') === 0) continue;
-      if (lower.indexOf('background') !== -1 && lower.indexOf('windowtext') !== -1) continue;
+      if (lower.indexOf('color') === 0) continue;
+      if (lower.indexOf('font-size') === 0) continue;
+      if (lower.indexOf('font-family') === 0) continue;
+      if (lower.indexOf('line-height') === 0) continue;
+      if (lower.indexOf('background') !== -1) continue;
       if (
         lower.indexOf('margin') === 0 ||
         lower.indexOf('padding') === 0 ||

@@ -413,13 +413,20 @@
 }
 
 .apogee-toc__item--h3 .apogee-toc__link,
-.apogee-toc__item--h4 .apogee-toc__link {
+.apogee-toc__item--h4 .apogee-toc__link,
+.apogee-toc__item--h5 .apogee-toc__link,
+.apogee-toc__item--h6 .apogee-toc__link {
   padding-left: 12px;
   font-size: 13.5px;
 }
 
-.apogee-toc__item--h4 .apogee-toc__link {
-  padding-left: 20px;
+.apogee-toc__item--h4 .apogee-toc__link,
+.apogee-toc__item--h5 .apogee-toc__link {
+  padding-left: 18px;
+}
+
+.apogee-toc__item--h6 .apogee-toc__link {
+  padding-left: 24px;
 }
 
 .apogee-toc__link {
@@ -445,6 +452,136 @@
 .apogee-blog-body h3,
 .apogee-blog-body h4 {
   scroll-margin-top: 110px;
+}
+
+/* Blog article typography (overrides global 40px/90px headings + grey body) */
+.apogee-blog-body {
+  color: #222222;
+  font-family: "Nunito Sans", sans-serif;
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+.apogee-blog-body > *:first-child {
+  margin-top: 0 !important;
+}
+
+.apogee-blog-body p,
+.apogee-blog-body li,
+.apogee-blog-body td,
+.apogee-blog-body th {
+  color: #222222 !important;
+  font-size: 16px !important;
+  line-height: 1.7 !important;
+  font-family: "Nunito Sans", sans-serif;
+}
+
+.apogee-blog-body p {
+  margin: 0 0 1.1em !important;
+}
+
+.apogee-blog-body a {
+  color: #0d401c;
+  text-decoration: underline;
+}
+
+.apogee-blog-body a:hover {
+  color: #db5518;
+}
+
+.apogee-blog-body h1,
+.apogee-blog-body h2,
+.apogee-blog-body h3,
+.apogee-blog-body h4,
+.apogee-blog-body h5,
+.apogee-blog-body h6 {
+  font-family: "Work Sans", sans-serif !important;
+  color: #141414 !important;
+  font-weight: 700 !important;
+  line-height: 1.35 !important;
+  margin: 1.6em 0 0.65em !important;
+  scroll-margin-top: 110px;
+}
+
+.apogee-blog-body h1 {
+  font-size: 28px !important;
+  line-height: 1.3 !important;
+}
+
+.apogee-blog-body h2 {
+  font-size: 24px !important;
+  line-height: 1.35 !important;
+}
+
+.apogee-blog-body h3 {
+  font-size: 20px !important;
+  line-height: 1.4 !important;
+}
+
+.apogee-blog-body h4 {
+  font-size: 18px !important;
+}
+
+.apogee-blog-body h5,
+.apogee-blog-body h6 {
+  font-size: 16px !important;
+}
+
+.apogee-blog-body ul,
+.apogee-blog-body ol {
+  margin: 0 0 1.15em !important;
+  padding-left: 1.35em;
+  color: #222222;
+}
+
+.apogee-blog-body li {
+  margin-bottom: 0.4em;
+}
+
+.apogee-blog-body li + li {
+  margin-top: 0.25em;
+}
+
+.apogee-blog-body blockquote {
+  margin: 1.25em 0;
+  padding: 12px 18px;
+  border-left: 3px solid #0d401c;
+  background: rgba(13, 64, 28, 0.05);
+  color: #222222;
+}
+
+.apogee-blog-body img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin: 1em 0;
+}
+
+.apogee-blog-body table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.25em 0;
+}
+
+.apogee-blog-body th,
+.apogee-blog-body td {
+  border: 1px solid #dbe3dd;
+  padding: 8px 10px;
+  text-align: left;
+}
+
+@media (max-width: 767px) {
+  .apogee-blog-body h1 {
+    font-size: 24px !important;
+  }
+
+  .apogee-blog-body h2 {
+    font-size: 21px !important;
+  }
+
+  .apogee-blog-body h3 {
+    font-size: 18px !important;
+  }
 }
 
 /* Latest posts: clear spacing, no overlap with TOC */
