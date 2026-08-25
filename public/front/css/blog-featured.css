@@ -367,6 +367,14 @@
   max-height: calc(100vh - 120px);
   overflow-y: auto;
   padding-right: 4px;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE/Edge legacy */
+}
+
+.apogee-blog-sidebar::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  display: none; /* Chrome, Safari, Opera */
 }
 
 .apogee-toc {
